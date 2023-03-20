@@ -1,0 +1,16 @@
+CFLAGS =  -O3 -Dmain=SDL_main
+LDFLAGS = -lm -lmingw32 -lSDL2main -lSDL2
+SDL2_INCLUDE_DIR = C:\SDL2-2.0.12\x86_64-w64-mingw32\include
+SDL2_LIBRARIES_DIR = C:\SDL2-2.0.12\x86_64-w64-mingw32\lib
+
+main:ei1.c sdl2-light.c sdl2-light.h
+	gcc ei1.c sdl2-light.c -o ei1.exe -I $(SDL2_INCLUDE_DIR) -L $(SDL2_LIBRARIES_DIR) $(CFLAGS) $(LDFLAGS)
+
+corr:ei1-corr.c sdl2-light.c sdl2-light.h
+	gcc ei1-corr.c sdl2-light.c -o ei1-corr.exe -I $(SDL2_INCLUDE_DIR) -L $(SDL2_LIBRARIES_DIR) $(CFLAGS) $(LDFLAGS)
+
+
+.PHONY: clean
+clean:
+	del /f /q ei1.exe
+	del /f /q ei1-corr.exe
