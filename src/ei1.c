@@ -11,6 +11,7 @@
 #include "../include/sdl2-light.h"
 
 
+
 #define SCREEN_WIDTH 320
 #define SCREEN_HEIGHT 240
 #define WIND_SPEED 4
