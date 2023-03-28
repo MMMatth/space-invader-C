@@ -53,21 +53,18 @@ SDL_Texture *load_image(const char path[], SDL_Renderer *renderer)
 
 
 void apply_texture(SDL_Texture *texture,SDL_Renderer *renderer,int x, int y){
-    SDL_Rect dst = {0, 0, 0, 0};
-    
-    SDL_QueryTexture(texture, NULL, NULL, &dst.w, &dst.h);
-    dst.x = x; dst.y=y;
-    
-    SDL_RenderCopy(renderer, texture, NULL, &dst);
+    SDL_Rect rect = {0, 0, 0, 0};
+    SDL_QueryTexture(texture, NULL, NULL, &rect.w, &rect.h);
+    rect.x = x; rect.y=y;
+    SDL_RenderCopy(renderer, texture, NULL, &rect);
     
 }
 
 
 void clean_texture(SDL_Texture *texture){
-    if(NULL != texture){
+    if(texture != NULL){
         SDL_DestroyTexture(texture);
     }
-    
 }
 
 

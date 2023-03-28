@@ -7,6 +7,7 @@
  */
 
 #include "sdl2-light.h"
+#include <stdio.h>
 
 
 /**
@@ -40,26 +41,21 @@
 
 struct textures_s{
     SDL_Texture* background; /*!< Texture liée à l'image du fond de l'écran. */
-    /* A COMPLETER */
+    SDL_Texture* sprite; /*!< Texture liée à l'image du sprite. */
 };
-
 
 /**
  * \brief Type qui correspond aux textures du jeu
 */
-
 typedef struct textures_s textures_t;
 
 
 /**
  * \brief Représentation du monde du jeu
 */
-
 struct world_s{
-    /*
-      A COMPLETER
-     */
-    
+    int joueur_x; /*!< Position en x du joueur */
+    int joueur_y; /*!< Position en y du joueur */    
     int gameover; /*!< Champ indiquant si l'on est à la fin du jeu */
 
 };
@@ -81,9 +77,9 @@ typedef struct world_s world_t;
 
 
 void init_data(world_t * world){
-    
-    //on n'est pas à la fin du jeu
-    world->gameover = 0;
+    world->joueur_x = SCREEN_WIDTH / 2 - SPRITE_SIZE / 2; // le joueur est au centre de l'écran
+    world->joueur_y = SCREEN_HEIGHT / 2 - SPRITE_SIZE / 2; // le joueur est au centre de l'écran
+    world->gameover = 0; // le jeu n'est pas fini
     
 }
 
@@ -139,14 +135,20 @@ void handle_events(SDL_Event *event,world_t *world){
             //On indique la fin du jeu
             world->gameover = 1;
         }
-       
-         //si une touche est appuyée
-         if(event->type == SDL_KEYDOWN){
-             //si la touche appuyée est 'D'
-             if(event->key.keysym.sym == SDLK_d){
-                 printf("La touche D est appuyée\n");
-              }
-         }
+
+        //si une touche est appuyée
+        if(event->type == SDL_KEYDOWN){
+            //si la touche appuyée est 'D'
+            if(event->key.keysym.sym == SDLK_d){
+                world->joueur_x += MOVING_STEP;
+            }else if(event->key.keysym.sym == SDLK_q){
+                world->joueur_x -= MOVING_STEP;
+            }else if(event->key.keysym.sym == SDLK_z){
+                world->joueur_y -= MOVING_STEP;
+            }else if(event->key.keysym.sym == SDLK_s){
+                world->joueur_y += MOVING_STEP;
+            }
+        }
     }
 }
 
@@ -158,7 +160,7 @@ void handle_events(SDL_Event *event,world_t *world){
 
 void clean_textures(textures_t *textures){
     clean_texture(textures->background);
-    /* A COMPLETER */
+    clean_texture(textures->sprite);
 }
 
 
@@ -171,10 +173,7 @@ void clean_textures(textures_t *textures){
 
 void  init_textures(SDL_Renderer *renderer, textures_t *textures){
     textures->background = load_image( "ressources/background.bmp",renderer);
-    
-    /* A COMPLETER */
-
-    
+    textures->sprite = load_image( "ressources/sprite.bmp",renderer);
 }
 
 
@@ -186,7 +185,7 @@ void  init_textures(SDL_Renderer *renderer, textures_t *textures){
 
 void apply_background(SDL_Renderer *renderer, textures_t *textures){
     if(textures->background != NULL){
-      apply_texture(textures->background, renderer, 0, 0);
+        apply_texture(textures->background, renderer, 0, 0);
     }
 }
 
@@ -202,14 +201,13 @@ void apply_background(SDL_Renderer *renderer, textures_t *textures){
  */
 
 void refresh_graphics(SDL_Renderer *renderer, world_t *world,textures_t *textures){
-    
     //on vide le renderer
     clear_renderer(renderer);
     
     //application des textures dans le renderer
     apply_background(renderer, textures);
-    /* A COMPLETER */
-    
+    apply_texture(textures->sprite, renderer, world->joueur_x, world->joueur_y);
+
     // on met à jour l'écran
     update_screen(renderer);
 }
