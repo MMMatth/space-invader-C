@@ -14,13 +14,13 @@
 */
 
 
-#define SCREEN_WIDTH 320
+#define SCREEN_WIDTH 300
 
 /**
  * \brief Hauteur de l'écran
 */
 
-#define SCREEN_HEIGHT 240
+#define SCREEN_HEIGHT 480
 
 /**
  * \brief Taille du sprite
@@ -177,8 +177,8 @@ void clean_textures(textures_t *textures){
 */
 
 void  init_textures(SDL_Renderer *renderer, textures_t *textures){
-    textures->background = load_image( "ressources/background.bmp",renderer);
-    textures->sprite = load_image( "ressources/sprite.bmp",renderer);
+    textures->background = load_image( "ressources/space-background.bmp",renderer);
+    textures->sprite = load_image( "ressources/spaceship.bmp",renderer);
 }
 
 
