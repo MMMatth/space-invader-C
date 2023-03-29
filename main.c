@@ -22,19 +22,21 @@
 /**
  * \brief Taille du sprite
 */
-#define SPRITE_SIZE 32
+#define SHIP_SIZE 32
 
 /**
  * \brief Pas de déplacement du sprite
 */
 #define MOVING_STEP 20
 
+
+
 /**
  * \brief Représentation pour stocker les textures nécessaires à l'affichage graphique
 */
 struct textures_s{
     SDL_Texture* background; /*!< Texture liée à l'image du fond de l'écran. */
-    SDL_Texture* sprite; /*!< Texture liée à l'image du sprite. */
+    SDL_Texture* vaisseau; /*!< Texture liée à l'image du sprite. */
 };
 
 /**
@@ -42,15 +44,24 @@ struct textures_s{
 */
 typedef struct textures_s textures_t;
 
+/**
+ * \brief structure qui représente un sprite
+ */
+struct sprite_s{
+    int x; /*!< Position en x du sprite */
+    int y; /*!< Position en y du sprite */
+    int w; /*!< Largeur du sprite */
+    int h; /*!< Hauteur du sprite */
+};
+
+typedef struct sprite_s sprite_t;
 
 /**
  * \brief Représentation du monde du jeu
 */
 struct world_s{
-    int joueur_x; /*!< Position en x du joueur */
-    int joueur_y; /*!< Position en y du joueur */    
+    sprite_t* joueur; /*!< Sprite représentant le joueur */
     int gameover; /*!< Champ indiquant si l'on est à la fin du jeu */
-
 };
 
 /**
@@ -60,6 +71,20 @@ typedef struct world_s world_t;
 
 
 
+void init_sprite(sprite_t *sprite, int x, int y, int w, int h){
+    sprite->x = x;
+    sprite->y = y;
+    sprite->w = w;
+    sprite->h = h;
+}
+
+void print_sprite(sprite_t *sprite){
+    printf("x = %d, y = %d, w = %d, h = %d \n", sprite->x, sprite->y, sprite->w, sprite->h);
+}
+
+void apply_sprite(SDL_Renderer *renderer, textures_t *texture, sprite_t *sprite){
+    apply_surface(sprite->x, sprite->y, texture->vaisseau, renderer);
+}
 
 
 /**
@@ -67,8 +92,8 @@ typedef struct world_s world_t;
  * \param world les données du monde
  */
 void init_data(world_t * world){
-    world->joueur_x = SCREEN_WIDTH / 2 - SPRITE_SIZE / 2; // le joueur est au centre de l'écran
-    world->joueur_y = SCREEN_HEIGHT / 2 - SPRITE_SIZE / 2; // le joueur est au centre de l'écran
+    world->joueur = malloc(sizeof(sprite_t));
+    init_sprite(world->joueur, SCREEN_WIDTH / 2 - SHIP_SIZE / 2, SCREEN_HEIGHT - SHIP_SIZE, SHIP_SIZE, SHIP_SIZE);
     world->gameover = 0; // le jeu n'est pas fini
     
 }
@@ -80,7 +105,7 @@ void init_data(world_t * world){
  */
 void clean_data(world_t *world){
     /* utile uniquement si vous avez fait de l'allocation dynamique (malloc); la fonction ici doit permettre de libérer la mémoire (free) */
-    
+    free(world->joueur);
 }
 
 
@@ -123,21 +148,22 @@ void handle_events(SDL_Event *event,world_t *world){
 
         //si une touche est appuyée
         if(event->type == SDL_KEYDOWN){
-            //si la touche appuyée est 'D'
-            if(event->key.keysym.sym == SDLK_d){
-                if (world->joueur_x < SCREEN_WIDTH - 3 * SPRITE_SIZE / 2)
-                    world->joueur_x += MOVING_STEP;
-            }else if(event->key.keysym.sym == SDLK_q){
-                if (world->joueur_x > 0 + SPRITE_SIZE / 2 )
-                    world->joueur_x -= MOVING_STEP;
-            }else if(event->key.keysym.sym == SDLK_z){
-                if (world->joueur_y > 0 + SPRITE_SIZE / 2)
-                    world->joueur_y -= MOVING_STEP;
-            }else if(event->key.keysym.sym == SDLK_s){
-                if (world->joueur_y < SCREEN_HEIGHT - 3 * SPRITE_SIZE / 2)
-                    world->joueur_y += MOVING_STEP;
+            if (event->key.keysym.sym == SDLK_d){
+                if (world->joueur->x < SCREEN_WIDTH - 3 * SHIP_SIZE / 2)
+                    world->joueur->x += MOVING_STEP;
+            }else if (event->key.keysym.sym == SDLK_q){
+                if (world->joueur->x > 0 + SHIP_SIZE / 2 )
+                    world->joueur->x -= MOVING_STEP;
+            }else if (event->key.keysym.sym == SDLK_z){
+                if (world->joueur->y > 0 + SHIP_SIZE / 2)
+                    world->joueur->y -= MOVING_STEP;
+            }else if (event->key.keysym.sym == SDLK_s){
+                if (world->joueur->y < SCREEN_HEIGHT - 3 * SHIP_SIZE / 2)
+                    world->joueur->y += MOVING_STEP;
             }else if(event->key.keysym.sym == SDLK_ESCAPE){
                 world->gameover = 1;
+            }else if(event->key.keysym.sym == SDLK_SPACE){
+                print_sprite(world->joueur);
             }
         }
     }
@@ -150,7 +176,7 @@ void handle_events(SDL_Event *event,world_t *world){
 */
 void clean_textures(textures_t *textures){
     clean_texture(textures->background);
-    clean_texture(textures->sprite);
+    clean_texture(textures->vaisseau);
 }
 
 
@@ -162,7 +188,7 @@ void clean_textures(textures_t *textures){
 */
 void  init_textures(SDL_Renderer *renderer, textures_t *textures){
     textures->background = load_image( "ressources/space-background.bmp",renderer);
-    textures->sprite = load_image( "ressources/spaceship.bmp",renderer);
+    textures->vaisseau = load_image( "ressources/spaceship.bmp",renderer);
 }
 
 
@@ -193,7 +219,8 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,textures_t *texture
     
     //application des textures dans le renderer
     apply_background(renderer, textures);
-    apply_texture(textures->sprite, renderer, world->joueur_x, world->joueur_y);
+    //application du sprite
+    apply_sprite(renderer, textures, world->joueur);
 
     // on met à jour l'écran
     update_screen(renderer);
@@ -208,7 +235,6 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,textures_t *texture
 * \param textures les textures
 * \param world le monde
 */
-
 void clean(SDL_Window *window, SDL_Renderer * renderer, textures_t *textures, world_t * world){
     clean_data(world);
     clean_textures(textures);
@@ -224,7 +250,6 @@ void clean(SDL_Window *window, SDL_Renderer * renderer, textures_t *textures, wo
  * \param textures les textures
  * \param wordl le monde
  */
-
 void init(SDL_Window **window, SDL_Renderer ** renderer, textures_t *textures, world_t * world){
     init_sdl(window,renderer,SCREEN_WIDTH, SCREEN_HEIGHT);
     init_data(world);
@@ -235,8 +260,6 @@ void init(SDL_Window **window, SDL_Renderer ** renderer, textures_t *textures, w
 /**
  *  \brief programme principal qui implémente la boucle du jeu
  */
-
-
 int main( int argc, char* args[] )
 {
     SDL_Event event;
