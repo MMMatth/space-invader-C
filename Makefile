@@ -14,11 +14,13 @@ all: $(PROG)
 $(PROG): $(OBJ)
 	gcc $(CFLAGS) $(OBJ) $(LDFLAGS) -o $@ -L $(SDL2_LIBRARIES_DIR)
 
+
 lib/%.o: src/%.c $(INC)
 	gcc $(CFLAGS) -c $< -o $@ -I $(SDL2_INCLUDE_DIR)
 
-doc: $(PROG)
-	doxygen $(PROG)
+doc: 
+	doxygen doc/Doxyfile
 
 clean:
 	del /q lib\*.o bin\start.exe bin\tests.exe
+	del /q doc\html\* doc\latex\*
