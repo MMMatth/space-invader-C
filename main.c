@@ -29,7 +29,11 @@
 */
 #define MOVING_STEP 20
 
+#define FINISH_LINE_HEIGHT -1000
 
+#define INITIAL_SPEED 1
+
+#define METEORITE_SIZE 32
 
 /**
  * \brief Représentation pour stocker les textures nécessaires à l'affichage graphique
@@ -37,6 +41,8 @@
 struct textures_s{
     SDL_Texture* background; /*!< Texture liée à l'image du fond de l'écran. */
     SDL_Texture* vaisseau; /*!< Texture liée à l'image du sprite. */
+    SDL_Texture* ligne_arrivee; /*!< Texture liée à l'image de la ligne d'arrivée. */
+    SDL_Texture* meteorite; /*!< Texture liée à l'image de la météorite. */
 };
 
 /**
@@ -61,6 +67,9 @@ typedef struct sprite_s sprite_t;
 */
 struct world_s{
     sprite_t* joueur; /*!< Sprite représentant le joueur */
+    sprite_t* ligne_arrivee; /*!< Sprite représentant la ligne d'arrivée */
+    sprite_t* mur_meteorite; /*!< Sprite représentant le mur de météorites */
+    int vitesse; /*!< Vitesse de déplacement du fond */
     int gameover; /*!< Champ indiquant si l'on est à la fin du jeu */
 };
 
@@ -82,8 +91,8 @@ void print_sprite(sprite_t *sprite){
     printf("x = %d, y = %d, w = %d, h = %d \n", sprite->x, sprite->y, sprite->w, sprite->h);
 }
 
-void apply_sprite(SDL_Renderer *renderer, textures_t *texture, sprite_t *sprite){
-    apply_surface(sprite->x, sprite->y, texture->vaisseau, renderer);
+void apply_sprite(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite){
+    apply_texture(texture, renderer, sprite->x, sprite->y);
 }
 
 
@@ -94,6 +103,11 @@ void apply_sprite(SDL_Renderer *renderer, textures_t *texture, sprite_t *sprite)
 void init_data(world_t * world){
     world->joueur = malloc(sizeof(sprite_t));
     init_sprite(world->joueur, SCREEN_WIDTH / 2 - SHIP_SIZE / 2, SCREEN_HEIGHT - SHIP_SIZE, SHIP_SIZE, SHIP_SIZE);
+    world->ligne_arrivee = malloc(sizeof(sprite_t));
+    init_sprite(world->ligne_arrivee, 0, FINISH_LINE_HEIGHT, SCREEN_WIDTH, 1);
+    world->mur_meteorite = malloc(sizeof(sprite_t));
+    init_sprite(world->mur_meteorite, SCREEN_WIDTH / 2, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    world->vitesse = INITIAL_SPEED;
     world->gameover = 0; // le jeu n'est pas fini
     
 }
@@ -106,6 +120,7 @@ void init_data(world_t * world){
 void clean_data(world_t *world){
     /* utile uniquement si vous avez fait de l'allocation dynamique (malloc); la fonction ici doit permettre de libérer la mémoire (free) */
     free(world->joueur);
+    free(world->ligne_arrivee);
 }
 
 
@@ -126,7 +141,9 @@ int is_game_over(world_t *world){
  * \param les données du monde
  */
 void update_data(world_t *world){
-    /* A COMPLETER */
+    world->ligne_arrivee->y += world->vitesse;
+    world->mur_meteorite->y += world->vitesse;
+
 }
 
 
@@ -149,17 +166,22 @@ void handle_events(SDL_Event *event,world_t *world){
         //si une touche est appuyée
         if(event->type == SDL_KEYDOWN){
             if (event->key.keysym.sym == SDLK_d){
-                if (world->joueur->x < SCREEN_WIDTH - 3 * SHIP_SIZE / 2)
+                if (world->joueur->x < SCREEN_WIDTH - 3 * SHIP_SIZE / 2){
                     world->joueur->x += MOVING_STEP;
+                }
             }else if (event->key.keysym.sym == SDLK_q){
                 if (world->joueur->x > 0 + SHIP_SIZE / 2 )
                     world->joueur->x -= MOVING_STEP;
             }else if (event->key.keysym.sym == SDLK_z){
-                if (world->joueur->y > 0 + SHIP_SIZE / 2)
+                if (world->joueur->y > 0 + SHIP_SIZE / 2){
                     world->joueur->y -= MOVING_STEP;
+                    world->vitesse += 1;
+                }
             }else if (event->key.keysym.sym == SDLK_s){
-                if (world->joueur->y < SCREEN_HEIGHT - 3 * SHIP_SIZE / 2)
+                if (world->joueur->y < SCREEN_HEIGHT - 3 * SHIP_SIZE / 2){
                     world->joueur->y += MOVING_STEP;
+                    world->vitesse -= 1;
+                }
             }else if(event->key.keysym.sym == SDLK_ESCAPE){
                 world->gameover = 1;
             }else if(event->key.keysym.sym == SDLK_SPACE){
@@ -177,6 +199,8 @@ void handle_events(SDL_Event *event,world_t *world){
 void clean_textures(textures_t *textures){
     clean_texture(textures->background);
     clean_texture(textures->vaisseau);
+    clean_texture(textures->ligne_arrivee);
+    clean_texture(textures->meteorite);
 }
 
 
@@ -189,6 +213,8 @@ void clean_textures(textures_t *textures){
 void  init_textures(SDL_Renderer *renderer, textures_t *textures){
     textures->background = load_image( "ressources/space-background.bmp",renderer);
     textures->vaisseau = load_image( "ressources/spaceship.bmp",renderer);
+    textures->ligne_arrivee = load_image( "ressources/finish_line.bmp",renderer);
+    textures->meteorite = load_image( "ressources/meteorite.bmp",renderer);
 }
 
 
@@ -204,7 +230,16 @@ void apply_background(SDL_Renderer *renderer, textures_t *textures){
 }
 
 
-
+void apply_wall(SDL_Renderer *renderer, SDL_Texture *textures, int x, int y){
+    if (textures != NULL){
+        SDL_Rect rect;
+        rect.x = x;
+        rect.y = y;
+        rect.w = METEORITE_SIZE;
+        rect.h = METEORITE_SIZE;
+        SDL_RenderCopy(renderer, textures, NULL, &rect);
+    }
+}
 
 
 /**
@@ -220,7 +255,15 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,textures_t *texture
     //application des textures dans le renderer
     apply_background(renderer, textures);
     //application du sprite
-    apply_sprite(renderer, textures, world->joueur);
+    apply_sprite(renderer, textures->vaisseau, world->joueur);
+    //application de la ligne d'arrivée
+    apply_sprite(renderer, textures->ligne_arrivee, world->ligne_arrivee);
+    // boucle pour afficher les météorites 3 en largeur et 7 en hauteur
+    for (int i = 0; i < 3; i++){
+        for (int j = 0; j < 7; j++){
+            apply_wall(renderer, textures->meteorite , world->mur_meteorite->x + i * METEORITE_SIZE , world->mur_meteorite->y + j * METEORITE_SIZE);
+        }
+    }
 
     // on met à jour l'écran
     update_screen(renderer);
