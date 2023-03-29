@@ -12,32 +12,26 @@
 /**
  * \brief Largeur de l'écran
 */
-
-
 #define SCREEN_WIDTH 300
 
 /**
  * \brief Hauteur de l'écran
 */
-
 #define SCREEN_HEIGHT 480
 
 /**
  * \brief Taille du sprite
 */
-
 #define SPRITE_SIZE 32
 
 /**
  * \brief Pas de déplacement du sprite
 */
-
 #define MOVING_STEP 20
 
 /**
  * \brief Représentation pour stocker les textures nécessaires à l'affichage graphique
 */
-
 struct textures_s{
     SDL_Texture* background; /*!< Texture liée à l'image du fond de l'écran. */
     SDL_Texture* sprite; /*!< Texture liée à l'image du sprite. */
@@ -62,7 +56,6 @@ struct world_s{
 /**
  * \brief Type qui correspond aux données du monde
  */
-
 typedef struct world_s world_t;
 
 
@@ -73,8 +66,6 @@ typedef struct world_s world_t;
  * \brief La fonction initialise les données du monde du jeu
  * \param world les données du monde
  */
-
-
 void init_data(world_t * world){
     world->joueur_x = SCREEN_WIDTH / 2 - SPRITE_SIZE / 2; // le joueur est au centre de l'écran
     world->joueur_y = SCREEN_HEIGHT / 2 - SPRITE_SIZE / 2; // le joueur est au centre de l'écran
@@ -87,8 +78,6 @@ void init_data(world_t * world){
  * \brief La fonction nettoie les données du monde
  * \param world les données du monde
  */
-
-
 void clean_data(world_t *world){
     /* utile uniquement si vous avez fait de l'allocation dynamique (malloc); la fonction ici doit permettre de libérer la mémoire (free) */
     
@@ -101,7 +90,6 @@ void clean_data(world_t *world){
  * \param world les données du monde
  * \return 1 si le jeu est fini, 0 sinon
  */
-
 int is_game_over(world_t *world){
     return world->gameover;
 }
@@ -112,7 +100,6 @@ int is_game_over(world_t *world){
  * \brief La fonction met à jour les données en tenant compte de la physique du monde
  * \param les données du monde
  */
-
 void update_data(world_t *world){
     /* A COMPLETER */
 }
@@ -124,7 +111,6 @@ void update_data(world_t *world){
  * \param event paramètre qui contient les événements
  * \param world les données du monde
  */
-
 void handle_events(SDL_Event *event,world_t *world){
     Uint8 *keystates;
     while( SDL_PollEvent( event ) ) {
@@ -162,7 +148,6 @@ void handle_events(SDL_Event *event,world_t *world){
  * \brief La fonction nettoie les textures
  * \param textures les textures
 */
-
 void clean_textures(textures_t *textures){
     clean_texture(textures->background);
     clean_texture(textures->sprite);
@@ -175,7 +160,6 @@ void clean_textures(textures_t *textures){
  * \param screen la surface correspondant à l'écran de jeu
  * \param textures les textures du jeu
 */
-
 void  init_textures(SDL_Renderer *renderer, textures_t *textures){
     textures->background = load_image( "ressources/space-background.bmp",renderer);
     textures->sprite = load_image( "ressources/spaceship.bmp",renderer);
@@ -187,7 +171,6 @@ void  init_textures(SDL_Renderer *renderer, textures_t *textures){
  * \param renderer le renderer
  * \param textures les textures du jeu
 */
-
 void apply_background(SDL_Renderer *renderer, textures_t *textures){
     if(textures->background != NULL){
         apply_texture(textures->background, renderer, 0, 0);
@@ -204,7 +187,6 @@ void apply_background(SDL_Renderer *renderer, textures_t *textures){
  * \param world les données du monde
  * \param textures les textures du jeu
  */
-
 void refresh_graphics(SDL_Renderer *renderer, world_t *world,textures_t *textures){
     //on vide le renderer
     clear_renderer(renderer);
