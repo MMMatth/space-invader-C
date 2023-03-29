@@ -32,7 +32,7 @@
  * \brief Pas de déplacement du sprite
 */
 
-#define MOVING_STEP 5
+#define MOVING_STEP 20
 
 /**
  * \brief Représentation pour stocker les textures nécessaires à l'affichage graphique
@@ -139,13 +139,19 @@ void handle_events(SDL_Event *event,world_t *world){
         if(event->type == SDL_KEYDOWN){
             //si la touche appuyée est 'D'
             if(event->key.keysym.sym == SDLK_d){
-                world->joueur_x += MOVING_STEP;
+                if (world->joueur_x < SCREEN_WIDTH - 3 * SPRITE_SIZE / 2)
+                    world->joueur_x += MOVING_STEP;
             }else if(event->key.keysym.sym == SDLK_q){
-                world->joueur_x -= MOVING_STEP;
+                if (world->joueur_x > 0 + SPRITE_SIZE / 2 )
+                    world->joueur_x -= MOVING_STEP;
             }else if(event->key.keysym.sym == SDLK_z){
-                world->joueur_y -= MOVING_STEP;
+                if (world->joueur_y > 0 + SPRITE_SIZE / 2)
+                    world->joueur_y -= MOVING_STEP;
             }else if(event->key.keysym.sym == SDLK_s){
-                world->joueur_y += MOVING_STEP;
+                if (world->joueur_y < SCREEN_HEIGHT - 3 * SPRITE_SIZE / 2)
+                    world->joueur_y += MOVING_STEP;
+            }else if(event->key.keysym.sym == SDLK_ESCAPE){
+                world->gameover = 1;
             }
         }
     }
