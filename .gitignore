@@ -1,4 +1,5 @@
-spacecorridor.exe
-main.o
-sdl2-light.o
 .vscode
+bin/*
+lib/*
+# sauf le fichier .dll de la librairie SDL2 
+!bin/SDL2.dll 
