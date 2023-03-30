@@ -8,21 +8,23 @@
 #include "const.h"
 #include "world.h"
 #include "sdl2-light.h"
+#include "sdl2-ttf-light.h"
 
 /**
  * \brief Représentation pour stocker les textures nécessaires à l'affichage graphique
 */
-struct textures_s{
+struct resources_s{
     SDL_Texture* background; /*!< Texture liée à l'image du fond de l'écran. */
     SDL_Texture* vaisseau; /*!< Texture liée à l'image du sprite. */
     SDL_Texture* ligne_arrivee; /*!< Texture liée à l'image de la ligne d'arrivée. */
     SDL_Texture* meteorite; /*!< Texture liée à l'image de la météorite. */
+    TTF_Font *font; /*!< Font utilisée pour l'affichage du texte. */
 };
 
 /**
  * \brief Type qui correspond aux textures du jeu
 */
-typedef struct textures_s textures_t;
+typedef struct resources_s resources_t;
 
 /**
  * \brief applique le sprite sur le renderer
@@ -45,20 +47,20 @@ void handle_events(SDL_Event* event,world_t * world);
  * \param screen la surface correspondant à l'écran de jeu
  * \param textures les textures du jeu
 */
-void init_textures(SDL_Renderer *renderer, textures_t *textures);
+void init_textures(SDL_Renderer *renderer, resources_t *textures);
 
 /**
  * \brief La fonction nettoie les textures
  * \param textures les textures
 */
-void clean_textures(textures_t *textures);
+void clean_textures(resources_t *textures);
 
 /**
  * \brief La fonction applique la texture du fond sur le renderer lié à l'écran de jeu
  * \param renderer le renderer
  * \param textures les textures du jeu
 */
-void apply_background(SDL_Renderer *renderer, textures_t *textures);
+void apply_background(SDL_Renderer *renderer, resources_t *textures);
 
 /**
  * \brief 
@@ -68,7 +70,7 @@ void apply_background(SDL_Renderer *renderer, textures_t *textures);
  * \param x 
  * \param y 
  */
-void apply_wall(SDL_Renderer *renderer, SDL_Texture *textures, int x, int y);
+void apply_walls(SDL_Renderer *renderer, sprite_t ** tab_mur, SDL_Texture *texture);
 
 
 #endif

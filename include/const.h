@@ -21,7 +21,7 @@
 /**
  * \brief Hauteur de la ligne d'arrivée
  */
-#define FINISH_LINE_HEIGHT -1000
+#define FINISH_LINE_HEIGHT -960
 
 /**
  * \brief Vitesse initiale mouvement des météorites
@@ -32,3 +32,6 @@
  * \brief Taille des météorites
  */
 #define METEORITE_SIZE 32
+
+#define NB_MUR_METEORITE 6
+

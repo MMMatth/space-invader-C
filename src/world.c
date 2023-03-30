@@ -1,4 +1,5 @@
 #include "../include/world.h"
+#include "../include/wall.h"
 
 
 void init_data(world_t * world){
@@ -6,9 +7,10 @@ void init_data(world_t * world){
     init_sprite(world->joueur, SCREEN_WIDTH / 2 - SHIP_SIZE / 2, SCREEN_HEIGHT - SHIP_SIZE - 15, SHIP_SIZE, SHIP_SIZE);
     world->ligne_arrivee = malloc(sizeof(sprite_t));
     init_sprite(world->ligne_arrivee, 0, FINISH_LINE_HEIGHT, SCREEN_WIDTH, 1);
-    world->mur_meteorite = malloc(sizeof(sprite_t));
-    init_sprite(world->mur_meteorite, SCREEN_WIDTH / 3, 0, 3 * METEORITE_SIZE, 7 * METEORITE_SIZE);
+    world->tab_wall_meteor = malloc(sizeof(sprite_t*) * NB_MUR_METEORITE);
+    init_walls(world);
     world->vitesse = INITIAL_SPEED;
+    world->chrono = 0;
     world->gameover = 0; // le jeu n'est pas fini
 }
 
@@ -27,9 +29,18 @@ void check_pos(world_t *world){
     }
 }
 
+void est_fini(world_t *world){
+    if(sprites_collide(world->joueur, world->ligne_arrivee)){ // si le joueur a atteint la ligne d'arrivée
+        printf("Vous avez gagne en %d s!\n", world->chrono);
+    }else{
+        printf("Vous avez perdu !\n");
+    }
+}
+
 void handle_sprites_collision(world_t *world, sprite_t *sp1, sprite_t *sp2){
     if(sprites_collide(sp1, sp2)){
-        world->vitesse = 0;
+        world->gameover = 1;
+        est_fini(world);
     }
 }
 
@@ -39,21 +50,21 @@ void clean_data(world_t *world){
     free(world->joueur);
     free(world->ligne_arrivee);
     free(world->mur_meteorite);
+    clean_walls(world);
 }
+
 
 void update_data(world_t *world){
     world->ligne_arrivee->y += world->vitesse;
-    world->mur_meteorite->y += world->vitesse;
+    update_wall(world);
     check_pos(world);
-    handle_sprites_collision(world, world->joueur, world->mur_meteorite);
     handle_sprites_collision(world, world->joueur, world->ligne_arrivee);
-}
+    handle_wall_collision(world);
+}   
 
 int is_game_over(world_t *world){
     return world->gameover;
 }
-
-
 
 void print_data(world_t* world){
     printf("Position et taille du joueur : ");

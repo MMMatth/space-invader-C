@@ -40,6 +40,8 @@ int sprites_collide(sprite_t * sp1, sprite_t * sp2);
  */
 void init_sprite(sprite_t *sprite, int x, int y, int w, int h);
 
+void hide_sprite(sprite_t *sprite);
+
 // --- Fonctions test --- //
 
 /**
