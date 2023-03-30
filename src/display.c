@@ -21,12 +21,11 @@ void handle_events(SDL_Event *event,world_t *world){
                 world->joueur->x -= MOVING_STEP;
                 break;
             case SDLK_z:
-                world->joueur->y -= MOVING_STEP;
                 world->vitesse += 0.2;
                 break;
             case SDLK_s:
-                world->joueur->y += MOVING_STEP;
-                world->vitesse -= 0.2;
+                if (world->vitesse > 1)
+                    world->vitesse -= 0.2;
                 break;
             case SDLK_ESCAPE:
                 world->gameover = 1;
