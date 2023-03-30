@@ -12,31 +12,21 @@ void handle_events(SDL_Event *event,world_t *world){
         if( event->type == SDL_QUIT ) {
             world->gameover = 1;
         }
-
-        //si une touche est appuyée
-
         if(event->type == SDL_KEYDOWN){
             switch (event->key.keysym.sym){
             case SDLK_d:
-                if (world->joueur->x < SCREEN_WIDTH - 3 * SHIP_SIZE / 2){
-                        world->joueur->x += MOVING_STEP;
-                }
+                world->joueur->x += MOVING_STEP;
                 break;
             case SDLK_q:
-                if (world->joueur->x > 0 + SHIP_SIZE / 2 )
-                        world->joueur->x -= MOVING_STEP;
+                world->joueur->x -= MOVING_STEP;
                 break;
             case SDLK_z:
-                if (world->joueur->y > 0 + SHIP_SIZE / 2){
-                        world->joueur->y -= MOVING_STEP;
-                        world->vitesse += 0.2;
-                }
+                world->joueur->y -= MOVING_STEP;
+                world->vitesse += 0.2;
                 break;
             case SDLK_s:
-                if (world->joueur->y < SCREEN_HEIGHT - 3 * SHIP_SIZE / 2){
-                        world->joueur->y += MOVING_STEP;
-                        world->vitesse -= 0.2;
-                }
+                world->joueur->y += MOVING_STEP;
+                world->vitesse -= 0.2;
                 break;
             case SDLK_ESCAPE:
                 world->gameover = 1;

@@ -53,7 +53,6 @@ void init_textures(SDL_Renderer *renderer, textures_t *textures);
 */
 void clean_textures(textures_t *textures);
 
-
 /**
  * \brief La fonction applique la texture du fond sur le renderer lié à l'écran de jeu
  * \param renderer le renderer
@@ -61,6 +60,14 @@ void clean_textures(textures_t *textures);
 */
 void apply_background(SDL_Renderer *renderer, textures_t *textures);
 
+/**
+ * \brief 
+ * 
+ * \param renderer 
+ * \param textures 
+ * \param x 
+ * \param y 
+ */
 void apply_wall(SDL_Renderer *renderer, SDL_Texture *textures, int x, int y);
 
 

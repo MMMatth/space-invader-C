@@ -10,6 +10,7 @@
 #include "../include/const.h"
 #include "../include/world.h"
 #include "../include/display.h"
+#include "../include/sprite.h"
 #include <stdio.h>
 
 

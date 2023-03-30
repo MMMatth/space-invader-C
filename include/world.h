@@ -2,22 +2,9 @@
 #define WORLD_H
 
 #include "const.h"
+#include "sprite.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-/**
- * \brief structure qui représente un sprite
- */
-struct sprite_s{
-    int x; /*!< Position en x du sprite */
-    int y; /*!< Position en y du sprite */
-    int w; /*!< Largeur du sprite */
-    int h; /*!< Hauteur du sprite */
-};
-/**
- * \brief Type qui correspond à un sprite
- */
-typedef struct sprite_s sprite_t;
 
 
 /**
@@ -41,16 +28,13 @@ typedef struct world_s world_t;
  */
 void init_data(world_t* world);
 
+
 /**
- * \brief initialise un sprite
+ * \brief fonction qui verifie si le joueur depasse les bords de l'écran et le deplace en conséquence
  * 
- * \param sprite : le sprite à initialiser
- * \param x : la position en x du sprite
- * \param y : la position en y du sprite
- * \param w : la largeur du sprite
- * \param h : la hauteur du sprite
+ * \param world 
  */
-void init_sprite(sprite_t *sprite, int x, int y, int w, int h);
+void check_pos(world_t *world);
 
 
 /**
@@ -72,14 +56,18 @@ void update_data(world_t* world);
  */
 int is_game_over(world_t* world);
 
+/**
+ * \brief fonction qui permet de modifier le world en fonction de la collision entre deux sprites
+ * 
+ * \param world 
+ * \param sp1 
+ * \param sp2 
+ */
+void handle_sprites_collision(world_t *world, sprite_t *sp1, sprite_t *sp2);
+
+
 // --- fonction tests --- //
 
-/**
- * \brief affiche les informations du sprite
- * 
- * \param sprite 
- */
-void print_sprite(sprite_t *sprite);
 
 /**
  * \brief affiche les informations du monde
