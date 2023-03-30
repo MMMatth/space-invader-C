@@ -1,7 +1,6 @@
 #include "../include/world.h"
 
 
-
 void init_data(world_t * world){
     world->joueur = malloc(sizeof(sprite_t));
     init_sprite(world->joueur, SCREEN_WIDTH / 2 - SHIP_SIZE / 2, SCREEN_HEIGHT - SHIP_SIZE, SHIP_SIZE, SHIP_SIZE);
@@ -13,11 +12,18 @@ void init_data(world_t * world){
     world->gameover = 0; // le jeu n'est pas fini
 }
 
+void init_sprite(sprite_t *sprite, int x, int y, int w, int h){
+    sprite->x = x;
+    sprite->y = y;
+    sprite->w = w;
+    sprite->h = h;
+}
+
 
 void clean_data(world_t *world){
-    /* utile uniquement si vous avez fait de l'allocation dynamique (malloc); la fonction ici doit permettre de libérer la mémoire (free) */
     free(world->joueur);
     free(world->ligne_arrivee);
+    free(world->mur_meteorite);
 }
 
 void update_data(world_t *world){
@@ -25,51 +31,21 @@ void update_data(world_t *world){
     world->mur_meteorite->y += world->vitesse;
 }
 
-
 int is_game_over(world_t *world){
     return world->gameover;
 }
 
-void handle_events(SDL_Event *event,world_t *world){
-    Uint8 *keystates;
-    while( SDL_PollEvent( event ) ) {
-        
-        //Si l'utilisateur a cliqué sur le X de la fenêtre
-        if( event->type == SDL_QUIT ) {
-            world->gameover = 1;
-        }
+void print_sprite(sprite_t *sprite){
+    printf("x = %d, y = %d, w = %d, h = %d \n", sprite->x, sprite->y, sprite->w, sprite->h);
+}
 
-        //si une touche est appuyée
-
-        if(event->type == SDL_KEYDOWN){
-            switch (event->key.keysym.sym){
-            case SDLK_d:
-                if (world->joueur->x < SCREEN_WIDTH - 3 * SHIP_SIZE / 2){
-                        world->joueur->x += MOVING_STEP;
-                }
-                break;
-            case SDLK_q:
-                if (world->joueur->x > 0 + SHIP_SIZE / 2 )
-                        world->joueur->x -= MOVING_STEP;
-                break;
-            case SDLK_z:
-                if (world->joueur->y > 0 + SHIP_SIZE / 2){
-                        world->joueur->y -= MOVING_STEP;
-                        world->vitesse += 0.2;
-                }
-                break;
-            case SDLK_s:
-                if (world->joueur->y < SCREEN_HEIGHT - 3 * SHIP_SIZE / 2){
-                        world->joueur->y += MOVING_STEP;
-                        world->vitesse -= 0.2;
-                }
-                break;
-            case SDLK_ESCAPE:
-                world->gameover = 1;
-                break;
-            default:
-                break;
-            }
-        }
-    }
+void print_data(world_t* world){
+    printf("Position et taille du joueur : ");
+    print_sprite(world->joueur);
+    printf("Position et taille de la ligne d'arrivee : ");
+    print_sprite(world->ligne_arrivee);
+    printf("Position et taille du mur de meteorites : ");
+    print_sprite(world->mur_meteorite);
+    printf("Vistesse du fond : %f ", world->vitesse);
+    printf("Le jeu est fini ? %s \t", world->gameover ? "oui" : "non");
 }

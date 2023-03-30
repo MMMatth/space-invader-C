@@ -28,10 +28,9 @@ void clean_sdl(SDL_Renderer *renderer,SDL_Window *window);
  * \return la surface SDL contenant l'image avec la couleur RGB (255,0,255) rendue transparente. Elle renvoie NULL si le chargement a échoué
  * (ex. le fichier path n'existe pas)
 */
-
-
 SDL_Texture *load_image(const char path[], SDL_Renderer *renderer);
 
+void init_icon(SDL_Window *window, const char path[]);
 
 /**
  * \brief La fonction initialise la SDL.

@@ -29,7 +29,6 @@ int init_sdl(SDL_Window **window, SDL_Renderer **renderer, int width, int height
 
 
 
-
 SDL_Texture *load_image(const char path[], SDL_Renderer *renderer)
 {
     SDL_Surface *tmp = NULL;
@@ -50,7 +49,6 @@ SDL_Texture *load_image(const char path[], SDL_Renderer *renderer)
     }
     return texture;
 }
-
 
 void apply_texture(SDL_Texture *texture,SDL_Renderer *renderer,int x, int y){
     SDL_Rect rect = {0, 0, 0, 0};
@@ -80,11 +78,9 @@ void update_screen(SDL_Renderer *renderer){
 }
 
 
-
 void pause(int time){
     SDL_Delay(time);
 }
-
 
 void clean_sdl(SDL_Renderer *renderer,SDL_Window *window){
     if(NULL != renderer)
@@ -93,3 +89,4 @@ void clean_sdl(SDL_Renderer *renderer,SDL_Window *window){
         SDL_DestroyWindow(window);
     SDL_Quit();    
 }
+
