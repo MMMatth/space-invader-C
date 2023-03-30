@@ -24,7 +24,7 @@ void handle_events(SDL_Event *event,world_t *world){
                 world->vitesse += 0.2;
                 break;
             case SDLK_s:
-                if (world->vitesse > 1)
+                if (world->vitesse > INITIAL_SPEED)
                     world->vitesse -= 0.2;
                 break;
             case SDLK_ESCAPE:
