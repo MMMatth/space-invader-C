@@ -14,24 +14,24 @@ void init_data(world_t * world){
     world->gameover = 0; // le jeu n'est pas fini
 }
 
-void check_pos(world_t *world){
-    if(world->joueur->x < 0){
-        world->joueur->x = 0;
+void check_pos(world_t *world){ // vérifie que le joueur ne sort pas de l'écran
+    if(world->joueur->x < 0){ // si le joueur sort de l'écran à gauche
+        world->joueur->x = 0; // on le replace à gauche
     }
-    if(world->joueur->x > SCREEN_WIDTH - SHIP_SIZE){
-        world->joueur->x = SCREEN_WIDTH - SHIP_SIZE;
+    if(world->joueur->x > SCREEN_WIDTH - SHIP_SIZE){ // si le joueur sort de l'écran à droite
+        world->joueur->x = SCREEN_WIDTH - SHIP_SIZE; // on le replace à droite
     }
-    if(world->joueur->y < 0){
-        world->joueur->y = 0;
+    if(world->joueur->y < 0){ // si le joueur sort de l'écran en haut
+        world->joueur->y = 0; // on le replace en haut
     }
-    if(world->joueur->y > SCREEN_HEIGHT - SHIP_SIZE){
-        world->joueur->y = SCREEN_HEIGHT - SHIP_SIZE;
+    if(world->joueur->y > SCREEN_HEIGHT - SHIP_SIZE){ // si le joueur sort de l'écran en bas
+        world->joueur->y = SCREEN_HEIGHT - SHIP_SIZE; // on le replace en bas
     }
 }
 
 void est_fini(world_t *world){
     if(sprites_collide(world->joueur, world->ligne_arrivee)){ // si le joueur a atteint la ligne d'arrivée
-        printf("Vous avez gagne en %d s!\n", world->chrono);
+        printf("Vous avez gagne en %ds!\n", world->chrono);
     }else{
         printf("Vous avez perdu !\n");
     }
@@ -44,15 +44,16 @@ void handle_sprites_collision(world_t *world, sprite_t *sp1, sprite_t *sp2){
     }
 }
 
-
-
 void clean_data(world_t *world){
+    printf("00000")
     free(world->joueur);
+    printf("1");
     free(world->ligne_arrivee);
+    printf("2");
     free(world->mur_meteorite);
+    printf("3");
     clean_walls(world);
 }
-
 
 void update_data(world_t *world){
     world->ligne_arrivee->y += world->vitesse;
@@ -73,6 +74,6 @@ void print_data(world_t* world){
     print_sprite(world->ligne_arrivee);
     printf("Position et taille du mur de meteorites : ");
     print_sprite(world->mur_meteorite);
-    printf("Vistesse du fond : %f ", world->vitesse);
+    printf("Vitesse du fond : %f ", world->vitesse);
     printf("Le jeu est fini ? %s \t", world->gameover ? "oui" : "non");
 }

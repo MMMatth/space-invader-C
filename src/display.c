@@ -6,14 +6,11 @@ void  init_textures(SDL_Renderer *renderer, resources_t *resources){
     resources->ligne_arrivee = load_image( "assets/img/finish_line.bmp",renderer);
     resources->meteorite = load_image( "assets/img/meteorite.bmp",renderer);
     resources->font = load_font("assets/font/arial.ttf", 30);
-
 }
 
 void apply_sprite(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite){
     apply_texture(texture, renderer, sprite->x, sprite->y);
 }
-
-
 
 void apply_walls(SDL_Renderer *renderer, sprite_t ** tab_mur, SDL_Texture *texture){
     for (int k = 0; k < NB_MUR_METEORITE; k++){ // on parcourt le tableau de mur
@@ -63,7 +60,6 @@ void apply_background(SDL_Renderer *renderer, resources_t *textures){
         apply_texture(textures->background, renderer, 0, 0);
     }
 }
-
 
 void clean_textures(resources_t *textures){
     clean_texture(textures->background);

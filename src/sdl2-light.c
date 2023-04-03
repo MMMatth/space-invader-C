@@ -44,7 +44,7 @@ SDL_Texture *load_image(const char path[], SDL_Renderer *renderer)
     SDL_FreeSurface(tmp);
     if(NULL == texture)
     {
-        fprintf(stderr, "Erreur pendant creation de la texture liee a l'image chargee: %s", SDL_GetError());
+        fprintf(stderr, "Erreur pendant la creation de la texture liee a l'image chargee: %s", SDL_GetError());
         return NULL;
     }
     return texture;

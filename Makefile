@@ -22,7 +22,7 @@ doc:
 	doxygen doc/Doxyfile
 
 test:
-	gcc src/tests.c lib/world.o -o bin/tests
+	gcc src/tests.c lib/world.o lib/sprite.o lib/wall.o -o bin/tests.exe
 
 
 clean:

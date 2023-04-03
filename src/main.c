@@ -22,7 +22,7 @@
  * \brief La fonction rafraichit l'écran en fonction de l'état des données du monde
  * \param renderer le renderer
  * \param world les données du monde
- * \param resources les resources du jeu
+ * \param resources les ressources du jeu
  */
 void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resources){
     clear_renderer(renderer);
@@ -46,7 +46,7 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
  * \param time 
  */
 void update_chrono(world_t *world, int time){
-        world->chrono = time / 1000;
+        world->chrono = time/1000;
 }
 
 /**
@@ -108,7 +108,6 @@ int main( int argc, char* argv[] )
     
     //nettoyage final
     clean(window,renderer,&textures,&world);
-    
     
     return 0;
 }
