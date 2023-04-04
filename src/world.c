@@ -45,13 +45,8 @@ void handle_sprites_collision(world_t *world, sprite_t *sp1, sprite_t *sp2){
 }
 
 void clean_data(world_t *world){
-    printf("00000")
     free(world->joueur);
-    printf("1");
     free(world->ligne_arrivee);
-    printf("2");
-    free(world->mur_meteorite);
-    printf("3");
     clean_walls(world);
 }
 
