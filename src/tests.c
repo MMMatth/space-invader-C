@@ -61,6 +61,7 @@ void test_handle_sprite_collision(){
     sprite_t * sprite1 = malloc(sizeof(sprite_t));
     sprite_t * sprite2 = malloc(sizeof(sprite_t));
     world_t * world = malloc(sizeof(world_t));
+    if (sprite1 == NULL || sprite2 == NULL || world == NULL) error("variable non alloue dans test_handle_sprite_collision");
     init_sprite(sprite1, 0, 0, 10, 10);
     init_sprite(sprite2, 5, 5, 10, 10);
     init_data(world);
