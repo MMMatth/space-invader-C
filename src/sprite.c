@@ -10,7 +10,6 @@ void init_sprite(sprite_t *sprite, int x, int y, int w, int h){
 void hide_sprite(sprite_t *sprite){
     sprite->w = 0;
     sprite->h = 0;
-    printf("Sprite hidden \n %d, %d, %d, %d \n", sprite->x, sprite->y, sprite->w, sprite->h);
 }
 
 int sprites_collide(sprite_t * sp1, sprite_t * sp2){

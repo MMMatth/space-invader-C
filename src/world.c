@@ -29,18 +29,10 @@ void check_pos(world_t *world){ // vérifie que le joueur ne sort pas de l'écra
     }
 }
 
-void est_fini(world_t *world){
-    if(sprites_collide(world->joueur, world->ligne_arrivee)){ // si le joueur a atteint la ligne d'arrivée
-        printf("Vous avez gagne en %ds!\n", world->chrono);
-    }else{
-        printf("Vous avez perdu !\n");
-    }
-}
 
 void handle_sprites_collision(world_t *world, sprite_t *sp1, sprite_t *sp2){
     if(sprites_collide(sp1, sp2)){
         world->gameover = 1;
-        // est_fini(world);
     }
 }
 

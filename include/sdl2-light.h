@@ -30,8 +30,6 @@ void clean_sdl(SDL_Renderer *renderer,SDL_Window *window);
 */
 SDL_Texture *load_image(const char path[], SDL_Renderer *renderer);
 
-void init_icon(SDL_Window *window, const char path[]);
-
 /**
  * \brief La fonction initialise la SDL.
  * Elle crée la fenêtre du jeu ainsi que le renderer
@@ -60,15 +58,25 @@ void clean_texture(SDL_Texture *texture);
  *  \param y l'ordonnée sur le renderer de l'endroit où est appliquée texture (point en haut à gauche de la surface)
 */
 
-void apply_texture(SDL_Texture *texture,SDL_Renderer *renderer,int x, int y);
+void apply_texture_adapted(SDL_Texture *texture,SDL_Renderer *renderer,int x, int y);
 
+/**
+ * \brief fonction qui permet d'appliquer une texture sur le renderer à une position donnée et avec la hauteur et la largeur données
+ * 
+ * \param texture : la texture que l'on va appliquer
+ * \param renderer : le renderer qui va recevoir la texture
+ * \param x : l'abscisse sur le renderer de l'endroit où est appliquée texture (point en haut à gauche de la surface)
+ * \param y : l'ordonnée sur le renderer de l'endroit où est appliquée texture (point en haut à gauche de la surface)
+ * \param w : la largeur de la texture
+ * \param h : la hauteur de la texture
+ */
+void apply_texture(SDL_Texture *texture,SDL_Renderer *renderer,int x, int y, int w, int h);
 
 
 /**
  * \brief La fonction vide le contenu graphique du renderer lié à l'écran de jeu
  * \param renderer le renderer de l'écran
 */
-
 void clear_renderer(SDL_Renderer *renderer);
 
 /**
@@ -82,8 +90,6 @@ void update_screen(SDL_Renderer *renderer);
  * \brief La fonction met le programme en pause pendant un laps de temps
  * \param time ce laps de temps en milliseconde
 */
-
-
 void pause(int time);
 
 #endif

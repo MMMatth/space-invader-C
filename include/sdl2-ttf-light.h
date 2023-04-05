@@ -35,6 +35,15 @@ TTF_Font * load_font(const char* path, int font_size);
 
 void apply_text(SDL_Renderer *renderer,int x, int y, int w, int h, const char *text, TTF_Font *font);
 
+/**
+ * \brief meme que apply_text mais la taille du sprite est adaptée à la taille du texte
+ * 
+ * \param renderer : le renderer
+ * \param x : abscisse du centre du texte
+ * \param y : 
+ * \param text 
+ * \param font 
+ */
 void apply_text_adapted(SDL_Renderer *renderer,int x, int y, const char *text, TTF_Font *font);
 
 

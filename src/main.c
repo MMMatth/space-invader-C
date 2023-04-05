@@ -28,19 +28,18 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
     clear_renderer(renderer);
     apply_background(renderer, resources);
     apply_sprite(renderer, resources->vaisseau, world->joueur);
-    apply_sprite(renderer, resources->ligne_arrivee, world->ligne_arrivee);
+    apply_sprite_adapted(renderer, resources->ligne_arrivee, world->ligne_arrivee);
     apply_walls(renderer, world->tab_wall_meteor , resources->meteorite);
 
     char str[20];
     sprintf(str, "Time : %d", world->chrono);
     
     if (is_game_over(world)) {
-        if (sprites_collide(world->joueur, world->ligne_arrivee)) { //si on gagne
+        hide_sprite(world->joueur);
+        if (sprites_collide(world->joueur, world->ligne_arrivee)) //si on gagne
             apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "YOU WIN" , resources->font );
-        }
-        else { //si on perd
+        else //si on perd
             apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "GAME OVER" , resources->font );
-        }
     }
 
     apply_text_adapted(renderer, SCREEN_WIDTH/2, 15, str , resources->font );
@@ -114,10 +113,8 @@ int main( int argc, char* argv[] )
         // pause de 10 ms pour controler la vitesse de rafraichissement
         pause(10);
     }
-    
-    
+    refresh_graphics(renderer, &world, &textures); // on rafrachit une dernière fois l'écran pour afficher le message de fin de jeu et faire disparaitre le vaisseau
     pause(3000); //pause de 3 secondes à la fin du jeu
-
     //nettoyage final
     clean(window,renderer,&textures,&world);
     

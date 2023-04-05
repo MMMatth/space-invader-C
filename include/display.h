@@ -33,6 +33,8 @@ typedef struct resources_s resources_t;
  * \param texture 
  * \param sprite 
  */
+void apply_sprite_adapted(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite);
+
 void apply_sprite(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite);
 
 /**

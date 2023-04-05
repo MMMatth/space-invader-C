@@ -8,15 +8,19 @@ void  init_textures(SDL_Renderer *renderer, resources_t *resources){
     resources->font = load_font("assets/font/arial.ttf", 30);
 }
 
-void apply_sprite(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite){
-    apply_texture(texture, renderer, sprite->x, sprite->y);
+void apply_sprite_adapted(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite){
+    apply_texture_adapted(texture, renderer, sprite->x, sprite->y);
 }
+void apply_sprite(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite){
+    apply_texture(texture, renderer, sprite->x, sprite->y, sprite->w, sprite->h);
+}
+
 
 void apply_walls(SDL_Renderer *renderer, sprite_t ** tab_mur, SDL_Texture *texture){
     for (int k = 0; k < NB_MUR_METEORITE; k++){ // on parcourt le tableau de mur
         for (int x = 0; x < 3; x++){
             for (int y = 0; y < 7; y++){
-                apply_texture(texture, renderer, tab_mur[k]->x + x * METEORITE_SIZE , tab_mur[k]->y + y * METEORITE_SIZE);
+                apply_texture_adapted(texture, renderer, tab_mur[k]->x + x * METEORITE_SIZE , tab_mur[k]->y + y * METEORITE_SIZE);
             }
         }
     }
@@ -59,7 +63,7 @@ void handle_events(SDL_Event *event,world_t *world){
 
 void apply_background(SDL_Renderer *renderer, resources_t *textures){
     if(textures->background != NULL){
-        apply_texture(textures->background, renderer, 0, 0);
+        apply_texture_adapted(textures->background, renderer, 0, 0);
     }
 }
 

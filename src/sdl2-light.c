@@ -50,10 +50,16 @@ SDL_Texture *load_image(const char path[], SDL_Renderer *renderer)
     return texture;
 }
 
-void apply_texture(SDL_Texture *texture,SDL_Renderer *renderer,int x, int y){
+void apply_texture_adapted(SDL_Texture *texture,SDL_Renderer *renderer,int x, int y){
     SDL_Rect rect = {0, 0, 0, 0};
     SDL_QueryTexture(texture, NULL, NULL, &rect.w, &rect.h);
     rect.x = x; rect.y=y;
+    SDL_RenderCopy(renderer, texture, NULL, &rect);
+}
+
+void apply_texture(SDL_Texture * texture, SDL_Renderer * renderer , int x, int y, int w, int h){
+    SDL_Rect rect = {0, 0, 0, 0};
+    rect.x = x; rect.y=y; rect.w=w; rect.h=h;
     SDL_RenderCopy(renderer, texture, NULL, &rect);
 }
 
