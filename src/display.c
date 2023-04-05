@@ -29,6 +29,7 @@ void handle_events(SDL_Event *event,world_t *world){
         //Si l'utilisateur a cliqué sur le X de la fenêtre
         if( event->type == SDL_QUIT ) {
             world->gameover = 1;
+            SDL_Quit();
         }
         if(event->type == SDL_KEYDOWN){
             switch (event->key.keysym.sym){
@@ -47,6 +48,7 @@ void handle_events(SDL_Event *event,world_t *world){
                 break;
             case SDLK_ESCAPE:
                 world->gameover = 1;
+                SDL_Quit();
                 break;
             default:
                 break;
