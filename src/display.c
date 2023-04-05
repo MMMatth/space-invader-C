@@ -1,5 +1,6 @@
 #include "../include/display.h"
 
+
 void  init_textures(SDL_Renderer *renderer, resources_t *resources){
     resources->background = load_image( "assets/img/space-background.bmp",renderer);
     resources->vaisseau = load_image( "assets/img/spaceship.bmp",renderer);
@@ -16,13 +17,9 @@ void apply_sprite(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite
 }
 
 
-void apply_walls(SDL_Renderer *renderer, sprite_t ** tab_mur, SDL_Texture *texture){
-    for (int k = 0; k < NB_MUR_METEORITE; k++){ // on parcourt le tableau de mur
-        for (int x = 0; x < 3; x++){
-            for (int y = 0; y < 7; y++){
-                apply_texture_adapted(texture, renderer, tab_mur[k]->x + x * METEORITE_SIZE , tab_mur[k]->y + y * METEORITE_SIZE);
-            }
-        }
+void apply_meteors(SDL_Renderer *renderer, sprite_t ** tab_meteor, SDL_Texture *texture){
+    for (int k = 0; k < 328 ; k++){ // on parcourt le tableau de mur
+        apply_texture_adapted(texture, renderer, tab_meteor[k]->x, tab_meteor[k]->y);
     }
 }
 

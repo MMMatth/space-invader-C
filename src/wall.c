@@ -1,25 +1,20 @@
 #include "../include/wall.h"
 
+int nb_meteor = 0;
 
 
-int **findOnes(char* filename) {
-    int **map = malloc(2500 * sizeof(int*));
-    for (int i = 0; i < 2500; i++) {
-        map[i] = malloc(2 * sizeof(int));
-    }
-    FILE* fp = fopen(filename, "r");
-    if(fp == NULL) {
-        printf("Erreur d'ouverture du fichier.\n");
-        return NULL;
-    }
-    
+void init_meteor(world_t * world, int indice, int x, int y, int w, int h){
+    world->tab_meteor[indice] = malloc(sizeof(sprite_t));
+    init_sprite(world->tab_meteor[indice], x, y, w, h);
+}
+
+void calc_meteor(char * mapfile){
+    FILE* fp = fopen(mapfile, "r");
+    if(fp == NULL) printf("Erreur d'ouverture du fichier.\n");
     char c;
     int x = 0, y = 0, i = 0;
     while((c = fgetc(fp)) != EOF) {
         if(c == '1') {
-            // printf("Position du 1 : x=%d, y=%d\n", x, y);
-            map[i][0] = x * METEORITE_SIZE;
-            map[i][1] = y * METEORITE_SIZE;
             i++;
         }
         x++;
@@ -28,42 +23,60 @@ int **findOnes(char* filename) {
             y++;
         }
     }
-    
+    nb_meteor = i;
     fclose(fp);
-    return map;
 }
 
+void init_meteors(world_t *world, char * map_file){
+    calc_meteor(map_file);
+    int **map = malloc(nb_meteor * sizeof(int*));
+    for (int i = 0; i < nb_meteor; i++) {map[i] = malloc(2 * sizeof(int));}
+    FILE* fp = fopen(map_file, "r");
+    if(fp == NULL) printf("Erreur d'ouverture du fichier.\n");
+    char c;
+    int x = 0, y = 0, i = 0;
+    while((c = fgetc(fp)) != EOF) {
+        if(c == '1') {
+            init_meteor(world, i, x * METEORITE_SIZE, - y * METEORITE_SIZE, METEORITE_SIZE, METEORITE_SIZE);
+            i++;
+        }
+        x++;
+        if(c == '\n') {
+            x = 0;
+            y++;
+        }
+    }
+    fclose(fp);
+    printf("nb_meteor = %d", nb_meteor);
 
-
-
-void init_wall(world_t * world, int indice, int x, int y, int w, int h){
-    world->tab_wall_meteor[indice] = malloc(sizeof(sprite_t));
-    init_sprite(world->tab_wall_meteor[indice], x, y, w, h);
+    for (int i = 0; i < nb_meteor; i++) {free(map[i]);}
+    free(map);
 }
 
-void init_walls(world_t* world){
-    init_wall(world, 0, 48, 0, 96, 192);
-    init_wall(world, 1, 252, 0, 96, 192);
-    init_wall(world, 2, 48, -320, 96, 192);
-    init_wall(world, 3, 188, -352, 224, 160);
-    init_wall(world, 4, 48, -672, 96, 192);
-    init_wall(world, 5, 252, -672, 96, 192);
-}
-
-void handle_wall_collision(world_t *world){
-    for (int i = 0; i < NB_MUR_METEORITE; i++){
-        handle_sprites_collision(world, world->joueur, world->tab_wall_meteor[i]);
+void update_meteors(world_t *world){
+    printf("%d", nb_meteor);
+    for (int i = 0; i < nb_meteor; i++) {
+        if (world->tab_meteor[i] != NULL) {
+            world->tab_meteor[i]->y += world->vitesse;
+        }
     }
 }
 
-void update_wall(world_t *world){
-    for (int i = 0; i < NB_MUR_METEORITE; i++){
-        world->tab_wall_meteor[i]->y += world->vitesse;
+void clean_meteors(world_t *world){
+    for (int i = 0; i < nb_meteor; i++) {
+        if (world->tab_meteor[i] != NULL) {
+            free(world->tab_meteor[i]);
+        }
     }
 }
 
-void clean_walls(world_t *world){
-    for (int i = 0; i < NB_MUR_METEORITE; i++){
-        free(world->tab_wall_meteor[i]);
-    }free(world->tab_wall_meteor);
+void handle_meteors(world_t *world){
+    for (int i = 0; i < nb_meteor; i++) {
+        if (world->tab_meteor[i] != NULL) {
+            handle_sprites_collision(world, world->tab_meteor[i], world->joueur);
+        }
+    }
 }
+
+
+

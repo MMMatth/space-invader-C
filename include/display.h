@@ -57,22 +57,13 @@ void init_textures(SDL_Renderer *renderer, resources_t *textures);
 */
 void clean_textures(resources_t *textures);
 
+void apply_meteors(SDL_Renderer *renderer, sprite_t ** tab_meteor, SDL_Texture *texture);
+
 /**
  * \brief La fonction applique la texture du fond sur le renderer lié à l'écran de jeu
  * \param renderer le renderer
  * \param textures les textures du jeu
 */
 void apply_background(SDL_Renderer *renderer, resources_t *textures);
-
-/**
- * \brief 
- * 
- * \param renderer 
- * \param textures 
- * \param x 
- * \param y 
- */
-void apply_walls(SDL_Renderer *renderer, sprite_t ** tab_mur, SDL_Texture *texture);
-
 
 #endif

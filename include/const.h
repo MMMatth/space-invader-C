@@ -17,7 +17,7 @@
 /**
  * \brief Taille du sprite
 */
-#define SHIP_SIZE 32
+#define SHIP_SIZE 30
 
 #define METEORITE_SIZE 32
 
@@ -29,7 +29,7 @@
 /**
  * \brief Hauteur de la ligne d'arrivée
  */
-#define FINISH_LINE_HEIGHT -960
+#define FINISH_LINE_HEIGHT - (100 * 32)
 
 /**
  * \brief Vitesse initiale mouvement des météorites
@@ -41,5 +41,5 @@
  */
 #define METEORITE_SIZE 32
 
-#define NB_MUR_METEORITE 6
+#define NB_MUR_METEORITE 1
 

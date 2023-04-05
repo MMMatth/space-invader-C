@@ -29,7 +29,7 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
     apply_background(renderer, resources);
     apply_sprite(renderer, resources->vaisseau, world->joueur);
     apply_sprite_adapted(renderer, resources->ligne_arrivee, world->ligne_arrivee);
-    apply_walls(renderer, world->tab_wall_meteor , resources->meteorite);
+    apply_meteors(renderer,  world->tab_meteor, resources->meteorite);
 
     char str[20];
     sprintf(str, "Time : %d", world->chrono);
@@ -54,7 +54,7 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
  * \param time 
  */
 void update_chrono(world_t *world, int time){
-        world->chrono = time/1000;
+    world->chrono = time / 1000;
 }
 
 /**

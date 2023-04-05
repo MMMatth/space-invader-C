@@ -7,8 +7,8 @@ void init_data(world_t * world){
     init_sprite(world->joueur, SCREEN_WIDTH / 2 - SHIP_SIZE / 2, SCREEN_HEIGHT - SHIP_SIZE - 15, SHIP_SIZE, SHIP_SIZE);
     world->ligne_arrivee = malloc(sizeof(sprite_t));
     init_sprite(world->ligne_arrivee, 0, FINISH_LINE_HEIGHT, SCREEN_WIDTH, 1);
-    world->tab_wall_meteor = malloc(sizeof(sprite_t*) * NB_MUR_METEORITE);
-    init_walls(world);
+    world->tab_meteor = malloc(sizeof(sprite_t*) * 1000);
+    init_meteors(world, "map.txt");
     world->vitesse = INITIAL_SPEED;
     world->chrono = 0;
     world->gameover = 0; // le jeu n'est pas fini
@@ -39,15 +39,15 @@ void handle_sprites_collision(world_t *world, sprite_t *sp1, sprite_t *sp2){
 void clean_data(world_t *world){
     free(world->joueur);
     free(world->ligne_arrivee);
-    clean_walls(world);
+    clean_meteors(world);
 }
 
 void update_data(world_t *world){
     world->ligne_arrivee->y += world->vitesse;
-    update_wall(world);
+    update_meteors(world);
     check_pos(world);
     handle_sprites_collision(world, world->joueur, world->ligne_arrivee);
-    handle_wall_collision(world);
+    handle_meteors(world);
 }   
 
 int is_game_over(world_t *world){

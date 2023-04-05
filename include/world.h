@@ -19,6 +19,7 @@ struct world_s{
     sprite_t* ligne_arrivee; /*!< Sprite représentant la ligne d'arrivée */
     sprite_t* mur_meteorite; /*!< Sprite représentant le mur de météorites */
     sprite_t** tab_wall_meteor; /*!< Tableau de sprite représentant les murs de météorites */
+    sprite_t ** tab_meteor; /*!< Tableau de sprite représentant les météorites */
     float vitesse; /*!< Vitesse de déplacement du fond */
     int chrono; /*!< Chronomètre du jeu */
     int gameover; /*!< Champ indiquant si l'on est à la fin du jeu */
@@ -33,6 +34,7 @@ typedef struct world_s world_t;
  * \param world les données du monde
  */
 void init_data(world_t* world);
+
 
 /**
  * \brief fonction qui permet d'initialiser tout les murs
