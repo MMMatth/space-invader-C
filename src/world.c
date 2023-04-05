@@ -40,7 +40,7 @@ void est_fini(world_t *world){
 void handle_sprites_collision(world_t *world, sprite_t *sp1, sprite_t *sp2){
     if(sprites_collide(sp1, sp2)){
         world->gameover = 1;
-        est_fini(world);
+        // est_fini(world);
     }
 }
 
