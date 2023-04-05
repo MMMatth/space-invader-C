@@ -32,9 +32,18 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
     apply_walls(renderer, world->tab_wall_meteor , resources->meteorite);
 
     char str[20];
-    sprintf(str, "chrono : %d", world->chrono);
+    sprintf(str, "Time : %d", world->chrono);
     
-    apply_text_adapted(renderer, 0, 0, str , resources->font );
+    if (is_game_over(world)) {
+        if (sprites_collide(world->joueur, world->ligne_arrivee)) { //si on gagne
+            apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "YOU WIN" , resources->font );
+        }
+        else { //si on perd
+            apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "GAME OVER" , resources->font );
+        }
+    }
+
+    apply_text_adapted(renderer, SCREEN_WIDTH/2, 15, str , resources->font );
 
     update_screen(renderer);
 }
@@ -106,6 +115,9 @@ int main( int argc, char* argv[] )
         pause(10);
     }
     
+    
+    pause(3000); //pause de 3 secondes à la fin du jeu
+
     //nettoyage final
     clean(window,renderer,&textures,&world);
     

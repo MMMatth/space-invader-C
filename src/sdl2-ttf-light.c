@@ -36,7 +36,7 @@ void apply_text_adapted(SDL_Renderer *renderer,int x, int y, const char *text, T
     SDL_Color color = { 255, 255, 255 };
     SDL_Surface* surface = TTF_RenderText_Solid(font, text, color);
     SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-    SDL_Rect dstrect2 = {x, y, surface->w, surface->h};
+    SDL_Rect dstrect2 = {x - surface->w / 2 , y - surface->h /2, surface->w , surface->h};
     SDL_RenderCopy(renderer, texture, NULL, &dstrect2);
 }
 
