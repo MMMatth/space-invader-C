@@ -1,3 +1,8 @@
+/**
+ * \file sprite.h
+ * \brief fichier d'en tete des fonctions qui gère les sprites
+ */
+
 #ifndef SPRITE_H
 #define SPRITE_H
 

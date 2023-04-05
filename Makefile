@@ -18,8 +18,8 @@ $(PROG): $(OBJ)
 lib/%.o: src/%.c $(INC)
 	gcc $(CFLAGS) -c $< -o $@ -I $(SDL2_INCLUDE_DIR)
 
-doc: 
-	doxygen doc/Doxyfile
+doc : 
+	cd doc && doxygen Doxyfile
 
 test:
 	gcc src/tests.c lib/world.o lib/sprite.o lib/wall.o -o bin/tests.exe

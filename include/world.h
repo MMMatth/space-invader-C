@@ -1,3 +1,7 @@
+/**
+ * \file world.h
+ * \brief fichier d'en tete qui contient toute les fonctions qui concere le world
+ */
 #ifndef WORLD_H
 #define WORLD_H
 
@@ -30,13 +34,17 @@ typedef struct world_s world_t;
  */
 void init_data(world_t* world);
 
-
+/**
+ * \brief fonction qui permet d'initialiser tout les murs
+ * 
+ * \param world : les données du monde ou se trouve le tableau de mur
+ */
 void init_walls(world_t *world);
 
 /**
  * \brief fonction qui verifie si le joueur depasse les bords de l'écran et le deplace en conséquence
  * 
- * \param world 
+ * \param world : les données du monde ou se trouve le joueur
  */
 void check_pos(world_t *world);
 
@@ -63,9 +71,9 @@ int is_game_over(world_t* world);
 /**
  * \brief fonction qui permet de modifier le world en fonction de la collision entre deux sprites
  * 
- * \param world 
- * \param sp1 
- * \param sp2 
+ * \param world : les données du monde ou se trouve les sprites
+ * \param sp1 : le premier sprite
+ * \param sp2 : le deuxieme sprite
  */
 void handle_sprites_collision(world_t *world, sprite_t *sp1, sprite_t *sp2);
 

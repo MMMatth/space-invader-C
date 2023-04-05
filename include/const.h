@@ -1,4 +1,10 @@
 /**
+ * \file const.h
+ * \brief  fichier qui contient toute les constantes
+ * 
+ */
+
+/**
  * \brief Largeur de l'écran
 */
 #define SCREEN_WIDTH 300
