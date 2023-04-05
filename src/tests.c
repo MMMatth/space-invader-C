@@ -102,14 +102,20 @@ void test_update_wall(){
     free(world);
 }
 
+void test_findOnes(){
+    int ** tab = findOnes("map.txt");
+    printf("%d", tab[0][0]);
+}
+
 
 int main(){
-    test_init_sprite();
-    test_init_world();
-    test_check_pos();
-    test_sprite_collide();
-    test_handle_sprite_collision();
-    test_init_walls();
+    // test_init_sprite();
+    // test_init_world();
+    // test_check_pos();
+    // test_sprite_collide();
+    // test_handle_sprite_collision();
+    // test_init_walls();
+    test_findOnes();
     printf("Il y'a %d erreur \n", nb_error);
     return 0;
 }

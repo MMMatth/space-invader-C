@@ -24,6 +24,10 @@ doc :
 test:
 	gcc src/tests.c lib/world.o lib/sprite.o lib/wall.o -o bin/tests.exe
 
+map:
+	gcc -O3 -Dmain=SDL_main -c src/map_generation.c -o lib/map_generation.o -I C:\dev\SDL2\x86_64-w64-mingw32\include 
+	gcc lib/map_generation.o -o bin/map_generation.exe -L C:\dev\SDL2\x86_64-w64-mingw32\lib -lmingw32 -lSDL2main -lSDL2
+
 
 clean:
 	del /q lib\*.o bin\start.exe bin\tests.exe

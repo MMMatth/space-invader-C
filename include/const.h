@@ -7,17 +7,19 @@
 /**
  * \brief Largeur de l'écran
 */
-#define SCREEN_WIDTH 300
+#define SCREEN_WIDTH 900
 
 /**
  * \brief Hauteur de l'écran
 */
-#define SCREEN_HEIGHT 480
+#define SCREEN_HEIGHT 500
 
 /**
  * \brief Taille du sprite
 */
 #define SHIP_SIZE 32
+
+#define METEORITE_SIZE 32
 
 /**
  * \brief Pas de déplacement du sprite

@@ -10,6 +10,8 @@
 #include "sprite.h"
 #include "const.h"
 
+int ** findOnes(char* filename);
+
 /**
  * \brief initialise les murs du jeu
  * 
