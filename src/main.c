@@ -12,6 +12,7 @@
 #include "../include/world.h"
 #include "../include/display.h"
 #include "../include/sprite.h"
+#include "../include/wall.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -29,7 +30,7 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
     apply_background(renderer, resources);
     apply_sprite(renderer, resources->vaisseau, world->joueur);
     apply_sprite_adapted(renderer, resources->ligne_arrivee, world->ligne_arrivee);
-    apply_meteors(renderer,  world->tab_meteor, resources->meteorite);
+    apply_meteors(renderer,  world , resources->meteorite);
 
     char str[20];
     sprintf(str, "Time : %d", world->chrono);

@@ -4,8 +4,8 @@ int nb_meteor = 0;
 
 
 void init_meteor(world_t * world, int indice, int x, int y, int w, int h){
-    world->tab_meteor[indice] = malloc(sizeof(sprite_t));
-    init_sprite(world->tab_meteor[indice], x, y, w, h);
+    world->meteors->tab_meteor[indice] = malloc(sizeof(sprite_t));
+    init_sprite(world->meteors->tab_meteor[indice], x, y, w, h);
 }
 
 void calc_meteor(char * mapfile){
@@ -29,8 +29,10 @@ void calc_meteor(char * mapfile){
 
 void init_meteors(world_t *world, char * map_file){
     calc_meteor(map_file);
-    int **map = malloc(nb_meteor * sizeof(int*));
-    for (int i = 0; i < nb_meteor; i++) {map[i] = malloc(2 * sizeof(int));}
+    world->meteors->nb_meteor = nb_meteor; // on defini le nombre de meteorites
+    world->meteors->tab_meteor = malloc(world->meteors->nb_meteor * sizeof(sprite_t*)); // on alloue la memoire pour le tableau de sprite de meteorites
+    int **map = malloc(world->meteors->nb_meteor * sizeof(int*));
+    for (int i = 0; i < world->meteors->nb_meteor; i++) {map[i] = malloc(2 * sizeof(int));}
     FILE* fp = fopen(map_file, "r");
     if(fp == NULL) printf("Erreur d'ouverture du fichier.\n");
     char c;
@@ -47,33 +49,31 @@ void init_meteors(world_t *world, char * map_file){
         }
     }
     fclose(fp);
-    printf("nb_meteor = %d", nb_meteor);
 
-    for (int i = 0; i < nb_meteor; i++) {free(map[i]);}
+    for (int i = 0; i < world->meteors->nb_meteor; i++) {free(map[i]);}
     free(map);
 }
 
 void update_meteors(world_t *world){
-    printf("%d", nb_meteor);
-    for (int i = 0; i < nb_meteor; i++) {
-        if (world->tab_meteor[i] != NULL) {
-            world->tab_meteor[i]->y += world->vitesse;
+    for (int i = 0; i < world->meteors->nb_meteor; i++) {
+        if (world->meteors->tab_meteor[i] != NULL) {
+            world->meteors->tab_meteor[i]->y += world->vitesse;
         }
     }
 }
 
 void clean_meteors(world_t *world){
-    for (int i = 0; i < nb_meteor; i++) {
-        if (world->tab_meteor[i] != NULL) {
-            free(world->tab_meteor[i]);
+    for (int i = 0; i < world->meteors->nb_meteor ; i++) {
+        if (world->meteors->tab_meteor[i] != NULL) {
+            free(world->meteors->tab_meteor[i]);
         }
     }
 }
 
 void handle_meteors(world_t *world){
     for (int i = 0; i < nb_meteor; i++) {
-        if (world->tab_meteor[i] != NULL) {
-            handle_sprites_collision(world, world->tab_meteor[i], world->joueur);
+        if (world->meteors->tab_meteor[i] != NULL) {
+            handle_sprites_collision(world, world->meteors->tab_meteor[i], world->joueur);
         }
     }
 }

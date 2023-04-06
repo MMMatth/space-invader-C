@@ -7,7 +7,7 @@ void init_data(world_t * world){
     init_sprite(world->joueur, SCREEN_WIDTH / 2 - SHIP_SIZE / 2, SCREEN_HEIGHT - SHIP_SIZE - 15, SHIP_SIZE, SHIP_SIZE);
     world->ligne_arrivee = malloc(sizeof(sprite_t));
     init_sprite(world->ligne_arrivee, 0, FINISH_LINE_HEIGHT, SCREEN_WIDTH, 1);
-    world->tab_meteor = malloc(sizeof(sprite_t*) * 1000);
+    world->meteors = malloc(sizeof(meteors_t));
     init_meteors(world, "map.txt");
     world->vitesse = INITIAL_SPEED;
     world->chrono = 0;
