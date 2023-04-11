@@ -19,7 +19,8 @@ void apply_sprite(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite
 
 void apply_meteors(SDL_Renderer *renderer, world_t * world, SDL_Texture *texture){
     for (int k = 0; k < world->meteors->nb_meteor ; k++){ // on parcourt le tableau de mur
-        apply_texture_adapted(texture, renderer, world->meteors->tab_meteor[k]->x, world->meteors->tab_meteor[k]->y);
+        // apply_texture_adapted(texture, renderer, world->meteors->tab_meteor[k]->x, world->meteors->tab_meteor[k]->y);
+        apply_texture(texture, renderer, world->meteors->tab_meteor[k]->x, world->meteors->tab_meteor[k]->y, world->meteors->tab_meteor[k]->w, world->meteors->tab_meteor[k]->h);
     }
 }
 

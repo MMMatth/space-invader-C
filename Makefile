@@ -25,7 +25,8 @@ test:
 	gcc src/tests.c lib/world.o lib/sprite.o lib/wall.o -o bin/tests.exe
 
 map:
-	python map_generator.py
+	gcc src/map_generator.c -o bin/map_generator.exe
+	./bin/map_generator.exe
 
 clean:
 	del /q lib\*.o bin\start.exe bin\tests.exe
