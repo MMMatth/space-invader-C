@@ -6,6 +6,7 @@ void  init_textures(SDL_Renderer *renderer, resources_t *resources){
     resources->vaisseau = load_image( "assets/img/spaceship.bmp",renderer);
     resources->ligne_arrivee = load_image( "assets/img/finish_line.bmp",renderer);
     resources->meteorite = load_image( "assets/img/meteorite.bmp",renderer);
+    resources->laser = load_image( "assets/img/laser.bmp",renderer);
     resources->font = load_font("assets/font/arial.ttf", 30);
 }
 
@@ -16,10 +17,8 @@ void apply_sprite(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite
     apply_texture(texture, renderer, sprite->x, sprite->y, sprite->w, sprite->h);
 }
 
-
 void apply_meteors(SDL_Renderer *renderer, world_t * world, SDL_Texture *texture){
     for (int k = 0; k < world->meteors->nb_meteor ; k++){ // on parcourt le tableau de mur
-        // apply_texture_adapted(texture, renderer, world->meteors->tab_meteor[k]->x, world->meteors->tab_meteor[k]->y);
         apply_texture(texture, renderer, world->meteors->tab_meteor[k]->x, world->meteors->tab_meteor[k]->y, world->meteors->tab_meteor[k]->w, world->meteors->tab_meteor[k]->h);
     }
 }

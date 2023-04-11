@@ -18,6 +18,7 @@ struct resources_s{
     SDL_Texture* vaisseau; /*!< Texture liée à l'image du sprite. */
     SDL_Texture* ligne_arrivee; /*!< Texture liée à l'image de la ligne d'arrivée. */
     SDL_Texture* meteorite; /*!< Texture liée à l'image de la météorite. */
+    SDL_Texture* laser; /*!< Texture liée à l'image du laser. */
     TTF_Font *font; /*!< Font utilisée pour l'affichage du texte. */
 };
 
@@ -27,14 +28,21 @@ struct resources_s{
 typedef struct resources_s resources_t;
 
 /**
- * \brief applique le sprite sur le renderer
+ * \brief applique le sprite sur le renderer en l'adaptant à la taille de l'image
  * 
- * \param renderer 
- * \param texture 
- * \param sprite 
+ * \param renderer : le renderer
+ * \param texture : la texture
+ * \param sprite : le sprite
  */
 void apply_sprite_adapted(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite);
 
+/**
+ * \brief applique le sprite sur le renderer
+ * 
+ * \param renderer : le renderer
+ * \param texture : la texture
+ * \param sprite : le sprite
+ */
 void apply_sprite(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite);
 
 /**
@@ -57,6 +65,13 @@ void init_textures(SDL_Renderer *renderer, resources_t *textures);
 */
 void clean_textures(resources_t *textures);
 
+/**
+ * \brief permet d'afficher les meteores sur l'écran de jeu
+ * 
+ * \param renderer 
+ * \param world 
+ * \param texture 
+ */
 void apply_meteors(SDL_Renderer *renderer, world_t * world, SDL_Texture *texture);
 
 /**

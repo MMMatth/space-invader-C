@@ -29,5 +29,5 @@ map:
 	./bin/map_generator.exe
 
 clean:
-	del /q lib\*.o bin\start.exe bin\tests.exe
+	del /q lib\*.o bin\start.exe bin\tests.exe bin\map_generator.exe
 	del /q doc\html\* doc\latex\*

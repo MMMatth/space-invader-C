@@ -8,16 +8,13 @@
 #include <time.h>
 
 int main(){
-    // Create and configure noise state
     fnl_state noise = fnlCreateState();
-    // noise.noise_type = FNL_NOISE_OPENSIMPLEX2;
     noise.noise_type = FNL_NOISE_OPENSIMPLEX2;
     srand(time(NULL));
     noise.seed = rand();
     noise.frequency = 0.075;
     noise.gain = 0.3;
 
-    // Gather noise data
     float* noiseData = malloc(HEIGHT * WIDTH * sizeof(float));
     int index = 0;
 
@@ -34,8 +31,6 @@ int main(){
         }
     }
 
-
-    // on ecrit dans un fichier les données
     FILE *f = fopen("map.txt", "w");
     if (f == NULL)
     {
@@ -50,8 +45,6 @@ int main(){
     }
     fclose(f);
 
-
-    // Free data later
     free(noiseData);
     return 0;
 }
