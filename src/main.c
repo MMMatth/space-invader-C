@@ -9,6 +9,7 @@
 #include "../include/sdl2-light.h"
 #include "../include/sdl2-ttf-light.h"
 #include "../include/const.h"
+#include "../include/struct.h"
 #include "../include/world.h"
 #include "../include/display.h"
 #include "../include/sprite.h"
@@ -16,54 +17,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
-
-/**
- * \brief La fonction rafraichit l'écran en fonction de l'état des données du monde
- * \param renderer le renderer
- * \param world les données du monde
- * \param resources les ressources du jeu
- */
-void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resources){
-    clear_renderer(renderer);
-    apply_background(renderer, resources);
-    apply_sprite(renderer, resources->vaisseau, world->joueur);
-    apply_sprite_adapted(renderer, resources->ligne_arrivee, world->ligne_arrivee);
-    apply_meteors(renderer,  world , resources->meteorite);
-
-    char str[20];
-    sprintf(str, "Time : %d", world->chrono);
-    
-    if (is_game_over(world)) {
-        hide_sprite(world->joueur);
-        if (world->joueur->y <= world->ligne_arrivee->y){
-            apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "YOU WIN" , resources->font );
-        }else //si on perd
-            apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "GAME OVER" , resources->font );
-    }
-    for (int i = 0; i < MAX_PROJECTILE; i++){
-        if (world->projectiles[i]->active){
-            world->projectiles[i]->sprite->x = world->projectiles[i]->x;
-            world->projectiles[i]->sprite->y = world->projectiles[i]->y;
-            apply_sprite(renderer, resources->laser, world->projectiles[i]->sprite);
-        }
-    }
-
-    apply_text_adapted(renderer, SCREEN_WIDTH/2, 15, str , resources->font );
-
-    update_screen(renderer);
-}
-
-/**
- * \brief fonction qui met à jour le chrono du jeu
- * 
- * \param world 
- * \param time 
- */
-void update_chrono(world_t *world, int time){
-    world->chrono = time / 1000;
-}
 
 /**
  * \brief fonction qui initialise le jeu: initialisation de la partie graphique (SDL), chargement des textures, initialisation des données
@@ -109,12 +62,11 @@ int main( int argc, char* argv[] )
         
         //gestion des évènements
         handle_events(&event,&world);
-        
+
         //mise à jour des données liée à la physique du monde
         update_data(&world);
         
         update_chrono(&world, SDL_GetTicks());
-
         //rafraichissement de l'écran
         refresh_graphics(renderer, &world, &textures);
         

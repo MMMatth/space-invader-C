@@ -10,20 +10,7 @@ void  init_textures(SDL_Renderer *renderer, resources_t *resources){
     resources->font = load_font("assets/font/arial.ttf", 30);
 }
 
-void apply_sprite_adapted(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite){
-    apply_texture_adapted(texture, renderer, sprite->x, sprite->y);
-}
 
-void apply_sprite(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite){
-    apply_texture(texture, renderer, sprite->x, sprite->y, sprite->w, sprite->h);
-}
-
-void apply_meteors(SDL_Renderer *renderer, world_t * world, SDL_Texture *texture){
-    for (int k = 0; k < world->meteors->nb_meteor ; k++){ // on parcourt le tableau de mur
-        if (world->meteors->tab_meteor[k] != NULL)
-            apply_texture(texture, renderer, world->meteors->tab_meteor[k]->x, world->meteors->tab_meteor[k]->y, world->meteors->tab_meteor[k]->w, world->meteors->tab_meteor[k]->h);
-    }
-}
 
 void handle_events(SDL_Event *event,world_t *world){    
     Uint8 *keystates;
@@ -75,4 +62,29 @@ void clean_textures(resources_t *textures){
     clean_texture(textures->ligne_arrivee);
     clean_texture(textures->meteorite);
     clean_font(textures->font);
+}
+
+void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resources){
+    clear_renderer(renderer);
+    apply_background(renderer, resources);
+    apply_sprite(renderer, resources->vaisseau, world->joueur);
+    apply_sprite_adapted(renderer, resources->ligne_arrivee, world->ligne_arrivee);
+    apply_meteors(renderer,  world , resources->meteorite);
+
+    char str[20];
+    sprintf(str, "Time : %d", world->chrono);
+    
+    if (is_game_over(world)) {
+        hide_sprite(world->joueur);
+        if (world->joueur->y <= world->ligne_arrivee->y){
+            apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "YOU WIN" , resources->font );
+        }else //si on perd
+            apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "GAME OVER" , resources->font );
+    }
+    
+    apply_projectile(renderer, world, resources);
+
+    apply_text_adapted(renderer, SCREEN_WIDTH/2, 15, str , resources->font );
+
+    update_screen(renderer);
 }

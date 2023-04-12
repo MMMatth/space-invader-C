@@ -53,7 +53,7 @@
 /**
  * \brief nombre de meteorite maximum en hauteur
  */
-#define MAP_HEIGHT 10
+#define MAP_HEIGHT 100
 
 
 /**
