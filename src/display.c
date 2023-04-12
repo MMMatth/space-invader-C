@@ -55,7 +55,6 @@ void handle_events(SDL_Event *event,world_t *world){
                 break;
             case SDLK_SPACE:
                 tirer(world);
-                SDL_Delay(100);
                 break;
             default:
                 break;

@@ -31,11 +31,6 @@
 #define MOVING_STEP 20
 
 /**
- * \brief Hauteur de la ligne d'arrivée
- */
-#define FINISH_LINE_HEIGHT - (1000 * 32)
-
-/**
  * \brief Vitesse initiale mouvement des météorites
  */
 #define INITIAL_SPEED 1
@@ -50,7 +45,19 @@
  */
 #define MAX_PROJECTILE 1000
 
+/**
+ * \brief nombre de meteorite maximum en largeur
+ */
+#define MAP_WIDTH 18
+
+/**
+ * \brief nombre de meteorite maximum en hauteur
+ */
+#define MAP_HEIGHT 50
 
 
-#define NB_MUR_METEORITE 1
+/**
+ * \brief Hauteur de la ligne d'arrivée
+ */
+#define FINISH_LINE_HEIGHT - (MAP_HEIGHT * METEORITE_SIZE)
 
