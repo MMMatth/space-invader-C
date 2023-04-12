@@ -1,5 +1,5 @@
 #include "../include/world.h"
-#include "../include/wall.h"
+#include "../include/meteors.h"
 
 void init_data(world_t * world){
     world->joueur = malloc(sizeof(sprite_t));

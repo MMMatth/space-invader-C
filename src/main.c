@@ -13,7 +13,7 @@
 #include "../include/world.h"
 #include "../include/display.h"
 #include "../include/sprite.h"
-#include "../include/wall.h"
+#include "../include/meteors.h"
 #include <stdio.h>
 #include <stdlib.h>
 

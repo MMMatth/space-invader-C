@@ -1,4 +1,4 @@
-#include "../include/wall.h"
+#include "../include/meteors.h"
 
 void init_meteor(world_t * world, int indice, int x, int y, int w, int h){
     world->meteors->tab_meteor[indice] = malloc(sizeof(sprite_t)); // on alloue la memoire pour un asteroide

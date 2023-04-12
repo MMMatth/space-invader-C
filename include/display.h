@@ -8,7 +8,7 @@
 #include "const.h"
 #include "struct.h"
 #include "world.h"
-#include "wall.h"
+#include "meteors.h"
 #include "sdl2-light.h"
 #include "sdl2-ttf-light.h"
 
