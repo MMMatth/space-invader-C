@@ -64,16 +64,22 @@ void clean_textures(resources_t *textures){
     clean_font(textures->font);
 }
 
-void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resources){
-    clear_renderer(renderer);
-    apply_background(renderer, resources);
-    apply_sprite(renderer, resources->vaisseau, world->joueur);
-    apply_sprite_adapted(renderer, resources->ligne_arrivee, world->ligne_arrivee);
-    apply_meteors(renderer,  world , resources->meteorite);
-
+void apply_chrono(SDL_Renderer *renderer, world_t *world, resources_t *resources){
     char str[20];
-    sprintf(str, "Time : %d", world->chrono);
-    
+    if (world->chrono >= 60){        
+        if (world->chrono % 60 >= 10)
+            sprintf(str, "0%d : %d", world->chrono / 60, world->chrono % 60);
+        else
+            sprintf(str, "0%d : 0%d", world->chrono / 60, world->chrono % 60);
+    }else if (world->chrono >= 10){
+        sprintf(str, "00 : %d", world->chrono);
+    }else if (world->chrono < 10){
+        sprintf(str, "00 : 0%d", world->chrono);
+    }
+    apply_text_adapted(renderer, SCREEN_WIDTH/2, 15, str , resources->font );
+}
+
+void apply_win_defeat(SDL_Renderer *renderer, world_t *world, resources_t *resources){
     if (is_game_over(world)) {
         hide_sprite(world->joueur);
         if (world->joueur->y <= world->ligne_arrivee->y){
@@ -81,10 +87,16 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
         }else //si on perd
             apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "GAME OVER" , resources->font );
     }
-    
+}
+
+void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resources){
+    clear_renderer(renderer);
+    apply_background(renderer, resources);
     apply_projectile(renderer, world, resources);
-
-    apply_text_adapted(renderer, SCREEN_WIDTH/2, 15, str , resources->font );
-
+    apply_sprite(renderer, resources->vaisseau, world->joueur);
+    apply_sprite_adapted(renderer, resources->ligne_arrivee, world->ligne_arrivee);
+    apply_meteors(renderer,  world , resources->meteorite);
+    apply_chrono(renderer, world, resources);
+    apply_win_defeat(renderer, world, resources);
     update_screen(renderer);
 }
