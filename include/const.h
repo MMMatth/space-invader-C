@@ -43,7 +43,7 @@
 /**
  * \brief Nombre de projectile maximum
  */
-#define MAX_PROJECTILE 1000
+#define MAX_PROJECTILE 100
 
 /**
  * \brief nombre de meteorite maximum en largeur
@@ -53,7 +53,7 @@
 /**
  * \brief nombre de meteorite maximum en hauteur
  */
-#define MAP_HEIGHT 50
+#define MAP_HEIGHT 10
 
 
 /**

@@ -37,9 +37,9 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
     
     if (is_game_over(world)) {
         hide_sprite(world->joueur);
-        if (sprites_collide(world->joueur, world->ligne_arrivee)) //si on gagne
+        if (world->joueur->y <= world->ligne_arrivee->y){
             apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "YOU WIN" , resources->font );
-        else //si on perd
+        }else //si on perd
             apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "GAME OVER" , resources->font );
     }
     for (int i = 0; i < MAX_PROJECTILE; i++){

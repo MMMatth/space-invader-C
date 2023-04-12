@@ -1,6 +1,7 @@
 .vscode
 bin/*
 lib/*
+!lib
 # sauf le fichier .dll de la librairie SDL2 
 !bin/SDL2.dll 
 !bin/SDL2_ttf.dll

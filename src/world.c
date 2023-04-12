@@ -12,6 +12,14 @@ void init_projectile(world_t * world){
     }
 }
 
+void clean_projectile(world_t * world){
+    for (int i = 0; i < MAX_PROJECTILE; i++){
+        free(world->projectiles[i]->sprite);
+        free(world->projectiles[i]);
+    }
+    free(world->projectiles);
+}
+
 void handle_projectile(world_t *world){
     for (int i = 0; i < MAX_PROJECTILE; i++){
         if (world->projectiles[i]->active){
