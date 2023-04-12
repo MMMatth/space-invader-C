@@ -71,7 +71,7 @@ void clean_meteors(world_t *world){
 }
 
 void handle_meteors(world_t *world){
-    for (int i = 0; i < nb_meteor; i++) {
+    for (int i = 0; i < world->meteors->nb_meteor; i++) {
         if (world->meteors->tab_meteor[i] != NULL) {
             handle_sprites_collision(world, world->meteors->tab_meteor[i], world->joueur);
         }

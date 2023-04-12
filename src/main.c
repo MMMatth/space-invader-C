@@ -42,6 +42,13 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
         else //si on perd
             apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "GAME OVER" , resources->font );
     }
+    for (int i = 0; i < MAX_PROJECTILE; i++){
+        if (world->projectiles[i]->active){
+            world->projectiles[i]->sprite->x = world->projectiles[i]->x;
+            world->projectiles[i]->sprite->y = world->projectiles[i]->y;
+            apply_sprite(renderer, resources->laser, world->projectiles[i]->sprite);
+        }
+    }
 
     apply_text_adapted(renderer, SCREEN_WIDTH/2, 15, str , resources->font );
 

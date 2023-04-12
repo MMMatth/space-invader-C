@@ -9,6 +9,7 @@
 #include "sprite.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 
 struct meteors_s{
@@ -16,6 +17,16 @@ struct meteors_s{
     int nb_meteor;
 };
 typedef struct meteors_s meteors_t;
+
+struct  projectile_s{
+    float x;
+    float y;
+    float vitesse_x;
+    float vitesse_y;
+    bool active;
+    sprite_t * sprite;
+};
+typedef struct projectile_s projectile_t;
 
 /**
  * \brief Représentation du monde du jeu
@@ -26,6 +37,7 @@ struct world_s{
     sprite_t* mur_meteorite; /*!< Sprite représentant le mur de météorites */
     sprite_t** tab_wall_meteor; /*!< Tableau de sprite représentant les murs de météorites */
     meteors_t * meteors;
+    projectile_t ** projectiles;
     float vitesse; /*!< Vitesse de déplacement du fond */
     int chrono; /*!< Chronomètre du jeu */
     int gameover; /*!< Champ indiquant si l'on est à la fin du jeu */
@@ -52,6 +64,8 @@ void init_data(world_t* world);
 void check_pos(world_t *world);
 
 
+void tirer(world_t *world);
+
 /**
  * \brief La fonction nettoie les données du monde
  * \param world les données du monde
@@ -70,6 +84,8 @@ void update_data(world_t* world);
  * \return 1 si le jeu est fini, 0 sinon
  */
 int is_game_over(world_t* world);
+
+void handle_projectile(world_t *world);
 
 /**
  * \brief fonction qui permet de modifier le world en fonction de la collision entre deux sprites

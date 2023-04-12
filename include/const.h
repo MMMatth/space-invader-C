@@ -20,6 +20,12 @@
 #define SHIP_SIZE 50
 
 /**
+ * \brief taille du projectile
+*/
+#define PROJECTILE_SIZE 50
+
+
+/**
  * \brief Pas de déplacement du sprite
 */
 #define MOVING_STEP 20
@@ -38,6 +44,13 @@
  * \brief Taille des météorites
  */
 #define METEORITE_SIZE 50
+
+/**
+ * \brief Nombre de projectile maximum
+ */
+#define MAX_PROJECTILE 1000
+
+
 
 #define NB_MUR_METEORITE 1
 

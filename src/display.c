@@ -13,13 +13,15 @@ void  init_textures(SDL_Renderer *renderer, resources_t *resources){
 void apply_sprite_adapted(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite){
     apply_texture_adapted(texture, renderer, sprite->x, sprite->y);
 }
+
 void apply_sprite(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite){
     apply_texture(texture, renderer, sprite->x, sprite->y, sprite->w, sprite->h);
 }
 
 void apply_meteors(SDL_Renderer *renderer, world_t * world, SDL_Texture *texture){
     for (int k = 0; k < world->meteors->nb_meteor ; k++){ // on parcourt le tableau de mur
-        apply_texture(texture, renderer, world->meteors->tab_meteor[k]->x, world->meteors->tab_meteor[k]->y, world->meteors->tab_meteor[k]->w, world->meteors->tab_meteor[k]->h);
+        if (world->meteors->tab_meteor[k] != NULL)
+            apply_texture(texture, renderer, world->meteors->tab_meteor[k]->x, world->meteors->tab_meteor[k]->y, world->meteors->tab_meteor[k]->w, world->meteors->tab_meteor[k]->h);
     }
 }
 
@@ -50,6 +52,10 @@ void handle_events(SDL_Event *event,world_t *world){
             case SDLK_ESCAPE:
                 world->gameover = 1;
                 SDL_Quit();
+                break;
+            case SDLK_SPACE:
+                tirer(world);
+                SDL_Delay(100);
                 break;
             default:
                 break;
