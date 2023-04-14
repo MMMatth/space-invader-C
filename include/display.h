@@ -25,7 +25,7 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
  * \param event paramètre qui contient les événements
  * \param world les données du monde
  */
-void handle_events(SDL_Event* event,world_t * world);
+void handle_events(SDL_Event* event,world_t * world, Uint8 *keys);
 
 /**
  * \brief La fonction initialise les texures
@@ -38,7 +38,7 @@ void init_textures(SDL_Renderer *renderer, resources_t *textures);
  * \brief La fonction nettoie les textures
  * \param textures les textures
 */
-void clean_textures(resources_t *textures);
+void clean_ressources(resources_t *textures);
 
 
 /**

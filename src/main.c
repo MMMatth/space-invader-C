@@ -40,7 +40,7 @@ void init(SDL_Window **window, SDL_Renderer ** renderer, resources_t *textures, 
 */
 void clean(SDL_Window *window, SDL_Renderer * renderer, resources_t *textures, world_t * world){
     clean_data(world);
-    clean_textures(textures);
+    clean_ressources(textures);
     clean_sdl(renderer,window);
 }
 
@@ -54,6 +54,8 @@ int main( int argc, char* argv[] )
     resources_t textures;
     SDL_Renderer *renderer;
     SDL_Window *window;
+    const Uint8 *keys = SDL_GetKeyboardState(NULL);
+
 
     //initialisation du jeu
     init(&window,&renderer,&textures,&world);
@@ -61,7 +63,7 @@ int main( int argc, char* argv[] )
     while(!is_game_over(&world)){ //tant que le jeu n'est pas fini
         
         //gestion des évènements
-        handle_events(&event,&world);
+        handle_events(&event,&world, keys);
 
         //mise à jour des données liée à la physique du monde
         update_data(&world);

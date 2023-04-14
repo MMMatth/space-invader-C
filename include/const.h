@@ -28,7 +28,7 @@
 /**
  * \brief Pas de déplacement du sprite
 */
-#define MOVING_STEP 20
+#define MOVING_STEP 5
 
 /**
  * \brief Vitesse initiale mouvement des météorites
@@ -48,7 +48,7 @@
 /**
  * \brief nombre de meteorite maximum en largeur
  */
-#define MAP_WIDTH 18
+#define MAP_WIDTH SCREEN_WIDTH / METEORITE_SIZE
 
 /**
  * \brief nombre de meteorite maximum en hauteur

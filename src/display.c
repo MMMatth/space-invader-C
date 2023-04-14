@@ -12,43 +12,53 @@ void  init_textures(SDL_Renderer *renderer, resources_t *resources){
 
 
 
-void handle_events(SDL_Event *event,world_t *world){    
-    Uint8 *keystates;
-    while( SDL_PollEvent( event ) ) {
-        
-        //Si l'utilisateur a cliqué sur le X de la fenêtre
+void handle_events(SDL_Event *event,world_t *world, Uint8 *keys){    
+    static Uint32 last_tire_time = 0; 
+    
+    Uint32 current_time = SDL_GetTicks(); 
+
+    while (SDL_PollEvent(event)) {
+        //Si l'utilisateur a cliqué sur le x de la fenêtre
         if( event->type == SDL_QUIT ) {
             world->gameover = 1;
             SDL_Quit();
         }
-        if(event->type == SDL_KEYDOWN){
+        if (event->type == SDL_KEYDOWN){
             switch (event->key.keysym.sym){
-            case SDLK_d:
-                world->joueur->x += MOVING_STEP;
-                break;
-            case SDLK_q:
-                world->joueur->x -= MOVING_STEP;
-                break;
-            case SDLK_z:
-                world->vitesse += 1.0;
-                break;
-            case SDLK_s:
-                if (world->vitesse > INITIAL_SPEED)
-                    world->vitesse -= 1.0;
-                break;
-            case SDLK_ESCAPE:
-                world->gameover = 1;
-                SDL_Quit();
-                break;
-            case SDLK_SPACE:
-                tirer(world);
-                break;
-            default:
-                break;
+                case SDLK_ESCAPE:
+                    world->gameover = 1;
+                    SDL_Quit();
+                    break;
+                case SDLK_z:
+                    world->vitesse += 1;
+                    break;
+                case SDLK_s:
+                    if (world->vitesse > INITIAL_SPEED)
+                        world->vitesse -= 1.0;
+                    break;
+                default:
+                    break;
             }
         }
     }
+    // on gère les déplacements du joueur avec keys pour pouvoir appuyer sur plusieurs touches en même temps
+    if (keys[SDL_SCANCODE_A] && keys[SDL_SCANCODE_D]){
+        // on fait rien
+    }
+    else if (keys[SDL_SCANCODE_A]){ // Touche A enfoncée (correspond à Q sur un clavier AZERTY)
+        world->joueur->x -= MOVING_STEP;
+    }
+    else if (keys[SDL_SCANCODE_D]){ // Touche D enfoncée
+        world->joueur->x += MOVING_STEP;
+    }
+    if (keys[SDL_SCANCODE_SPACE]){ // Touche Espace enfoncée
+        if (current_time - last_tire_time >= 100){ // on vérifie que le temps écoulé depuis le dernier tir est supérieur à 100ms (pour éviter de tirer trop vite)
+            last_tire_time = current_time; // on met à jour le temps du dernier tir
+            tirer(world);
+        }
+    }
 }
+
 
 void apply_background(SDL_Renderer *renderer, resources_t *textures){
     if(textures->background != NULL){
@@ -56,7 +66,7 @@ void apply_background(SDL_Renderer *renderer, resources_t *textures){
     }
 }
 
-void clean_textures(resources_t *textures){
+void clean_ressources(resources_t *textures){
     clean_texture(textures->background);
     clean_texture(textures->vaisseau);
     clean_texture(textures->ligne_arrivee);
