@@ -12,7 +12,7 @@ void  init_textures(SDL_Renderer *renderer, resources_t *resources){
 
 
 
-void handle_events(SDL_Event *event,world_t *world, Uint8 *keys){    
+void handle_events(SDL_Event *event,world_t *world, const Uint8 *keys){    
     static Uint32 last_tire_time = 0; 
     
     Uint32 current_time = SDL_GetTicks(); 
