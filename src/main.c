@@ -14,6 +14,7 @@
 #include "../include/display.h"
 #include "../include/sprite.h"
 #include "../include/meteors.h"
+#include "../include/sound.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -25,11 +26,13 @@
  * \param textures les textures
  * \param wordl le monde
  */
-void init(SDL_Window **window, SDL_Renderer ** renderer, resources_t *textures, world_t * world){
+void init(SDL_Window **window, SDL_Renderer ** renderer, resources_t *textures, world_t * world, sounds_t *sounds){
     init_sdl(window,renderer,SCREEN_WIDTH, SCREEN_HEIGHT);
     init_data(world);
     init_ttf();
     init_textures(*renderer,textures);
+    init_sounds_systeme();
+    init_sounds(sounds);
 }
 /**
 * \brief fonction qui nettoie le jeu: nettoyage de la partie graphique (SDL), nettoyage des textures, nettoyage des données
@@ -42,6 +45,7 @@ void clean(SDL_Window *window, SDL_Renderer * renderer, resources_t *textures, w
     clean_data(world);
     clean_ressources(textures);
     clean_sdl(renderer,window);
+    clean_sound();
 }
 
 /**
@@ -51,6 +55,7 @@ int main( int argc, char* argv[] )
 {
     SDL_Event event;
     world_t world;
+    sounds_t sounds;
     resources_t textures;
     SDL_Renderer *renderer;
     SDL_Window *window;
@@ -58,12 +63,14 @@ int main( int argc, char* argv[] )
 
 
     //initialisation du jeu
-    init(&window,&renderer,&textures,&world);
+    init(&window,&renderer,&textures,&world, &sounds);
     
+    play_music(sounds.music, -1);
+
     while(!is_game_over(&world)){ //tant que le jeu n'est pas fini
         
         //gestion des évènements
-        handle_events(&event,&world, keys);
+        handle_events(&event,&world, &sounds, keys);
 
         //mise à jour des données liée à la physique du monde
         update_data(&world);

@@ -1,10 +1,10 @@
 CFLAGS = -O3 -Dmain=SDL_main
-LDFLAGS = -lm -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf
+LDFLAGS = -lm -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_mixer
 SDL2_INCLUDE_DIR = C:\dev\SDL2\x86_64-w64-mingw32\include 
 SDL2_LIBRARIES_DIR = C:\dev\SDL2\x86_64-w64-mingw32\lib
 
-INC = include/sdl2-light.h include/const.h include/world.h include/display.h include/sprite.h include/sdl2-ttf-light.h include/meteors.h include/projectile.h include/struct.h
-SRC = src/main.c src/sdl2-light.c src/world.c src/display.c src/sprite.c src/sdl2-ttf-light.c src/meteors.c src/projectile.c 
+INC = include/sdl2-light.h include/const.h include/world.h include/display.h include/sprite.h include/sdl2-ttf-light.h include/meteors.h include/projectile.h include/struct.h include/sound.h
+SRC = src/main.c src/sdl2-light.c src/world.c src/display.c src/sprite.c src/sdl2-ttf-light.c src/meteors.c src/projectile.c src/sound.c
 OBJ = $(SRC:src/%.c=lib/%.o)
 
 PROG = bin/start.exe

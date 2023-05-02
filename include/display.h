@@ -25,7 +25,7 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
  * \param event paramètre qui contient les événements
  * \param world les données du monde
  */
-void handle_events(SDL_Event* event,world_t * world, const Uint8 *keys);
+void handle_events(SDL_Event* event,world_t * world, sounds_t * sounds, const Uint8 *keys);
 
 /**
  * \brief La fonction initialise les texures

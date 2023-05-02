@@ -1,4 +1,5 @@
 #include "../include/display.h"
+#include "../include/sound.h"
 
 
 void  init_textures(SDL_Renderer *renderer, resources_t *resources){
@@ -12,7 +13,7 @@ void  init_textures(SDL_Renderer *renderer, resources_t *resources){
 
 
 
-void handle_events(SDL_Event *event,world_t *world, const Uint8 *keys){    
+void handle_events(SDL_Event *event,world_t *world, sounds_t * sounds, const Uint8 *keys){    
     static Uint32 last_tire_time = 0; 
     
     Uint32 current_time = SDL_GetTicks(); 
@@ -52,7 +53,9 @@ void handle_events(SDL_Event *event,world_t *world, const Uint8 *keys){
         world->joueur->x += MOVING_STEP;
     }
     if (keys[SDL_SCANCODE_SPACE]){ // Touche Espace enfoncée
+
         if (current_time - last_tire_time >= 100){ // on vérifie que le temps écoulé depuis le dernier tir est supérieur à 100ms (pour éviter de tirer trop vite)
+            play_sound(sounds->laser, -1, 0);
             last_tire_time = current_time; // on met à jour le temps du dernier tir
             tirer(world);
         }

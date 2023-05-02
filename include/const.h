@@ -57,6 +57,17 @@
 
 
 /**
+ * \brief volumes de sons
+ */
+#define SOUND_VOLUME 1
+
+/**
+ * \brief volumes de la musique
+ */
+#define MUSIC_VOLUME 1
+
+
+/**
  * \brief Hauteur de la ligne d'arrivée
  */
 #define FINISH_LINE_HEIGHT - (MAP_HEIGHT * METEORITE_SIZE)

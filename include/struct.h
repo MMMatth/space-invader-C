@@ -3,6 +3,7 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_mixer.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -54,6 +55,16 @@ struct resources_s{
     TTF_Font *font; /*!< Font utilisée pour l'affichage du texte. */
 };
 typedef struct resources_s resources_t;
+
+/**
+ * \brief 
+ * 
+ */
+struct sounds_s{
+    Mix_Music *music; /*!< Musique du jeu */
+    Mix_Chunk *laser; /*!< Son du laser */
+    Mix_Chunk *explosion; /*!< Son de l'explosion */
+};typedef struct sounds_s sounds_t;
 
 
 /**
