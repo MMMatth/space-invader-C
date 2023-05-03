@@ -30,7 +30,7 @@ void init(SDL_Window **window, SDL_Renderer ** renderer, resources_t *textures, 
     init_sdl(window,renderer,SCREEN_WIDTH, SCREEN_HEIGHT);
     init_data(world);
     init_ttf();
-    init_textures(*renderer,textures);
+    init_resources(*renderer,textures);
     init_sounds_systeme();
     init_sounds(sounds);
 }
@@ -73,7 +73,7 @@ int main( int argc, char* argv[] )
         handle_events(&event,&world, &sounds, keys);
 
         //mise à jour des données liée à la physique du monde
-        update_data(&world);
+        update_data(&world, &textures);
         
         update_chrono(&world, SDL_GetTicks());
         //rafraichissement de l'écran

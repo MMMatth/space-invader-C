@@ -42,6 +42,17 @@ struct meteors_s{
 }; 
 typedef struct meteors_s meteors_t;
 
+struct animate_s{
+    SDL_Texture ** frames;
+    int nb_frames;
+    int current_time;
+    Uint32 frame_duration;
+    Uint32 last_frame_time;
+    int active;
+    int x; int y;
+};typedef struct animate_s animate_t;
+
+
 
 /**
  * \brief Représentation pour stocker les textures nécessaires à l'affichage graphique
@@ -52,6 +63,7 @@ struct resources_s{
     SDL_Texture* ligne_arrivee; /*!< Texture liée à l'image de la ligne d'arrivée. */
     SDL_Texture* meteorite; /*!< Texture liée à l'image de la météorite. */
     SDL_Texture* laser; /*!< Texture liée à l'image du laser. */
+    animate_t ** explode_animate; /*!< Texture liée à l'image de l'explosion. */
     TTF_Font *font; /*!< Font utilisée pour l'affichage du texte. */
 };
 typedef struct resources_s resources_t;
@@ -65,6 +77,8 @@ struct sounds_s{
     Mix_Chunk *laser; /*!< Son du laser */
     Mix_Chunk *explosion; /*!< Son de l'explosion */
 };typedef struct sounds_s sounds_t;
+
+
 
 
 /**

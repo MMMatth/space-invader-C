@@ -51,7 +51,7 @@ void clean_data(world_t *world){
     clean_meteors(world);
 }
 
-void update_data(world_t *world){
+void update_data(world_t *world, resources_t *resources){
     world->ligne_arrivee->y += world->vitesse;
     update_meteors(world);
     update_projectile(world);
@@ -61,7 +61,10 @@ void update_data(world_t *world){
     // les collisions
     handle_sprites_collision(world, world->joueur, world->ligne_arrivee);
     est_perdu(world);
-    handle_projectile(world);
+    handle_projectile(world, resources);
+
+
+
 }   
 
 int is_game_over(world_t *world){

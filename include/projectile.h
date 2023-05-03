@@ -43,7 +43,7 @@ void tirer(world_t *world);
  * 
  * \param world : le monde
  */
-void colide_btw_projectile_and_meteor(world_t *world, int index_projectile, int index_meteor);
+void colide_btw_projectile_and_meteor(world_t *world, int index_projectile, int index_meteor, resources_t *resources);
 
 /**
  * \brief procedure qui permet de désactiver un projectile si il sort de l'écran
@@ -57,7 +57,7 @@ void est_dehors(projectile_t *projectile);
  * 
  * \param world 
  */
-void handle_projectile(world_t *world);
+void handle_projectile(world_t *world, resources_t *resources);
 
 /**
  * \brief procedure qui met à jour les projectiles

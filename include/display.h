@@ -32,7 +32,7 @@ void handle_events(SDL_Event* event,world_t * world, sounds_t * sounds, const Ui
  * \param screen la surface correspondant à l'écran de jeu
  * \param textures les textures du jeu
 */
-void init_textures(SDL_Renderer *renderer, resources_t *textures);
+void init_resources(SDL_Renderer *renderer, resources_t *textures);
 
 /**
  * \brief La fonction nettoie les textures

@@ -1,14 +1,23 @@
 #include "../include/display.h"
 #include "../include/sound.h"
+#include "../include/animate.h"
 
 
-void  init_textures(SDL_Renderer *renderer, resources_t *resources){
+
+void  init_resources(SDL_Renderer *renderer, resources_t *resources){
     resources->background = load_image( "assets/img/space-background.bmp",renderer);
     resources->vaisseau = load_image( "assets/img/spaceship.bmp",renderer);
     resources->ligne_arrivee = load_image( "assets/img/finish_line.bmp",renderer);
     resources->meteorite = load_image( "assets/img/meteorite.bmp",renderer);
     resources->laser = load_image( "assets/img/laser.bmp",renderer);
     resources->font = load_font("assets/font/arial.ttf", 30);
+
+    // on initialise les animations des explosions
+    resources->explode_animate = malloc(sizeof(animate_t) * MAX_ANIM);
+    for (int i = 0; i < MAX_ANIM; i++){
+        resources->explode_animate[i] = malloc(sizeof(struct animate_s));
+        init_animate(renderer, "assets/img/explode_animate", 6, 100, resources->explode_animate[i]);
+    }
 }
 
 
@@ -75,6 +84,10 @@ void clean_ressources(resources_t *textures){
     clean_texture(textures->ligne_arrivee);
     clean_texture(textures->meteorite);
     clean_font(textures->font);
+    // on libère les animations des explosions
+    for (int i = 0; i < MAX_ANIM; i++){
+        clean_animate(textures->explode_animate[i]);
+    }
 }
 
 void apply_chrono(SDL_Renderer *renderer, world_t *world, resources_t *resources){
@@ -111,5 +124,11 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
     apply_meteors(renderer,  world , resources->meteorite);
     apply_chrono(renderer, world, resources);
     apply_win_defeat(renderer, world, resources);
+    // on applique les animations des explosions
+    for (int i = 0; i < MAX_ANIM; i++){
+        apply_animate(renderer, resources->explode_animate[i], resources->explode_animate[i]->x, resources->explode_animate[i]->y);
+        update_animate(renderer, world, resources->explode_animate[i]);
+
+    }
     update_screen(renderer);
 }

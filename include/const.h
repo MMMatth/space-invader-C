@@ -55,6 +55,7 @@
  */
 #define MAP_HEIGHT 500
 
+#define MAX_ANIM 10
 
 /**
  * \brief volumes de sons

@@ -1,4 +1,5 @@
 #include "../include/projectile.h"
+#include "../include/animate.h"
 #include <math.h>
 
 
@@ -26,9 +27,15 @@ void tirer(world_t *world){
     world->projectiles[i]->vitesse_x = 0.5;
 }
 
-void colide_btw_projectile_and_meteor(world_t *world, int index_projectile, int index_meteor){
+void colide_btw_projectile_and_meteor(world_t *world, int index_projectile, int index_meteor, resources_t *resources){
     if (world->meteors->tab_meteor[index_meteor] != NULL){ // on verifie que le meteor existe bien
         if (sprites_collide(world->projectiles[index_projectile]->sprite, world->meteors->tab_meteor[index_meteor])){ // si il y'a collision
+            for (int i = 0; i < MAX_ANIM; i++){
+                if (!resources->explode_animate[i]->active){ // on cherche une explosion non active
+                    activate_animate(resources->explode_animate[i], world->meteors->tab_meteor[index_meteor]->x, world->meteors->tab_meteor[index_meteor]->y); // on active l'explosion
+                    break;
+                }
+            }
             world->projectiles[index_projectile]->active = 0; // on desactive le projectile
             world->projectiles[index_projectile]->x = -1; // on le bouge loin
             world->projectiles[index_projectile]->y = -1;
@@ -44,12 +51,12 @@ void est_dehors(projectile_t *projectile){
 }
 
 
-void handle_projectile(world_t *world){
+void handle_projectile(world_t *world, resources_t *resources){
     for (int i = 0; i < MAX_PROJECTILE; i++){
         if (world->projectiles[i]->active){ // on parcour les projectile actif
             est_dehors(world->projectiles[i]); // on verifie si il depace l'ecran et le desactive si c'est le cas
             for (int j = 0; j < world->meteors->nb_meteor; j++){
-                colide_btw_projectile_and_meteor(world, i, j); // on verifie si il y'a collision et agit en consequence
+                colide_btw_projectile_and_meteor(world, i, j, resources); // on verifie si il y'a collision et agit en consequence
             }
         }
     }
