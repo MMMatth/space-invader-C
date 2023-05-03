@@ -73,7 +73,7 @@ int main( int argc, char* argv[] )
         handle_events(&event,&world, &sounds, keys);
 
         //mise à jour des données liée à la physique du monde
-        update_data(&world, &textures);
+        update_data(&world);
         
         update_chrono(&world, SDL_GetTicks());
         //rafraichissement de l'écran

@@ -1,9 +1,6 @@
 #include "../include/sdl2-ttf-light.h"
 
 
-
-
-
 void init_ttf(){
     if(TTF_Init()==-1) {
         printf("TTF_Init: %s\n", TTF_GetError());

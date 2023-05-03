@@ -43,7 +43,6 @@ struct meteors_s{
 typedef struct meteors_s meteors_t;
 
 struct animate_s{
-    SDL_Texture ** frames;
     int nb_frames;
     int current_time;
     Uint32 frame_duration;
@@ -63,7 +62,7 @@ struct resources_s{
     SDL_Texture* ligne_arrivee; /*!< Texture liée à l'image de la ligne d'arrivée. */
     SDL_Texture* meteorite; /*!< Texture liée à l'image de la météorite. */
     SDL_Texture* laser; /*!< Texture liée à l'image du laser. */
-    animate_t ** explode_animate; /*!< Texture liée à l'image de l'explosion. */
+    SDL_Texture ** explode_img; /*!< Tableau des textures des explosions*/
     TTF_Font *font; /*!< Font utilisée pour l'affichage du texte. */
 };
 typedef struct resources_s resources_t;
@@ -90,7 +89,10 @@ struct world_s{
     sprite_t* mur_meteorite; /*!< Sprite représentant le mur de météorites */
     sprite_t** tab_wall_meteor; /*!< Tableau de sprite représentant les murs de météorites */
     meteors_t * meteors;
+    animate_t ** explode_animate; /*!< Texture liée à l'image de l'explosion. */
+
     projectile_t ** projectiles;
+
     float vitesse; /*!< Vitesse de déplacement du fond */
     int chrono; /*!< Chronomètre du jeu */
     int gameover; /*!< Champ indiquant si l'on est à la fin du jeu */

@@ -1,5 +1,5 @@
 #include "../include/world.h"
-#include "../include/meteors.h"
+
 
 void init_data(world_t * world){
     world->joueur = malloc(sizeof(sprite_t));
@@ -14,6 +14,11 @@ void init_data(world_t * world){
     world->vitesse = INITIAL_SPEED;
     world->chrono = 0;
     world->gameover = 0; // le jeu n'est pas fini
+        // on initialise les animations des explosions
+
+    world->explode_animate = malloc(sizeof(animate_t*) * MAX_ANIM);
+    init_animates("assets/img/explode_animate", 6, 50, world->explode_animate);
+
 }
 
 void check_pos(world_t *world){ // vérifie que le joueur ne sort pas de l'écran
@@ -49,21 +54,18 @@ void clean_data(world_t *world){
     free(world->ligne_arrivee);
     clean_projectile(world);
     clean_meteors(world);
+    clean_animates(world->explode_animate);
 }
 
-void update_data(world_t *world, resources_t *resources){
+void update_data(world_t *world){
     world->ligne_arrivee->y += world->vitesse;
     update_meteors(world);
     update_projectile(world);
-
     check_pos(world);
-
-    // les collisions
     handle_sprites_collision(world, world->joueur, world->ligne_arrivee);
     est_perdu(world);
-    handle_projectile(world, resources);
-
-
+    handle_projectile(world);
+    update_animates(world, world->explode_animate);
 
 }   
 

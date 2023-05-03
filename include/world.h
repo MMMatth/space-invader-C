@@ -9,6 +9,8 @@
 #include "struct.h"
 #include "sprite.h"
 #include "projectile.h"
+#include "meteors.h"
+#include "animate.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -39,7 +41,7 @@ void clean_data(world_t* world);
  * \brief La fonction met à jour les données en tenant compte de la physique du monde
  * \param les données du monde
  */
-void update_data(world_t* world, resources_t *resources);
+void update_data(world_t* world);
 
 /**
  * \brief fonction qui met à jour le chrono du jeu

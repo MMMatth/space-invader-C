@@ -17,3 +17,5 @@ Le système de tir est assez simple quand on appuie sur espace le vaisseau tire 
 ## Les deplacements
 Le vaisseau se déplace de gauche à droite. Il peut se déplacer en restant appuyé D (droite) ou Q (gauche). On peut aussi accélérer le vaisseau en appuyant sur Z et ralentir en appuyant sur S. 
 
+## Animations
+Nous avons crée un sytème n'animation [animate](include/animate.h)   qui permet de crée des animations grace à plusieur image qui s'affiche les unes après les autres. Nous avons crée une animation pour les explosions.

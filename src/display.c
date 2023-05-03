@@ -1,7 +1,4 @@
 #include "../include/display.h"
-#include "../include/sound.h"
-#include "../include/animate.h"
-
 
 
 void  init_resources(SDL_Renderer *renderer, resources_t *resources){
@@ -11,13 +8,13 @@ void  init_resources(SDL_Renderer *renderer, resources_t *resources){
     resources->meteorite = load_image( "assets/img/meteorite.bmp",renderer);
     resources->laser = load_image( "assets/img/laser.bmp",renderer);
     resources->font = load_font("assets/font/arial.ttf", 30);
-
-    // on initialise les animations des explosions
-    resources->explode_animate = malloc(sizeof(animate_t) * MAX_ANIM);
-    for (int i = 0; i < MAX_ANIM; i++){
-        resources->explode_animate[i] = malloc(sizeof(struct animate_s));
-        init_animate(renderer, "assets/img/explode_animate", 6, 100, resources->explode_animate[i]);
+    resources->explode_img = malloc(sizeof(SDL_Texture*) * MAX_ANIM);
+    char path[100];
+    for (int i = 0; i < 6; i++){ // on charge les images des explosions
+        sprintf(path, "assets/img/explode_animate/%d.bmp", i + 1);
+        resources->explode_img[i] = load_image(path, renderer);
     }
+
 }
 
 
@@ -84,10 +81,9 @@ void clean_ressources(resources_t *textures){
     clean_texture(textures->ligne_arrivee);
     clean_texture(textures->meteorite);
     clean_font(textures->font);
-    // on libère les animations des explosions
-    for (int i = 0; i < MAX_ANIM; i++){
-        clean_animate(textures->explode_animate[i]);
-    }
+    for (int i = 0; i < 6; i++){
+        clean_texture(textures->explode_img[i]);
+    }free(textures->explode_img);
 }
 
 void apply_chrono(SDL_Renderer *renderer, world_t *world, resources_t *resources){
@@ -115,6 +111,8 @@ void apply_win_defeat(SDL_Renderer *renderer, world_t *world, resources_t *resou
     }
 }
 
+
+
 void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resources){
     clear_renderer(renderer);
     apply_background(renderer, resources);
@@ -126,9 +124,7 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
     apply_win_defeat(renderer, world, resources);
     // on applique les animations des explosions
     for (int i = 0; i < MAX_ANIM; i++){
-        apply_animate(renderer, resources->explode_animate[i], resources->explode_animate[i]->x, resources->explode_animate[i]->y);
-        update_animate(renderer, world, resources->explode_animate[i]);
-
+        apply_animate(renderer, world->explode_animate[i], resources->explode_img, world->explode_animate[i]->x, world->explode_animate[i]->y, METEORITE_SIZE, METEORITE_SIZE);
     }
     update_screen(renderer);
 }

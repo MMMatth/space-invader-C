@@ -10,10 +10,12 @@
 #include "const.h"
 #include "struct.h"
 #include "sprite.h"
+#include "animate.h"
 #include "display.h"
 #include "world.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include <stdbool.h>
 #include <SDL2/SDL.h>
 
@@ -43,7 +45,7 @@ void tirer(world_t *world);
  * 
  * \param world : le monde
  */
-void colide_btw_projectile_and_meteor(world_t *world, int index_projectile, int index_meteor, resources_t *resources);
+void colide_btw_projectile_and_meteor(world_t *world, int index_projectile, int index_meteor);
 
 /**
  * \brief procedure qui permet de désactiver un projectile si il sort de l'écran
@@ -57,7 +59,7 @@ void est_dehors(projectile_t *projectile);
  * 
  * \param world 
  */
-void handle_projectile(world_t *world, resources_t *resources);
+void handle_projectile(world_t *world);
 
 /**
  * \brief procedure qui met à jour les projectiles
