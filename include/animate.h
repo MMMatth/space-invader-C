@@ -18,7 +18,7 @@
  * \param frame_duration : la durée d'une frame en ms
  * \param tab_animate : le tableau d'animation
  */
-void init_animates(char * folder_path, int nb_frame, Uint32 frame_duration, animate_t ** tab_animate);
+void init_animates(char * folder_path, int nb_frame, Uint32 frame_duration, animate_t ** tab_animate, int loop);
 
 /**
  * \brief procedure qui permet d'initialiser une animation
@@ -27,8 +27,9 @@ void init_animates(char * folder_path, int nb_frame, Uint32 frame_duration, anim
  * \param nb_frame : le nombre d'image dans le dossier
  * \param frame_duration : la durée d'une frame en ms
  * \param animate : l'animation
+ * \param loop : si l'animation doit boucler -1 sinon 0
  */
-void init_animate(char * folder_path, int nb_frame, Uint32 frame_duration, animate_t * animate);
+void init_animate(char * folder_path, int nb_frame, Uint32 frame_duration, animate_t * animate, int loop);
 
 /**
  * \brief procedure qui permet d'afficher une animation
@@ -50,7 +51,7 @@ void apply_animate(SDL_Renderer * renderer ,animate_t * animate, SDL_Texture ** 
  * \param x : la position x
  * \param y : la position y
  */
-void refresh_animates(animate_t ** animate, int x, int y);
+void active_animates(animate_t ** animate, int x, int y);
 
 /**
  * \brief procedure qui permet de mettre a jour une animation
@@ -59,7 +60,7 @@ void refresh_animates(animate_t ** animate, int x, int y);
  * \param x : la position x
  * \param y : la position y
  */
-void refresh_animate(animate_t * animate, int x, int y);
+void active_animate(animate_t * animate, int x, int y);
 
 /**
  * \brief procedure qui permet de mettre a jour plusieurs animations ( appliquer la vitesse)

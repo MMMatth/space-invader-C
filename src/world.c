@@ -17,7 +17,14 @@ void init_data(world_t * world){
         // on initialise les animations des explosions
 
     world->explode_animate = malloc(sizeof(animate_t*) * MAX_ANIM);
-    init_animates("assets/img/explode_animate", 6, 50, world->explode_animate);
+    init_animates("assets/img/explode_animate", 6, 50, world->explode_animate, 0);
+
+    world->speed_animate = malloc(sizeof(animate_t*) * MAX_ANIM);
+    init_animate("assets/img/speed_animate", 9, 100, world->speed_animate, -1);
+
+    active_animate(world->speed_animate, 0, 0);
+
+
 
 }
 
@@ -55,6 +62,7 @@ void clean_data(world_t *world){
     clean_projectile(world);
     clean_meteors(world);
     clean_animates(world->explode_animate);
+    clean_animate(world->speed_animate);
 }
 
 void update_data(world_t *world){
@@ -66,6 +74,7 @@ void update_data(world_t *world){
     est_perdu(world);
     handle_projectile(world);
     update_animates(world, world->explode_animate);
+    // update_animate(world, world->speed_animate);
 
 }   
 

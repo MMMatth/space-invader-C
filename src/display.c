@@ -9,10 +9,15 @@ void  init_resources(SDL_Renderer *renderer, resources_t *resources){
     resources->laser = load_image( "assets/img/laser.bmp",renderer);
     resources->font = load_font("assets/font/arial.ttf", 30);
     resources->explode_img = malloc(sizeof(SDL_Texture*) * MAX_ANIM);
+    resources->speed_img = malloc(sizeof(SDL_Texture*) * MAX_ANIM);
     char path[100];
     for (int i = 0; i < 6; i++){ // on charge les images des explosions
-        sprintf(path, "assets/img/explode_animate/%d.bmp", i + 1);
+        sprintf(path, "assets/img/explode_animate/%d.png", i + 1);
         resources->explode_img[i] = load_image(path, renderer);
+    }
+    for (int i = 0; i < 9; i++){
+        sprintf(path, "assets/img/speed_animate/%d.png", i + 1);
+        resources->speed_img[i] = load_image(path, renderer);
     }
 
 }
@@ -60,7 +65,7 @@ void handle_events(SDL_Event *event,world_t *world, sounds_t * sounds, const Uin
     }
     if (keys[SDL_SCANCODE_SPACE]){ // Touche Espace enfoncée
 
-        if (current_time - last_tire_time >= 100){ // on vérifie que le temps écoulé depuis le dernier tir est supérieur à 100ms (pour éviter de tirer trop vite)
+        if (current_time - last_tire_time >= world->projectiles[0]->frequence){ // on vérifie que le temps écoulé depuis le dernier tir est supérieur à 100ms (pour éviter de tirer trop vite)
             play_sound(sounds->laser, -1, 0);
             last_tire_time = current_time; // on met à jour le temps du dernier tir
             tirer(world);
@@ -84,6 +89,9 @@ void clean_ressources(resources_t *textures){
     for (int i = 0; i < 6; i++){
         clean_texture(textures->explode_img[i]);
     }free(textures->explode_img);
+    for (int i = 0; i < 9; i++){
+        clean_texture(textures->speed_img[i]);
+    }free(textures->speed_img);
 }
 
 void apply_chrono(SDL_Renderer *renderer, world_t *world, resources_t *resources){
@@ -126,5 +134,6 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
     for (int i = 0; i < MAX_ANIM; i++){
         apply_animate(renderer, world->explode_animate[i], resources->explode_img, world->explode_animate[i]->x, world->explode_animate[i]->y, METEORITE_SIZE, METEORITE_SIZE);
     }
+    apply_animate(renderer, world->speed_animate, resources->speed_img, world->speed_animate->x, world->speed_animate->y, SCREEN_WIDTH, SCREEN_HEIGHT);
     update_screen(renderer);
 }

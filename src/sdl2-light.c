@@ -34,17 +34,28 @@ SDL_Texture *load_image(const char path[], SDL_Renderer *renderer)
     tmp = SDL_LoadBMP(path);
     if(NULL == tmp)
     {
-        fprintf(stderr, "Erreur pendant chargement image BMP: %s", SDL_GetError());
-        return NULL;
+        // on utilise SDL_Image
+
+        tmp = IMG_Load(path);
+        if (tmp == NULL)
+        {
+            fprintf(stderr, "Erreur pendant chargement image BMP: %s", SDL_GetError());
+            return NULL;
+        }
+
     }
+    printf("Image chargee avec succes\n");
     SDL_SetColorKey(tmp, SDL_TRUE, SDL_MapRGB(tmp->format, 255, 0, 255));
+    
     texture = SDL_CreateTextureFromSurface(renderer, tmp);
     SDL_FreeSurface(tmp);
+    
     if(NULL == texture)
     {
         fprintf(stderr, "Erreur pendant la creation de la texture liee a l'image chargee: %s", SDL_GetError());
         return NULL;
     }
+    
     return texture;
 }
 

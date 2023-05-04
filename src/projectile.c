@@ -10,6 +10,7 @@ void init_projectile(world_t * world){
         world->projectiles[i]->x = -1; // on le met en 500 500 pour ne pas le voir en cas de prob
         world->projectiles[i]->y = -1;
         world->projectiles[i]->variation = 0;
+        world->projectiles[i]->frequence = 150;
         // on initialise le sprite
         init_sprite(world->projectiles[i]->sprite, world->projectiles[i]->x, world->projectiles[i]->y, PROJECTILE_SIZE/2, PROJECTILE_SIZE);
     }
@@ -29,7 +30,7 @@ void tirer(world_t *world){
 void colide_btw_projectile_and_meteor(world_t *world, int index_projectile, int index_meteor){
     if (world->meteors->tab_meteor[index_meteor] != NULL){ // on verifie que le meteor existe bien
         if (sprites_collide(world->projectiles[index_projectile]->sprite, world->meteors->tab_meteor[index_meteor])){ // si il y'a collision
-            refresh_animates(world->explode_animate, world->meteors->tab_meteor[index_meteor]->x, world->meteors->tab_meteor[index_meteor]->y); // on affiche l'animation d'explosion
+            active_animates(world->explode_animate, world->meteors->tab_meteor[index_meteor]->x, world->meteors->tab_meteor[index_meteor]->y); // on affiche l'animation d'explosion
             world->projectiles[index_projectile]->active = 0; // on desactive le projectile
             world->projectiles[index_projectile]->x = -1; // on le bouge loin
             world->projectiles[index_projectile]->y = -1;

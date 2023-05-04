@@ -1,5 +1,5 @@
 CFLAGS = -O3 -Dmain=SDL_main
-LDFLAGS = -lm -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_mixer
+LDFLAGS = -lm -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_mixer -lSDL2_image
 SDL2_INCLUDE_DIR = C:\dev\SDL2\x86_64-w64-mingw32\include 
 SDL2_LIBRARIES_DIR = C:\dev\SDL2\x86_64-w64-mingw32\lib
 
@@ -22,7 +22,7 @@ doc :
 	cd doc && doxygen Doxyfile
 
 test:
-	gcc src/tests.c lib/world.o lib/sprite.o lib/wall.o -o bin/tests.exe
+	gcc -IC:\dev\SDL2\x86_64-w64-mingw32\include src/tests.c lib/world.o lib/sprite.o lib/wall.o  -o bin/tests.exe -lSDL2
 
 map:
 	gcc src/map_generator.c -o bin/map_generator.exe

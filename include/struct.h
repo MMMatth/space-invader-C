@@ -28,6 +28,7 @@ struct  projectile_s{
     float vitesse_x; /*!< Vitesse en x du projectile */
     float vitesse_y; /*!< Vitesse en y du projectile */
     float variation;
+    int frequence;
     bool active; /*!< Champ indiquant si le projectile est actif */
     sprite_t * sprite; /*!< Sprite du projectile */
 };
@@ -47,6 +48,7 @@ struct animate_s{
     int current_time;
     Uint32 frame_duration;
     Uint32 last_frame_time;
+    int loop;
     int active;
     int x; int y;
 };typedef struct animate_s animate_t;
@@ -63,6 +65,7 @@ struct resources_s{
     SDL_Texture* meteorite; /*!< Texture liée à l'image de la météorite. */
     SDL_Texture* laser; /*!< Texture liée à l'image du laser. */
     SDL_Texture ** explode_img; /*!< Tableau des textures des explosions*/
+    SDL_Texture ** speed_img;
     TTF_Font *font; /*!< Font utilisée pour l'affichage du texte. */
 };
 typedef struct resources_s resources_t;
@@ -90,7 +93,7 @@ struct world_s{
     sprite_t** tab_wall_meteor; /*!< Tableau de sprite représentant les murs de météorites */
     meteors_t * meteors;
     animate_t ** explode_animate; /*!< Texture liée à l'image de l'explosion. */
-
+    animate_t * speed_animate;
     projectile_t ** projectiles;
 
     float vitesse; /*!< Vitesse de déplacement du fond */
