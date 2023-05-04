@@ -22,10 +22,6 @@ void init_data(world_t * world){
     world->speed_animate = malloc(sizeof(animate_t*) * MAX_ANIM);
     init_animate("assets/img/speed_animate", 9, 100, world->speed_animate, -1);
 
-    active_animate(world->speed_animate, 0, 0);
-
-
-
 }
 
 void check_pos(world_t *world){ // vérifie que le joueur ne sort pas de l'écran
@@ -65,6 +61,20 @@ void clean_data(world_t *world){
     clean_animate(world->speed_animate);
 }
 
+int speed_animate = 0;
+
+void activate_speed_animate(world_t *world){
+    if (world->vitesse > 3){
+        if (speed_animate == 0){
+            start_animate(world->speed_animate, 0, 0);
+            speed_animate = 1;
+        }
+    }else{
+        pause_animate(world->speed_animate);
+        speed_animate = 0;
+    }
+}
+
 void update_data(world_t *world){
     world->ligne_arrivee->y += world->vitesse;
     update_meteors(world);
@@ -74,8 +84,7 @@ void update_data(world_t *world){
     est_perdu(world);
     handle_projectile(world);
     update_animates(world, world->explode_animate);
-    // update_animate(world, world->speed_animate);
-
+    activate_speed_animate(world);
 }   
 
 int is_game_over(world_t *world){

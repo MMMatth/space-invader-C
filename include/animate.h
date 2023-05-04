@@ -60,7 +60,14 @@ void active_animates(animate_t ** animate, int x, int y);
  * \param x : la position x
  * \param y : la position y
  */
-void active_animate(animate_t * animate, int x, int y);
+void start_animate(animate_t * animate, int x, int y);
+
+/**
+ * \brief procedure qui permet de mettre en pause une animation
+ * 
+ * \param animate : l'animation
+ */
+void pause_animate(animate_t * animate);
 
 /**
  * \brief procedure qui permet de mettre a jour plusieurs animations ( appliquer la vitesse)

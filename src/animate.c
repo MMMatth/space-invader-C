@@ -21,17 +21,21 @@ void init_animate(char * folder_path, int nb_frame, Uint32 frame_duration, anima
 void active_animates(animate_t ** animate, int x, int y){
     for (int i = 0; i < MAX_ANIM; i++){
         if (animate[i]->active == 0){
-            active_animate(animate[i], x, y);
+            start_animate(animate[i], x, y);
             break;
         }
     }
 }
 
-void active_animate(animate_t * animate, int x, int y){
+void start_animate(animate_t * animate, int x, int y){
     animate->active = 1;
     animate->current_time = 0;
     animate->x = x;
     animate->y = y;
+}
+
+void pause_animate(animate_t * animate){
+    animate->active = 0;
 }
 
 

@@ -34,8 +34,6 @@ SDL_Texture *load_image(const char path[], SDL_Renderer *renderer)
     tmp = SDL_LoadBMP(path);
     if(NULL == tmp)
     {
-        // on utilise SDL_Image
-
         tmp = IMG_Load(path);
         if (tmp == NULL)
         {
@@ -44,7 +42,6 @@ SDL_Texture *load_image(const char path[], SDL_Renderer *renderer)
         }
 
     }
-    printf("Image chargee avec succes\n");
     SDL_SetColorKey(tmp, SDL_TRUE, SDL_MapRGB(tmp->format, 255, 0, 255));
     
     texture = SDL_CreateTextureFromSurface(renderer, tmp);
