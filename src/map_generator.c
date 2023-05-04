@@ -1,8 +1,7 @@
 #define FNL_IMPL 1
-#define WIDTH 18
-#define HEIGHT 100
 
 #include "../include/FastNoiseLite.h"
+#include "../include/const.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -15,12 +14,12 @@ int main(){
     noise.frequency = 0.075;
     noise.gain = 0.3;
 
-    float* noiseData = malloc(HEIGHT * WIDTH * sizeof(float));
+    float* noiseData = malloc(MAP_HEIGHT * MAP_WIDTH * sizeof(float));
     int index = 0;
 
-    for (int y = 0; y < HEIGHT; y++)
+    for (int y = 0; y < MAP_HEIGHT; y++)
     {
-        for (int x = 0; x < WIDTH; x++) 
+        for (int x = 0; x < MAP_WIDTH; x++) 
         {
             float noiseValue = fnlGetNoise2D(&noise, x, y);
             if (noiseValue > 0.5) {
@@ -37,9 +36,9 @@ int main(){
         printf("Error opening file!\n");
         exit(1);
     }
-    for (int y = 0; y < HEIGHT; y++) {
-        for (int x = 0; x < WIDTH; x++) {
-            fprintf(f, "%d", (int)noiseData[y * WIDTH + x]);
+    for (int y = 0; y < MAP_HEIGHT; y++) {
+        for (int x = 0; x < MAP_WIDTH; x++) {
+            fprintf(f, "%d", (int)noiseData[y * MAP_WIDTH + x]);
         }
         fprintf(f, "\n");
     }

@@ -20,14 +20,15 @@
 #define SHIP_SIZE 50
 
 /**
- * \brief Pas de déplacement du sprite
+ * \brief taille du projectile
 */
-#define MOVING_STEP 20
+#define PROJECTILE_SIZE 50
+
 
 /**
- * \brief Hauteur de la ligne d'arrivée
- */
-#define FINISH_LINE_HEIGHT - (1000 * 32)
+ * \brief Pas de déplacement du sprite
+*/
+#define MOVING_STEP 5
 
 /**
  * \brief Vitesse initiale mouvement des météorites
@@ -39,5 +40,35 @@
  */
 #define METEORITE_SIZE 50
 
-#define NB_MUR_METEORITE 1
+/**
+ * \brief Nombre de projectile maximum
+ */
+#define MAX_PROJECTILE 100
+
+/**
+ * \brief nombre de meteorite maximum en largeur
+ */
+#define MAP_WIDTH SCREEN_WIDTH / METEORITE_SIZE
+
+/**
+ * \brief nombre de meteorite maximum en hauteur
+ */
+#define MAP_HEIGHT 500
+
+
+/**
+ * \brief volumes de sons
+ */
+#define SOUND_VOLUME 1
+
+/**
+ * \brief volumes de la musique
+ */
+#define MUSIC_VOLUME 1
+
+
+/**
+ * \brief Hauteur de la ligne d'arrivée
+ */
+#define FINISH_LINE_HEIGHT - (MAP_HEIGHT * METEORITE_SIZE)
 

@@ -1,6 +1,5 @@
 #include "../include/world.h"
-#include "../include/wall.h"
-
+#include "../include/meteors.h"
 
 void init_data(world_t * world){
     world->joueur = malloc(sizeof(sprite_t));
@@ -9,9 +8,13 @@ void init_data(world_t * world){
     init_sprite(world->ligne_arrivee, 0, FINISH_LINE_HEIGHT, SCREEN_WIDTH, 1);
     world->meteors = malloc(sizeof(meteors_t));
     init_meteors(world, "map.txt");
+    world->projectiles = malloc(sizeof(projectile_t*) * (MAX_PROJECTILE+1) );
+    init_projectile(world);
     world->vitesse = INITIAL_SPEED;
     world->chrono = 0;
     world->gameover = 0; // le jeu n'est pas fini
+    world->phase = 0;
+    world->tps = 0;
 }
 
 void check_pos(world_t *world){ // vérifie que le joueur ne sort pas de l'écran
@@ -36,18 +39,32 @@ void handle_sprites_collision(world_t *world, sprite_t *sp1, sprite_t *sp2){
     }
 }
 
+void update_chrono(world_t *world, int time){
+    world->chrono = time / 1000;
+}
+
 void clean_data(world_t *world){
     free(world->joueur);
     free(world->ligne_arrivee);
+    clean_projectile(world);
     clean_meteors(world);
+}
+
+int game_phase(world_t *world){
+    return world->phase;
 }
 
 void update_data(world_t *world){
     world->ligne_arrivee->y += world->vitesse;
     update_meteors(world);
+    update_projectile(world);
+
     check_pos(world);
+
+    // les collisions
     handle_sprites_collision(world, world->joueur, world->ligne_arrivee);
-    handle_meteors(world);
+    est_perdu(world);
+    handle_projectile(world);
 }   
 
 int is_game_over(world_t *world){

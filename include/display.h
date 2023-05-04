@@ -6,51 +6,26 @@
 #ifndef DISPLAY_H
 #define DISPLAY_H
 #include "const.h"
+#include "struct.h"
 #include "world.h"
+#include "meteors.h"
 #include "sdl2-light.h"
 #include "sdl2-ttf-light.h"
 
 /**
- * \brief Représentation pour stocker les textures nécessaires à l'affichage graphique
-*/
-struct resources_s{
-    SDL_Texture* background; /*!< Texture liée à l'image du fond de l'écran. */
-    SDL_Texture* vaisseau; /*!< Texture liée à l'image du sprite. */
-    SDL_Texture* ligne_arrivee; /*!< Texture liée à l'image de la ligne d'arrivée. */
-    SDL_Texture* meteorite; /*!< Texture liée à l'image de la météorite. */
-    SDL_Texture* laser; /*!< Texture liée à l'image du laser. */
-    TTF_Font *font; /*!< Font utilisée pour l'affichage du texte. */
-};
-
-/**
- * \brief Type qui correspond aux textures du jeu
-*/
-typedef struct resources_s resources_t;
-
-/**
- * \brief applique le sprite sur le renderer en l'adaptant à la taille de l'image
- * 
- * \param renderer : le renderer
- * \param texture : la texture
- * \param sprite : le sprite
+ * \brief La fonction rafraichit l'écran en fonction de l'état des données du monde
+ * \param renderer le renderer
+ * \param world les données du monde
+ * \param resources les ressources du jeu
  */
-void apply_sprite_adapted(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite);
-
-/**
- * \brief applique le sprite sur le renderer
- * 
- * \param renderer : le renderer
- * \param texture : la texture
- * \param sprite : le sprite
- */
-void apply_sprite(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite);
+void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resources);
 
 /**
  * \brief La fonction gère les évènements ayant eu lieu et qui n'ont pas encore été traités
  * \param event paramètre qui contient les événements
  * \param world les données du monde
  */
-void handle_events(SDL_Event* event,world_t * world);
+void handle_events(SDL_Event* event,world_t * world, sounds_t * sounds, const Uint8 *keys);
 
 /**
  * \brief La fonction initialise les texures
@@ -63,16 +38,8 @@ void init_textures(SDL_Renderer *renderer, resources_t *textures);
  * \brief La fonction nettoie les textures
  * \param textures les textures
 */
-void clean_textures(resources_t *textures);
+void clean_ressources(resources_t *textures);
 
-/**
- * \brief permet d'afficher les meteores sur l'écran de jeu
- * 
- * \param renderer 
- * \param world 
- * \param texture 
- */
-void apply_meteors(SDL_Renderer *renderer, world_t * world, SDL_Texture *texture);
 
 /**
  * \brief La fonction applique la texture du fond sur le renderer lié à l'écran de jeu

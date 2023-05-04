@@ -9,20 +9,9 @@
 #include "const.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "sdl2-light.h"
+#include "struct.h"
 
-/**
- * \brief structure qui représente un sprite
- */
-struct sprite_s{
-    int x; /*!< Position en x du sprite */
-    int y; /*!< Position en y du sprite */
-    int w; /*!< Largeur du sprite */
-    int h; /*!< Hauteur du sprite */
-};
-/**
- * \brief Type qui correspond à un sprite
- */
-typedef struct sprite_s sprite_t;
 
 /**
  * \brief fonction qui verifie si deux sprites se chevauchent
@@ -51,6 +40,24 @@ void init_sprite(sprite_t *sprite, int x, int y, int w, int h);
  * \param sprite 
  */
 void hide_sprite(sprite_t *sprite);
+
+/**
+ * \brief applique le sprite sur le renderer en l'adaptant à la taille de l'image
+ * 
+ * \param renderer : le renderer
+ * \param texture : la texture
+ * \param sprite : le sprite
+ */
+void apply_sprite_adapted(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite);
+
+/**
+ * \brief applique le sprite sur le renderer
+ * 
+ * \param renderer : le renderer
+ * \param texture : la texture
+ * \param sprite : le sprite
+ */
+void apply_sprite(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite);
 
 // --- Fonctions test --- //
 

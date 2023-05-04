@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../include/world.h"
-#include "../include/wall.h"
+#include "../include/meteors.h"
 
 int nb_error = 0;
 
