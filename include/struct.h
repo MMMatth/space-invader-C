@@ -64,6 +64,7 @@ struct resources_s{
     SDL_Texture* ligne_arrivee; /*!< Texture liée à l'image de la ligne d'arrivée. */
     SDL_Texture* meteorite; /*!< Texture liée à l'image de la météorite. */
     SDL_Texture* laser; /*!< Texture liée à l'image du laser. */
+    SDL_Texture* menu; /*!< Texture liée à l'image du menu. */
     SDL_Texture ** explode_img; /*!< Tableau des textures des explosions*/
     SDL_Texture ** speed_img;
     TTF_Font *font; /*!< Font utilisée pour l'affichage du texte. */
@@ -95,6 +96,8 @@ struct world_s{
     animate_t ** explode_animate; /*!< Texture liée à l'image de l'explosion. */
     animate_t * speed_animate;
     projectile_t ** projectiles;
+
+    int phase; /*!< Champ indiquant la phase du jeu */
 
     float vitesse; /*!< Vitesse de déplacement du fond */
     int chrono; /*!< Chronomètre du jeu */

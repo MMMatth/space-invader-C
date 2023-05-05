@@ -14,6 +14,7 @@
 #include "../include/display.h"
 #include "../include/sprite.h"
 #include "../include/meteors.h"
+#include "../include/menu.h"
 #include "../include/sound.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -69,18 +70,30 @@ int main( int argc, char* argv[] )
 
     while(!is_game_over(&world)){ //tant que le jeu n'est pas fini
         
-        //gestion des évènements
-        handle_events(&event,&world, &sounds, keys);
+        if (world.phase == 0){
+                
+                menu_refresh_graphics(renderer, &world, &textures);
+                
+                menu_handle_events(&event,&world, &sounds, keys);
 
-        //mise à jour des données liée à la physique du monde
-        update_data(&world);
-        
-        update_chrono(&world, SDL_GetTicks());
-        //rafraichissement de l'écran
-        refresh_graphics(renderer, &world, &textures);
-        
-        // pause de 10 ms pour controler la vitesse de rafraichissement
-        pause(10);
+                pause(10);
+
+        } else {
+
+            //gestion des évènements
+            handle_events(&event,&world, &sounds, keys);
+
+            //mise à jour des données liée à la physique du monde
+            update_data(&world);
+            
+            update_chrono(&world, SDL_GetTicks());
+
+            //rafraichissement de l'écran
+            refresh_graphics(renderer, &world, &textures);
+            
+            // pause de 10 ms pour controler la vitesse de rafraichissement
+            pause(10);
+        }
     }
     save_chrono(&world);
 

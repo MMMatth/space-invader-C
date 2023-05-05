@@ -10,6 +10,7 @@ void  init_resources(SDL_Renderer *renderer, resources_t *resources){
     resources->font = load_font("assets/font/arial.ttf", 30);
     resources->explode_img = malloc(sizeof(SDL_Texture*) * MAX_ANIM);
     resources->speed_img = malloc(sizeof(SDL_Texture*) * MAX_ANIM);
+    resources->menu = load_image("assets/img/menu.png", renderer);
     char path[100];
     // on charge les images des explosions
     for (int i = 0; i < 6; i++){

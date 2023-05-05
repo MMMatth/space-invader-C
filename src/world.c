@@ -14,6 +14,7 @@ void init_data(world_t * world){
     world->vitesse = INITIAL_SPEED;
     world->chrono = 0;
     world->gameover = 0; // le jeu n'est pas fini
+    world->phase = 0;
         // on initialise les animations des explosions
 
     world->explode_animate = malloc(sizeof(animate_t*) * MAX_ANIM);
