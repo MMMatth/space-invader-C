@@ -1,13 +1,5 @@
-#include "../include/sdl2-light.h"
-#include "../include/sdl2-ttf-light.h"
-#include "../include/const.h"
-#include "../include/world.h"
-#include "../include/display.h"
-#include "../include/sprite.h"
-#include "../include/meteors.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
+#include "../include/menu.h"
+
 
 bool hitbox(SDL_Event event, int top_left, int top_right, int bottom_left, int bottom_right){   
     if (event.button.x >= top_left // Si la souris est dans la hitbox

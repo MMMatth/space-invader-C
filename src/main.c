@@ -15,6 +15,7 @@
 #include "../include/sprite.h"
 #include "../include/meteors.h"
 #include "../include/sound.h"
+#include "../include/menu.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -69,9 +70,15 @@ int main( int argc, char* argv[] )
 
     while(!is_game_over(&world)){ //tant que le jeu n'est pas fini
         if (game_phase(&world) == 0){
+                
                 menu(renderer, &world, &textures);
+                
                 update_screen(renderer);
+                
                 event_menu(&event,&world, &sounds, keys);
+
+                pause(10);
+
             } else {
             
             //gestion des évènements
@@ -88,7 +95,9 @@ int main( int argc, char* argv[] )
             // pause de 10 ms pour controler la vitesse de rafraichissement
             pause(10);} 
     }
+
     refresh_graphics(renderer, &world, &textures); // on rafrachit une dernière fois l'écran pour afficher le message de fin de jeu et faire disparaitre le vaisseau
+    
     pause(3000); //pause de 3 secondes à la fin du jeu
     //nettoyage final
     clean(window,renderer,&textures,&world);

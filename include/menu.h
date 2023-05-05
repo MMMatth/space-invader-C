@@ -5,10 +5,18 @@
 #ifndef MENU_H
 #define MENU_H
 
+#include "sdl2-light.h"
+#include "sdl2-ttf-light.h"
+#include "const.h"
+#include "world.h"
+#include "display.h"
+#include "sprite.h"
+#include "meteors.h"
 #include "const.h"
 #include "sprite.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 /**
  * \brief La fonction crée une hibox pour le menu
@@ -21,17 +29,10 @@
 bool hitbox(SDL_Event event, int top_left, int top_right, int bottom_left, int bottom_right);
 
 
-/**
- * \brief La fonction initialise les données du menu
- * \param world les données du monde
- */
-void menu(world_t* world);
+void menu(SDL_Renderer *renderer, world_t *world, resources_t *resources);
 
-/**
- * \brief passage du menu au jeu
- * \param world les données du monde
-*/
-void event_menu(world_t *world);
+
+void event_menu(SDL_Event *event,world_t *world, sounds_t * sounds, const Uint8 *keys); 
 
 
 
