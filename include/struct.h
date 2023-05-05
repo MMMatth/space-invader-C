@@ -79,6 +79,7 @@ struct sounds_s{
     Mix_Music *music; /*!< Musique du jeu */
     Mix_Chunk *laser; /*!< Son du laser */
     Mix_Chunk *explosion; /*!< Son de l'explosion */
+    Mix_Chunk *clic; /*!< Son de clic */
 };typedef struct sounds_s sounds_t;
 
 

@@ -11,6 +11,7 @@ void init_sounds(sounds_t * sounds){
     sounds->laser = Mix_LoadWAV("assets/sounds/blaster.wav");
     sounds->explosion = Mix_LoadWAV("assets/sounds/blaster.wav");
     sounds->music = Mix_LoadMUS("assets/sounds/music.mp3");
+    sounds->clic = Mix_LoadWAV("assets/sounds/clic.wav");
 }
 
 void clean_sound(){
