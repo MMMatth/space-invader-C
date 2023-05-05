@@ -10,7 +10,6 @@ void init_data(world_t * world){
     init_meteors(world, "map.txt");
     world->projectiles = malloc(sizeof(projectile_t*) * (MAX_PROJECTILE+1) );
     init_projectile(world);
-    printf("init_data");
     world->vitesse = INITIAL_SPEED;
     world->chrono = 0;
     world->gameover = 0; // le jeu n'est pas fini

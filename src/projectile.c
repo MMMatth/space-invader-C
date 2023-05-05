@@ -10,7 +10,7 @@ void init_projectile(world_t * world){
         world->projectiles[i]->x = -1; // on le met en 500 500 pour ne pas le voir en cas de prob
         world->projectiles[i]->y = -1;
         world->projectiles[i]->variation = 0;
-        world->projectiles[i]->frequence = 150;
+        world->projectiles[i]->frequence = 1000;
         // on initialise le sprite
         init_sprite(world->projectiles[i]->sprite, world->projectiles[i]->x, world->projectiles[i]->y, PROJECTILE_SIZE/2, PROJECTILE_SIZE);
     }
