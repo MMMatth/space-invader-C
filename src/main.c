@@ -82,7 +82,10 @@ int main( int argc, char* argv[] )
         // pause de 10 ms pour controler la vitesse de rafraichissement
         pause(10);
     }
+    save_chrono(&world);
+
     refresh_graphics(renderer, &world, &textures); // on rafrachit une dernière fois l'écran pour afficher le message de fin de jeu et faire disparaitre le vaisseau
+    
     pause(3000); //pause de 3 secondes à la fin du jeu
     //nettoyage final
     clean(window,renderer,&textures,&world);

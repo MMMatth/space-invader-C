@@ -97,18 +97,7 @@ void clean_ressources(resources_t *textures){
 }
 
 void apply_chrono(SDL_Renderer *renderer, world_t *world, resources_t *resources){
-    char str[20];
-    if (world->chrono >= 60){        
-        if (world->chrono % 60 >= 10)
-            sprintf(str, "0%d : %d", world->chrono / 60, world->chrono % 60);
-        else
-            sprintf(str, "0%d : 0%d", world->chrono / 60, world->chrono % 60);
-    }else if (world->chrono >= 10){
-        sprintf(str, "00 : %d", world->chrono);
-    }else if (world->chrono < 10){
-        sprintf(str, "00 : 0%d", world->chrono);
-    }
-    apply_text_adapted(renderer, SCREEN_WIDTH/2, 15, str , resources->font );
+    apply_text_adapted(renderer, SCREEN_WIDTH/2, 15, get_chrono_str(world) , resources->font );
 }
 
 void apply_win_defeat(SDL_Renderer *renderer, world_t *world, resources_t *resources){

@@ -39,18 +39,43 @@ void check_pos(world_t *world){ // vérifie que le joueur ne sort pas de l'écra
     }
 }
 
+char * get_chrono_str(world_t *world){
+    char *chrono = malloc(sizeof(char) * 10);
+    if (world->chrono >= 60){        
+        if (world->chrono % 60 >= 10)
+            sprintf(chrono, "0%d : %d", world->chrono / 60, world->chrono % 60);
+        else
+            sprintf(chrono, "0%d : 0%d", world->chrono / 60, world->chrono % 60);
+    }else if (world->chrono >= 10){
+        sprintf(chrono, "00 : %d", world->chrono);
+    }else if (world->chrono < 10){
+        sprintf(chrono, "00 : 0%d", world->chrono);
+    }
+    return chrono;
+}
+
+void save_chrono(world_t *world){
+    FILE *fichier = NULL;
+    fichier = fopen("score.txt", "a");
+    if(fichier != NULL){
+        fprintf(fichier, "%s\n", get_chrono_str(world));
+        fclose(fichier);
+    }
+    else{
+        printf("Erreur lors de l'ouverture du fichier");
+    }
+}
+
+void update_chrono(world_t *world, int time){
+    world->chrono = time / 1000;
+}
+
 
 void handle_sprites_collision(world_t *world, sprite_t *sp1, sprite_t *sp2){
     if(sprites_collide(sp1, sp2)){
         world->gameover = 1;
     }
 }
-
-
-void update_chrono(world_t *world, int time){
-    world->chrono = time / 1000;
-}
-
 
 void clean_data(world_t *world){
     free(world->joueur);
