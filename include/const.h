@@ -20,12 +20,6 @@
 #define SHIP_SIZE 50
 
 /**
- * \brief taille du projectile
-*/
-#define PROJECTILE_SIZE 50
-
-
-/**
  * \brief Pas de déplacement du sprite
 */
 #define MOVING_STEP 5
@@ -41,6 +35,11 @@
 #define METEORITE_SIZE 50
 
 /**
+ * \brief taille du projectile
+*/
+#define PROJECTILE_SIZE 50
+
+/**
  * \brief Nombre de projectile maximum
  */
 #define MAX_PROJECTILE 100
@@ -53,8 +52,11 @@
 /**
  * \brief nombre de meteorite maximum en hauteur
  */
-#define MAP_HEIGHT 500
+#define MAP_HEIGHT 50
 
+/**
+ * \brief nombre d'animation que l'on peut avoir
+*/
 #define MAX_ANIM 10
 
 /**

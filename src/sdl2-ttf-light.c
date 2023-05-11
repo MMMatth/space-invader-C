@@ -29,11 +29,11 @@ void apply_text(SDL_Renderer *renderer,int x, int y, int w, int h, const char *t
     SDL_RenderCopy(renderer, texture, NULL, &dstrect2);
 }
 
-void apply_text_adapted(SDL_Renderer *renderer,int x, int y, const char *text, TTF_Font *font){
+void apply_text_adapted(SDL_Renderer *renderer,int x, int y, const char *text, TTF_Font *font, int size){
     SDL_Color color = { 255, 255, 255 };
     SDL_Surface* surface = TTF_RenderText_Solid(font, text, color);
     SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-    SDL_Rect dstrect2 = {x - surface->w / 2 , y - surface->h /2, surface->w , surface->h};
+    SDL_Rect dstrect2 = {x - surface->w / 2 , y - surface->h /2, surface->w * size , surface->h * size};
     SDL_RenderCopy(renderer, texture, NULL, &dstrect2);
 }
 

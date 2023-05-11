@@ -32,7 +32,7 @@ bool hitbox(SDL_Event event, int top_left, int top_right, int bottom_left, int b
 void over_refresh_graphics(SDL_Renderer *renderer, world_t *world, resources_t *resources);
 
 
-void over_handle_events(SDL_Event *event,SDL_Window **window, SDL_Renderer ** renderer, resources_t *textures, world_t *world, sounds_t *sounds, const Uint8 *keys); 
+void over_handle_events(SDL_Event *event,world_t *world, sounds_t * sounds, const Uint8 *keys);
 
 
 

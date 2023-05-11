@@ -1,19 +1,35 @@
 #include "../include/over.h"
 #include "../include/display.h"
+#include "../include/world.h"
+#include "../include/const.h"
 
 void over_refresh_graphics(SDL_Renderer *renderer, world_t *world, resources_t *resources){
-    if(resources->menu != NULL){
-        apply_texture(resources->over, renderer, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    apply_texture(resources->over, renderer, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    if (world->gameover == 1 && world->joueur->y <= world->ligne_arrivee->y){
+            apply_text_adapted(renderer, 200, 120 , "YOU WIN" , resources->font , 2);
+    }else{
+        apply_text_adapted(renderer, 200, 120, "GAME OVER" , resources->font , 2);
     }
-    if (world->joueur->y <= world->ligne_arrivee->y){
-            apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "YOU WIN" , resources->font );
-    }else //si on perd
-        apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "GAME OVER" , resources->font );
+    int * best_score = get_sort_score(world);
+    char * score = malloc(sizeof(char) * 10);
+    apply_text_adapted(renderer, 750, SCREEN_HEIGHT / 2 - 50, "BEST SCORES" , resources->font , 1);
+    int i = 0; int j = 0;
+    while (i < 3){
+        if (best_score[i] == 0){
+            i ++;
+        }else{
+            sprintf(score, "%d sec", best_score[i]);
+            apply_text_adapted(renderer, 750, SCREEN_HEIGHT / 2 + j*50, score , resources->font , 1);
+            j++;
+            i++;
+        }
+    }
+
     update_screen(renderer);
 }
 
 
-void over_handle_events(SDL_Event *event, SDL_Window **window, SDL_Renderer ** renderer, resources_t *textures, world_t * world, sounds_t *sounds,const Uint8 *keys){
+void over_handle_events(SDL_Event *event,world_t *world, sounds_t * sounds, const Uint8 *keys){
     Uint8 *keystates;
     while(SDL_PollEvent(event)) {
         switch (event->type)
@@ -35,12 +51,10 @@ void over_handle_events(SDL_Event *event, SDL_Window **window, SDL_Renderer ** r
             break; 
         case SDL_MOUSEBUTTONDOWN:
             if (event->button.button == SDL_BUTTON_LEFT){
-                printf("x = %d, y = %d\n", event->button.x, event->button.y);
                 if (hitbox(*event, 30, 290, 300, 330 )){
                     printf("replay\n");
                     play_sound(sounds->clic, -1, 0);
-                    //init(world, textures, sounds, window, renderer); 
-                    world->phase = 0;
+                    world->phase = 3;
                 }
                 if (hitbox(*event, 0, 185, 360, 390 )){
                     printf("quit\n");

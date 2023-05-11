@@ -7,7 +7,7 @@ void  init_resources(SDL_Renderer *renderer, resources_t *resources){
     resources->ligne_arrivee = load_image( "assets/img/finish_line.bmp",renderer);
     resources->meteorite = load_image( "assets/img/meteorite.bmp",renderer);
     resources->laser = load_image( "assets/img/laser.bmp",renderer);
-    resources->font = load_font("assets/font/arial.ttf", 30);
+    resources->font = load_font("assets/font/space_age.ttf", 30);
     resources->explode_img = malloc(sizeof(SDL_Texture*) * MAX_ANIM);
     resources->speed_img = malloc(sizeof(SDL_Texture*) * MAX_ANIM);
     resources->menu = load_image("assets/img/menu.png", renderer);
@@ -99,17 +99,7 @@ void clean_ressources(resources_t *textures){
 }
 
 void apply_chrono(SDL_Renderer *renderer, world_t *world, resources_t *resources){
-    apply_text_adapted(renderer, SCREEN_WIDTH/2, 15, get_chrono_str(world) , resources->font );
-}
-
-void apply_win_defeat(SDL_Renderer *renderer, world_t *world, resources_t *resources){
-    if (is_game_over(world)) {
-        hide_sprite(world->joueur);
-        if (world->joueur->y <= world->ligne_arrivee->y){
-            apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "YOU WIN" , resources->font );
-        }else //si on perd
-            apply_text_adapted(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "GAME OVER" , resources->font );
-    }
+    apply_text_adapted(renderer, SCREEN_WIDTH/2, 15, get_chrono_str(world) , resources->font, 1 );
 }
 
 
@@ -122,7 +112,6 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
     apply_sprite_adapted(renderer, resources->ligne_arrivee, world->ligne_arrivee);
     apply_meteors(renderer,  world , resources->meteorite);
     apply_chrono(renderer, world, resources);
-    apply_win_defeat(renderer, world, resources);
     // on applique les animations des explosions
     for (int i = 0; i < MAX_ANIM; i++){
         apply_animate(renderer, world->explode_animate[i], resources->explode_img, world->explode_animate[i]->x, world->explode_animate[i]->y, METEORITE_SIZE, METEORITE_SIZE);

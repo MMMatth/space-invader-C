@@ -43,8 +43,9 @@ void apply_text(SDL_Renderer *renderer,int x, int y, int w, int h, const char *t
  * \param y : 
  * \param text 
  * \param font 
+ * \param size : taille du texte par exemple 1 pour la taille normale, 2 pour le double de la taille normale
  */
-void apply_text_adapted(SDL_Renderer *renderer,int x, int y, const char *text, TTF_Font *font);
+void apply_text_adapted(SDL_Renderer *renderer,int x, int y, const char *text, TTF_Font *font, int size);
 
 
 

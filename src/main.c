@@ -95,21 +95,24 @@ int main( int argc, char* argv[] )
             // pause de 10 ms pour controler la vitesse de rafraichissement
             pause(10);
 
-        } else {
+        } else if (world.phase == 2) {
             //gestion des évènements
             over_refresh_graphics(renderer, &world, &textures);
                 
-            over_handle_events(&event,&window, &renderer, &world, &textures, &sounds, keys);
+            over_handle_events(&event, &world, &sounds, keys);
 
             pause(10);
+        }else if (world.phase == 3){
+
+            clean(window,renderer,&textures,&world);
+
+            init(&window,&renderer,&textures,&world, &sounds);
+
+            world.phase = 1;
+
         }
     }
     save_chrono(&world);
-
-    int * score = get_sort_score(&world);
-    for (int i = 0; i < 5; i++){
-        printf("%d\n", score[i]);
-    }
 
     refresh_graphics(renderer, &world, &textures); // on rafrachit une dernière fois l'écran pour afficher le message de fin de jeu et faire disparaitre le vaisseau
     
