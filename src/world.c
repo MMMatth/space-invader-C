@@ -73,7 +73,8 @@ void update_chrono(world_t *world, int time){
 
 void handle_sprites_collision(world_t *world, sprite_t *sp1, sprite_t *sp2){
     if(sprites_collide(sp1, sp2)){
-        world->gameover = 1;
+        //world->gameover = 1;
+        world->phase = 2;
     }
 }
 

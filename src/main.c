@@ -16,6 +16,7 @@
 #include "../include/meteors.h"
 #include "../include/menu.h"
 #include "../include/sound.h"
+#include "../include/over.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -66,7 +67,7 @@ int main( int argc, char* argv[] )
     //initialisation du jeu
     init(&window,&renderer,&textures,&world, &sounds);
     
-    play_music(sounds.music, -1);
+    //play_music(sounds.music, -1);
 
     while(!is_game_over(&world)){ //tant que le jeu n'est pas fini
         
@@ -78,7 +79,7 @@ int main( int argc, char* argv[] )
 
                 pause(10);
 
-        } else {
+        } else if (world.phase == 1) {
 
             //gestion des évènements
             handle_events(&event,&world, &sounds, keys);
@@ -92,6 +93,14 @@ int main( int argc, char* argv[] )
             refresh_graphics(renderer, &world, &textures);
             
             // pause de 10 ms pour controler la vitesse de rafraichissement
+            pause(10);
+
+        } else {
+            //gestion des évènements
+            over_refresh_graphics(renderer, &world, &textures);
+                
+            over_handle_events(&event,&window, &renderer, &world, &textures, &sounds, keys);
+
             pause(10);
         }
     }
