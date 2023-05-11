@@ -97,6 +97,11 @@ int main( int argc, char* argv[] )
     }
     save_chrono(&world);
 
+    int * score = get_sort_score(&world);
+    for (int i = 0; i < 5; i++){
+        printf("%d\n", score[i]);
+    }
+
     refresh_graphics(renderer, &world, &textures); // on rafrachit une dernière fois l'écran pour afficher le message de fin de jeu et faire disparaitre le vaisseau
     
     pause(3000); //pause de 3 secondes à la fin du jeu

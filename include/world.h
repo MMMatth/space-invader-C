@@ -76,6 +76,11 @@ int is_game_over(world_t* world);
 void handle_sprites_collision(world_t *world, sprite_t *sp1, sprite_t *sp2);
 
 
+int * get_sort_score(world_t * world);
+
+int * tri_tableau(int * tab, int len);
+
+
 // --- fonction tests --- //
 
 

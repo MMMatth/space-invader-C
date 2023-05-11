@@ -55,16 +55,58 @@ char * get_chrono_str(world_t *world){
 }
 
 void save_chrono(world_t *world){
-    FILE *fichier = NULL;
-    fichier = fopen("score.txt", "a");
-    if(fichier != NULL){
-        fprintf(fichier, "%s\n", get_chrono_str(world));
-        fclose(fichier);
-    }
-    else{
-        printf("Erreur lors de l'ouverture du fichier");
+    if (world->gameover = 1 && world->joueur->y <= world->ligne_arrivee->y){
+        FILE *fichier = NULL;
+        fichier = fopen("score.txt", "a");
+        if(fichier != NULL){
+            fprintf(fichier, "%d\n", world->chrono);
+            fclose(fichier);
+        }
+        else{
+            printf("Erreur lors de l'ouverture du fichier");
+        }
     }
 }
+
+int * get_sort_score(world_t * world){
+    FILE *fichier = NULL;
+    fichier = fopen("score.txt", "r");
+    int len = 0;
+    int *score = malloc(sizeof(int) * 1000);
+    while (!feof(fichier) && len < 1000){
+        fscanf(fichier, "%d", &score[len]);
+        len++;
+    }
+    fclose(fichier);
+    
+    // trie par ordre croissant
+    score = tri_tableau(score, len);
+    // renvoie que les 3 meilleurs scores
+    if (len > 3){
+        int *score2 = malloc(sizeof(int) * 3);
+        for (int j = 0; j < 3; j++){
+            score2[j] = score[j];
+        }
+        return score2;
+    }
+    return score;
+}
+
+int * tri_tableau(int * tab, int len){
+    int tmp;
+    for (int j = 0; j < len; j++){
+        for (int k = j + 1; k < len; k++){
+            if (tab[j] > tab[k]){
+                tmp = tab[j];
+                tab[j] = tab[k];
+                tab[k] = tmp;
+            }
+        }
+    }
+    return tab;
+}
+
+
 
 void update_chrono(world_t *world, int time){
     world->chrono = time / 1000;
