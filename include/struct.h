@@ -65,6 +65,7 @@ struct resources_s{
     SDL_Texture* meteorite; /*!< Texture liée à l'image de la météorite. */
     SDL_Texture* laser; /*!< Texture liée à l'image du laser. */
     SDL_Texture* menu; /*!< Texture liée à l'image du menu. */
+    SDL_Texture* over; /*!< Texture liée à l'image de fin du jeu. */
     SDL_Texture ** explode_img; /*!< Tableau des textures des explosions*/
     SDL_Texture ** speed_img;
     TTF_Font *font; /*!< Font utilisée pour l'affichage du texte. */
