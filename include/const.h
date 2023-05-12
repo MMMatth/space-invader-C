@@ -62,12 +62,12 @@
 /**
  * \brief volumes de sons
  */
-#define SOUND_VOLUME 1
+#define SOUND_VOLUME 8
 
 /**
  * \brief volumes de la musique
  */
-#define MUSIC_VOLUME 1
+#define MUSIC_VOLUME 16
 
 
 /**

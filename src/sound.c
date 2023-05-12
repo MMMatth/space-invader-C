@@ -3,8 +3,8 @@
 void init_sounds_systeme(){
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024);
     Mix_AllocateChannels(32);
-    Mix_VolumeMusic(SOUND_VOLUME % MIX_MAX_VOLUME); // on fait % pour que le volume soit entre 0 et MIX_MAX_VOLUME
-    Mix_Volume(-1, MUSIC_VOLUME % MIX_MAX_VOLUME); // on fait % pour que le volume soit entre 0 et MIX_MAX_VOLUME
+    Mix_VolumeMusic(MUSIC_VOLUME % MIX_MAX_VOLUME / 10); // on fait % pour que le volume soit entre 0 et MIX_MAX_VOLUME
+    Mix_Volume(-1, SOUND_VOLUME % MIX_MAX_VOLUME); // on fait % pour que le volume soit entre 0 et MIX_MAX_VOLUME
 }
 
 void init_sounds(sounds_t * sounds){

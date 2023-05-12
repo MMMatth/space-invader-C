@@ -67,49 +67,61 @@ int main( int argc, char* argv[] )
     //initialisation du jeu
     init(&window,&renderer,&textures,&world, &sounds);
     
-    //play_music(sounds.music, -1);
+    play_music(sounds.music, -1);
 
     while(!is_game_over(&world)){ //tant que le jeu n'est pas fini
-        
-        if (world.phase == 0){
-                
+        switch (world.phase)
+        {
+            case 0:
                 menu_refresh_graphics(renderer, &world, &textures);
                 
                 menu_handle_events(&event,&world, &sounds, keys);
 
                 pause(10);
 
-        } else if (world.phase == 1) {
-
-            //gestion des évènements
-            handle_events(&event,&world, &sounds, keys);
-
-            //mise à jour des données liée à la physique du monde
-            update_data(&world);
+                break;
             
-            update_chrono(&world, SDL_GetTicks());
+            case 1:
 
-            //rafraichissement de l'écran
-            refresh_graphics(renderer, &world, &textures);
-            
-            // pause de 10 ms pour controler la vitesse de rafraichissement
-            pause(10);
+                //gestion des évènements
+                handle_events(&event,&world, &sounds, keys);
 
-        } else if (world.phase == 2) {
-            //gestion des évènements
-            over_refresh_graphics(renderer, &world, &textures);
+                //mise à jour des données liée à la physique du monde
+                update_data(&world);
                 
-            over_handle_events(&event, &world, &sounds, keys);
+                update_chrono(&world, SDL_GetTicks());
 
-            pause(10);
-        }else if (world.phase == 3){
+                //rafraichissement de l'écran
+                refresh_graphics(renderer, &world, &textures);
+                
+                // pause de 10 ms pour controler la vitesse de rafraichissement
+                pause(10);
 
-            clean(window,renderer,&textures,&world);
+                break;
+            
+            case 2:
 
-            init(&window,&renderer,&textures,&world, &sounds);
+                over_refresh_graphics(renderer, &world, &textures);
+                    
+                over_handle_events(&event, &world, &sounds, keys);
 
-            world.phase = 1;
+                pause(10);
 
+                break;
+
+            case 3:
+                
+                clean(window,renderer,&textures,&world);
+
+                init(&window,&renderer,&textures,&world, &sounds);
+
+                world.phase = 1;
+                
+                break;
+
+            default:
+            
+                break;  
         }
     }
     save_chrono(&world);

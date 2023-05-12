@@ -69,7 +69,7 @@ void handle_events(SDL_Event *event,world_t *world, sounds_t * sounds, const Uin
     }
     if (keys[SDL_SCANCODE_SPACE]){ // Touche Espace enfoncée
 
-        if (current_time - last_tire_time >= world->projectiles[0]->frequence){ // on vérifie que le temps écoulé depuis le dernier tir est supérieur à 100ms (pour éviter de tirer trop vite)
+        if (current_time - last_tire_time >= 250){ // on vérifie que le temps écoulé depuis le dernier tir est supérieur à 100ms (pour éviter de tirer trop vite)
             play_sound(sounds->laser, -1, 0);
             last_tire_time = current_time; // on met à jour le temps du dernier tir
             tirer(world);

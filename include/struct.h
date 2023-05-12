@@ -28,7 +28,6 @@ struct  projectile_s{
     float vitesse_x; /*!< Vitesse en x du projectile */
     float vitesse_y; /*!< Vitesse en y du projectile */
     float variation;
-    int frequence;
     bool active; /*!< Champ indiquant si le projectile est actif */
     sprite_t * sprite; /*!< Sprite du projectile */
 };

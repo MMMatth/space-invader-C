@@ -50,6 +50,7 @@ void menu_handle_events(SDL_Event *event,world_t *world, sounds_t * sounds, cons
                     printf("quit\n");
                     play_sound(sounds->clic, -1, 0);
                     world->gameover = 1;
+                    pause(500); // On attend 500ms pour que le son puisse se jouer
                     SDL_Quit();
                 }
             }

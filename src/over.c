@@ -5,8 +5,8 @@
 
 void over_refresh_graphics(SDL_Renderer *renderer, world_t *world, resources_t *resources){
     apply_texture(resources->over, renderer, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    if (world->gameover == 1 && world->joueur->y <= world->ligne_arrivee->y){
-            apply_text_adapted(renderer, 200, 120 , "YOU WIN" , resources->font , 2);
+    if (world->joueur->y <= world->ligne_arrivee->y){
+        apply_text_adapted(renderer, 200, 120 , "YOU WIN" , resources->font , 2);
     }else{
         apply_text_adapted(renderer, 200, 120, "GAME OVER" , resources->font , 2);
     }
@@ -60,6 +60,7 @@ void over_handle_events(SDL_Event *event,world_t *world, sounds_t * sounds, cons
                     printf("quit\n");
                     play_sound(sounds->clic, -1, 0);
                     world->gameover = 1;
+                    pause(500);
                     SDL_Quit();
                 }
             }
