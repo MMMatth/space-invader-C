@@ -2,14 +2,14 @@
 
 
 
-void init_projectile(world_t * world){
+void init_projectiles(world_t * world){
     for (int i = 0; i < MAX_PROJECTILE; i++){
         world->projectiles[i] = malloc(sizeof(projectile_t)); // on alloue la memoire pour chaque projectile
         world->projectiles[i]->sprite = malloc(sizeof(sprite_t)); // on alloue la memoire pour chaque sprite 
         world->projectiles[i]->active = false; // le projectile n'est pas actif
-        world->projectiles[i]->x = -1; // on le met en 500 500 pour ne pas le voir en cas de prob
+        world->projectiles[i]->x = -1; // on initialise la position du projectile
         world->projectiles[i]->y = -1;
-        world->projectiles[i]->variation = 0;
+        world->projectiles[i]->variation = 0; // on initialise la variation de position
         // on initialise le sprite
         init_sprite(world->projectiles[i]->sprite, world->projectiles[i]->x, world->projectiles[i]->y, PROJECTILE_SIZE/2, PROJECTILE_SIZE);
     }
@@ -29,7 +29,7 @@ void tirer(world_t *world){
 void colide_btw_projectile_and_meteor(world_t *world, int index_projectile, int index_meteor){
     if (world->meteors->tab_meteor[index_meteor] != NULL){ // on verifie que le meteor existe bien
         if (sprites_collide(world->projectiles[index_projectile]->sprite, world->meteors->tab_meteor[index_meteor])){ // si il y'a collision
-            active_animates(world->explode_animate, world->meteors->tab_meteor[index_meteor]->x, world->meteors->tab_meteor[index_meteor]->y); // on affiche l'animation d'explosion
+            start_animates(world->explode_animate, world->meteors->tab_meteor[index_meteor]->x, world->meteors->tab_meteor[index_meteor]->y); // on affiche l'animation d'explosion
             world->projectiles[index_projectile]->active = 0; // on desactive le projectile
             world->projectiles[index_projectile]->x = -1; // on le bouge loin
             world->projectiles[index_projectile]->y = -1;

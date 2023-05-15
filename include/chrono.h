@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <SDL2/SDL.h>
+
 #include "world.h"
 
 /**
@@ -51,5 +53,14 @@ int * tri_tableau(int * tab, int len);
  */
 void update_chrono(world_t *world, int time);
 
+
+/**
+ * \brief permet d'afficher le chrono
+ * 
+ * \param renderer : le renderer SDL
+ * \param world : les données du monde
+ * \param resources : les ressources
+ */
+void apply_chrono(SDL_Renderer *renderer, world_t *world, resources_t *resources);
 
 #endif

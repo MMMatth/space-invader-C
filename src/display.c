@@ -2,16 +2,20 @@
 
 
 void  init_resources(SDL_Renderer *renderer, resources_t *resources){
+    // on charge les images
     resources->background = load_image( "assets/img/space-background.bmp",renderer);
     resources->vaisseau = load_image( "assets/img/spaceship.bmp",renderer);
     resources->ligne_arrivee = load_image( "assets/img/finish_line.bmp",renderer);
     resources->meteorite = load_image( "assets/img/meteorite.bmp",renderer);
     resources->laser = load_image( "assets/img/laser.bmp",renderer);
-    resources->font = load_font("assets/font/space_age.ttf", 30);
-    resources->explode_img = malloc(sizeof(SDL_Texture*) * MAX_ANIM);
-    resources->speed_img = malloc(sizeof(SDL_Texture*) * MAX_ANIM);
     resources->menu = load_image("assets/img/menu.png", renderer);
     resources->over = load_image("assets/img/over.png", renderer);
+    // on charge la police
+    resources->font = load_font("assets/font/space_age.ttf", 30);
+    // on charge les aniamations
+    resources->explode_img = malloc(sizeof(SDL_Texture*) * MAX_ANIM);
+    resources->speed_img = malloc(sizeof(SDL_Texture*) * MAX_ANIM);
+
     char path[100];
     // on charge les images des explosions
     for (int i = 0; i < 6; i++){
@@ -33,32 +37,39 @@ void handle_events(SDL_Event *event,world_t *world, sounds_t * sounds, const Uin
     
     Uint32 current_time = SDL_GetTicks(); 
 
-    while (SDL_PollEvent(event)) {
-        //Si l'utilisateur a cliqué sur le x de la fenêtre
-        if( event->type == SDL_QUIT ) {
+    while (SDL_PollEvent(event)){
+        switch (event->type)
+        {
+        case SDL_QUIT:
             world->gameover = 1;
             SDL_Quit();
-        }
-        if (event->type == SDL_KEYDOWN){
-            switch (event->key.keysym.sym){
-                case SDLK_ESCAPE:
-                    world->gameover = 1;
-                    SDL_Quit();
-                    break;
-                case SDLK_z:
-                    world->vitesse += 1;
-                    break;
-                case SDLK_s:
-                    if (world->vitesse > INITIAL_SPEED)
-                        world->vitesse -= 1.0;
-                    break;
-                default:
-                    break;
+            break;
+        
+        case SDL_KEYDOWN:
+            switch (event->key.keysym.sym)
+            {
+            case SDLK_ESCAPE:
+                world->gameover = 1;
+                SDL_Quit();
+                break;
+            case SDLK_z:
+                world->vitesse += 1;
+                break;
+            case SDLK_s:
+                if (world->vitesse > INITIAL_SPEED)
+                    world->vitesse -= 1.0;
+                break;
+            default:
+                break;
             }
+            break;
+
+        default:
+            break;
         }
     }
     // on gère les déplacements du joueur avec keys pour pouvoir appuyer sur plusieurs touches en même temps
-    if (keys[SDL_SCANCODE_A] && keys[SDL_SCANCODE_D]){
+    if (keys[SDL_SCANCODE_A] && keys[SDL_SCANCODE_D]){ // Si les touches A et D sont enfoncées en même temps
         // on fait rien
     }
     else if (keys[SDL_SCANCODE_A]){ // Touche A enfoncée (correspond à Q sur un clavier AZERTY)
@@ -68,15 +79,13 @@ void handle_events(SDL_Event *event,world_t *world, sounds_t * sounds, const Uin
         world->joueur->x += MOVING_STEP;
     }
     if (keys[SDL_SCANCODE_SPACE]){ // Touche Espace enfoncée
-
-        if (current_time - last_tire_time >= 250){ // on vérifie que le temps écoulé depuis le dernier tir est supérieur à 100ms (pour éviter de tirer trop vite)
-            play_sound(sounds->laser, -1, 0);
+        if (current_time - last_tire_time >= 250){ // on vérifie que le temps écoulé depuis le dernier tir est supérieur à 250ms (pour éviter de tirer trop vite)
+            play_sound(sounds->laser, -1, 0); // on joue le son du tir
             last_tire_time = current_time; // on met à jour le temps du dernier tir
             tirer(world);
         }
     }
 }
-
 
 void apply_background(SDL_Renderer *renderer, resources_t *textures){
     if(textures->background != NULL){
@@ -85,21 +94,23 @@ void apply_background(SDL_Renderer *renderer, resources_t *textures){
 }
 
 void clean_ressources(resources_t *textures){
+    // on libère les images
     clean_texture(textures->background);
     clean_texture(textures->vaisseau);
     clean_texture(textures->ligne_arrivee);
     clean_texture(textures->meteorite);
+    clean_texture(textures->laser);
+    clean_texture(textures->menu);
+    clean_texture(textures->over);
+    // on libère la police
     clean_font(textures->font);
+    // on libère les animations
     for (int i = 0; i < 6; i++){
         clean_texture(textures->explode_img[i]);
     }free(textures->explode_img);
     for (int i = 0; i < 9; i++){
         clean_texture(textures->speed_img[i]);
     }free(textures->speed_img);
-}
-
-void apply_chrono(SDL_Renderer *renderer, world_t *world, resources_t *resources){
-    apply_text_adapted(renderer, SCREEN_WIDTH/2, 15, get_chrono_str(world) , resources->font, 1 );
 }
 
 
@@ -119,4 +130,14 @@ void refresh_graphics(SDL_Renderer *renderer, world_t *world,resources_t *resour
     // on applique l'animation de la vitesse
     apply_animate(renderer, world->speed_animate, resources->speed_img, world->speed_animate->x, world->speed_animate->y, SCREEN_WIDTH, SCREEN_HEIGHT);
     update_screen(renderer);
+}
+
+bool hitbox(SDL_Event event, int x_top_left, int x_bottom_left, int y_top_left, int y_bottom_left){
+    if (event.button.x >= x_top_left // Si la souris est dans la hitbox
+        && event.button.x <= x_bottom_left 
+        && event.button.y >= y_top_left 
+        && event.button.y <= y_bottom_left)
+        return true; // On retourne true
+    else
+        return false; // On retourne false
 }

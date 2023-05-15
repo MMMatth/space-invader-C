@@ -1,3 +1,8 @@
+/**
+ * \file sdl2-ttf-light.h
+ * \brief module qui permet de gérer l'affichage de texte plus facilement (SDL_TTF)
+ */
+
 #ifndef __SDL2_TTF_LIGHT__H
 #define __SDL2_TTF_LIGHT__H
 

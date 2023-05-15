@@ -9,7 +9,7 @@ void init_data(world_t * world){
     world->meteors = malloc(sizeof(meteors_t));
     init_meteors(world, "map.txt");
     world->projectiles = malloc(sizeof(projectile_t*) * (MAX_PROJECTILE+1) );
-    init_projectile(world);
+    init_projectiles(world);
     world->vitesse = INITIAL_SPEED;
     world->chrono = 0;
     world->gameover = 0; // le jeu n'est pas fini
@@ -42,7 +42,6 @@ void check_pos(world_t *world){ // vérifie que le joueur ne sort pas de l'écra
 void handle_sprites_collision(world_t *world, sprite_t *sp1, sprite_t *sp2){
     if(sprites_collide(sp1, sp2)){
         world->phase = 2;
-        // save_chrono(world);
     }
 }
 
@@ -55,19 +54,6 @@ void clean_data(world_t *world){
     clean_animate(world->speed_animate);
 }
 
-int speed_animate = 0;
-
-void activate_speed_animate(world_t *world){
-    if (world->vitesse > 3){
-        if (speed_animate == 0){
-            start_animate(world->speed_animate, 0, 0);
-            speed_animate = 1;
-        }
-    }else{
-        pause_animate(world->speed_animate);
-        speed_animate = 0;
-    }
-}
 
 void update_data(world_t *world){
     world->ligne_arrivee->y += world->vitesse;
@@ -85,13 +71,16 @@ int is_game_over(world_t *world){
     return world->gameover;
 }
 
-void print_data(world_t* world){
-    printf("Position et taille du joueur : ");
-    print_sprite(world->joueur);
-    printf("Position et taille de la ligne d'arrivee : ");
-    print_sprite(world->ligne_arrivee);
-    printf("Position et taille du mur de meteorites : ");
-    print_sprite(world->mur_meteorite);
-    printf("Vitesse du fond : %f ", world->vitesse);
-    printf("Le jeu est fini ? %s \t", world->gameover ? "oui" : "non");
+int speed_animate = 0;
+
+void activate_speed_animate(world_t *world){
+    if (world->vitesse > 3){
+        if (speed_animate == 0){
+            start_animate(world->speed_animate, 0, 0);
+            speed_animate = 1;
+        }
+    }else{
+        pause_animate(world->speed_animate);
+        speed_animate = 0;
+    }
 }

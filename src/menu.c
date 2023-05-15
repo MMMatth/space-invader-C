@@ -1,15 +1,7 @@
 #include "../include/menu.h"
 
 
-bool hitbox(SDL_Event event, int top_left, int top_right, int bottom_left, int bottom_right){   
-    if (event.button.x >= top_left // Si la souris est dans la hitbox
-        && event.button.x <= top_right 
-        && event.button.y >= bottom_left 
-        && event.button.y <= bottom_right)
-        return true; // On retourne true
-    else
-        return false; // On retourne false
-}
+
 
 void menu_refresh_graphics(SDL_Renderer *renderer, world_t *world, resources_t *resources){
     if(resources->menu != NULL){
@@ -19,7 +11,7 @@ void menu_refresh_graphics(SDL_Renderer *renderer, world_t *world, resources_t *
 }
 
 
-void menu_handle_events(SDL_Event *event,world_t *world, sounds_t * sounds, const Uint8 *keys){    
+void menu_handle_events(SDL_Event *event,world_t *world, sounds_t * sounds){    
     Uint8 *keystates;
     while(SDL_PollEvent(event)) {
         switch (event->type)
@@ -58,6 +50,5 @@ void menu_handle_events(SDL_Event *event,world_t *world, sounds_t * sounds, cons
         default:
             break;
         }
-        // si on clique
     }
 } 

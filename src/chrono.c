@@ -2,15 +2,15 @@
 #include "../include/chrono.h"
 
 void save_chrono(world_t *world){
-    if (world->gameover = 1 && world->joueur->y <= world->ligne_arrivee->y){
-        FILE *fichier = NULL;
-        fichier = fopen("score.txt", "a");
-        if(fichier != NULL){
-            fprintf(fichier, "%d\n", world->chrono);
-            fclose(fichier);
+    if (world->gameover = 1 && world->joueur->y <= world->ligne_arrivee->y){ // si la partie est fini et que le joueur a depassé la ligne d'arrivée
+        FILE *fichier = NULL; // on initialise le fichier
+        fichier = fopen("score.txt", "a"); // on ouvre le fichier en mode ajout
+        if(fichier != NULL){ // on verifie que le fichier soit bien ouvert
+            fprintf(fichier, "%d\n", world->chrono); // on ecrit le score dans le fichier
+            fclose(fichier); // on ferme le fichier
         }
-        else{
-            printf("Erreur lors de l'ouverture du fichier");
+        else{ // si le fichier n'est pas ouvert
+            printf("Erreur lors de l'ouverture du fichier"); // on affiche une erreur
         }
     }
 }
@@ -18,37 +18,41 @@ void save_chrono(world_t *world){
 int * get_sort_score(world_t * world){
     FILE *fichier = NULL;
     fichier = fopen("score.txt", "r");
-    int len = 0;
-    int *score = malloc(sizeof(int) * 1000);
-    while (!feof(fichier) && len < 1000){
-        fscanf(fichier, "%d", &score[len]);
-        len++;
+    int len = 0; // on initialise la longueur du tableau
+    int * score = malloc(sizeof(int) * 1000); // on initialise le tableau
+    if (fichier != NULL){
+        while (!feof(fichier) && len < 1000){ // on parcours le fichier
+            fscanf(fichier, "%d", &score[len]); // on recupere le score
+            len++; // on incremente la longueur du tableau
+        }
+        fclose(fichier);
+    }else{
+        printf("Erreur lors de l'ouverture du fichier");
     }
-    fclose(fichier);
-    
     // trie par ordre croissant
-    score = tri_tableau(score, len);
+    score = tri_tableau(score, len); // on trie le tableau
     // renvoie que les 3 meilleurs scores
-    if (len > 3){
-        int * score2 = malloc(sizeof(int) * 3);
-        for (int j = 0; j < 3; j++){
+    if (len > 3){ // si il y a plus de 3 scores
+        int * score2 = malloc(sizeof(int) * 3); // on initialise un nouveau tableau
+        for (int j = 0; j < 3; j++){ // on recupere les 3 meilleurs scores
             score2[j] = score[j];
         }
-        return score2;
+        free(score); // on libere le tableau
+        return score2; // on renvoie le tableau
     }
-    return score;
+    return score; // si il y a moins de 3 scores on renvoie le tableau
 }
 
 char * get_chrono_str(world_t *world){
     char *chrono = malloc(sizeof(char) * 10);
-    if (world->chrono >= 60){        
-        if (world->chrono % 60 >= 10)
+    if (world->chrono >= 60){ // si le temp fait plus de 60 secondes        
+        if (world->chrono % 60 >= 10) // si les secondes sont superieur a 10
             sprintf(chrono, "0%d : %d", world->chrono / 60, world->chrono % 60);
-        else
+        else 
             sprintf(chrono, "0%d : 0%d", world->chrono / 60, world->chrono % 60);
-    }else if (world->chrono >= 10){
+    }else if (world->chrono >= 10){ // si le temp fait plus de 10 secondes
         sprintf(chrono, "00 : %d", world->chrono);
-    }else if (world->chrono < 10){
+    }else if (world->chrono < 10){ // si le temp fait moins de 10 secondes
         sprintf(chrono, "00 : 0%d", world->chrono);
     }
     return chrono;
@@ -70,4 +74,8 @@ int * tri_tableau(int * tab, int len){
 
 void update_chrono(world_t *world, int time){
     world->chrono = time / 1000;
+}
+
+void apply_chrono(SDL_Renderer *renderer, world_t *world, resources_t *resources){
+    apply_text_adapted(renderer, SCREEN_WIDTH/2, 15, get_chrono_str(world) , resources->font, 1 );
 }

@@ -19,14 +19,14 @@ int sprites_collide(sprite_t * sp1, sprite_t * sp2){
             sp1->y + sp1->h > sp2->y);
 }
 
-void print_sprite(sprite_t *sprite){
-    printf("x = %d, y = %d, w = %d, h = %d \n", sprite->x, sprite->y, sprite->w, sprite->h);
-}
-
 void apply_sprite_adapted(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite){
     apply_texture_adapted(texture, renderer, sprite->x, sprite->y);
 }
 
 void apply_sprite(SDL_Renderer *renderer, SDL_Texture *texture, sprite_t *sprite){
     apply_texture(texture, renderer, sprite->x, sprite->y, sprite->w, sprite->h);
+}
+
+void print_sprite(sprite_t *sprite){
+    printf("x = %d, y = %d, w = %d, h = %d \n", sprite->x, sprite->y, sprite->w, sprite->h);
 }

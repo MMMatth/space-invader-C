@@ -1,3 +1,8 @@
+/**
+ * \file map_generator.c
+ * \brief fichier qui permet de générer la map grace au bruit de perlin
+ */
+
 #define FNL_IMPL 1
 
 #include "../include/FastNoiseLite.h"
@@ -6,7 +11,7 @@
 #include <stdio.h>
 #include <time.h>
 
-int main(){
+int main(int argc, char *argv[]){
     fnl_state noise = fnlCreateState();
     noise.noise_type = FNL_NOISE_OPENSIMPLEX2;
     srand(time(NULL));

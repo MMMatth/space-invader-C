@@ -1,6 +1,6 @@
 /**
  * \file sound.h
- * \brief fichier d'en tete des fonctions qui gère les sons
+ * \brief module qui gère les sons
  */
 
 #ifndef SOUND_H
@@ -20,14 +20,14 @@
 void init_sounds_systeme();
 
 /**
- * \brief La fonction initialise les sons
+ * \brief La fonction initialise les sons et la musique
  * 
  * \param sounds : structure qui contient les sons
  */
 void init_sounds(sounds_t * sounds);
 
 /**
- * \brief La fonction nettoie les sons
+ * \brief La fonction nettoie les sons en mémoire
  * 
  */
 void clean_sound();

@@ -1,6 +1,6 @@
 /**
  * \file menu.h
- * \brief fichier d'en tete qui contient toute les fonctions qui concerne le menu
+ * \brief module qui permet de gerer le menu
  */
 #ifndef MENU_H
 #define MENU_H
@@ -18,21 +18,25 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+
 /**
- * \brief La fonction crée une hibox pour le menu
- * \param event l'evenement
- * \param top_left le point en haut à gauche
- * \param top_right le point en haut à droite
- * \param bottom_left le point en bas à gauche
- * \param bottom_right le point en bas à droite
+ * \brief procedure qui permet de rafraichir les ressources du menu
+ * 
+ * \param renderer : le renderer SDL
+ * \param world : les données du monde
+ * \param resources : les ressources du jeu
  */
-bool hitbox(SDL_Event event, int top_left, int top_right, int bottom_left, int bottom_right);
-
-
 void menu_refresh_graphics(SDL_Renderer *renderer, world_t *world, resources_t *resources);
 
-
-void menu_handle_events(SDL_Event *event,world_t *world, sounds_t * sounds, const Uint8 *keys); 
+/**
+ * \brief procedure qui permet de gerer les evenements du menu
+ * 
+ * \param event : l'evenement SDL
+ * \param world : les données du monde
+ * \param sounds : les sons du jeu
+ * \param keys : les touches du clavier
+ */
+void menu_handle_events(SDL_Event *event,world_t *world, sounds_t * sounds); 
 
 
 

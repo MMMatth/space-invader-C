@@ -1,6 +1,6 @@
 /**
  * \file const.h
- * \brief  fichier qui contient toute les constantes
+ * \brief  fichier avec les constantes du jeu
  * 
  */
 

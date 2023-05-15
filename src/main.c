@@ -72,16 +72,16 @@ int main( int argc, char* argv[] )
     while(!is_game_over(&world)){ //tant que le jeu n'est pas fini
         switch (world.phase)
         {
-            case 0:
+            case 0: // menu
                 menu_refresh_graphics(renderer, &world, &textures);
                 
-                menu_handle_events(&event,&world, &sounds, keys);
+                menu_handle_events(&event,&world, &sounds);
 
                 pause(10);
 
                 break;
             
-            case 1:
+            case 1: // jeu
 
                 //gestion des évènements
                 handle_events(&event,&world, &sounds, keys);
@@ -99,17 +99,17 @@ int main( int argc, char* argv[] )
 
                 break;
             
-            case 2:
+            case 2: // fin de jeu
 
                 over_refresh_graphics(renderer, &world, &textures);
                     
-                over_handle_events(&event, &world, &sounds, keys);
+                over_handle_events(&event, &world, &sounds);
 
                 pause(10);
 
                 break;
 
-            case 3:
+            case 3: // on recommence une partie
                 
                 clean(window,renderer,&textures,&world);
 
@@ -117,6 +117,8 @@ int main( int argc, char* argv[] )
 
                 world.phase = 1;
                 
+                play_music(sounds.music, -1);
+
                 break;
 
             default:

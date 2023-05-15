@@ -1,6 +1,6 @@
 /**
  * \file projectile.h
- * \brief fichier d'en-tête du module projectile
+ * \brief module qui s'occupe de la gestion des projectiles
  * 
  */
 
@@ -24,14 +24,7 @@
  * 
  * \param world 
  */
-void init_projectile(world_t *world);
-
-/**
- * \brief procedure qui permet de nettoyer les projectiles du monde
- * 
- * \param world 
- */
-void clean_projectile(world_t *world);
+void init_projectiles(world_t *world);
 
 /**
  * \brief procedure qui permet de tirer un projectile
@@ -61,6 +54,7 @@ void est_dehors(projectile_t *projectile);
  */
 void handle_projectile(world_t *world);
 
+
 /**
  * \brief procedure qui met à jour les projectiles
  * 
@@ -76,6 +70,13 @@ void update_projectile(world_t *world);
  * \param resources 
  */
 void apply_projectile(SDL_Renderer *renderer, world_t *world, resources_t *resources);
+
+/**
+ * \brief procedure qui permet de nettoyer les projectiles du monde en mémoire
+ * 
+ * \param world 
+ */
+void clean_projectile(world_t *world);
 
 
 #endif /* PROJECTILE_H */

@@ -1,6 +1,6 @@
 /**
  * \file sprite.h
- * \brief fichier d'en tete des fonctions qui gère les sprites
+ * \brief module qui s'occupe des sprites
  */
 
 #ifndef SPRITE_H
@@ -11,17 +11,6 @@
 #include <stdlib.h>
 #include "sdl2-light.h"
 #include "struct.h"
-
-
-/**
- * \brief fonction qui verifie si deux sprites se chevauchent
- * 
- * \param sp1 : le premier sprite
- * \param sp2 : le deuxieme sprite
- * \return int 
- */
-int sprites_collide(sprite_t * sp1, sprite_t * sp2);
-
 
 /**
  * \brief initialise un sprite
@@ -35,11 +24,21 @@ int sprites_collide(sprite_t * sp1, sprite_t * sp2);
 void init_sprite(sprite_t *sprite, int x, int y, int w, int h);
 
 /**
- * \brief cache le sprite
+ * \brief procedure qui cache un sprite
  * 
  * \param sprite 
  */
 void hide_sprite(sprite_t *sprite);
+
+/**
+ * \brief fonction qui verifie si deux sprites se chevauchent
+ * 
+ * \param sp1 : le premier sprite
+ * \param sp2 : le deuxieme sprite
+ * \return int : 1 si les sprites se chevauchent, 0 sinon
+ */
+int sprites_collide(sprite_t * sp1, sprite_t * sp2);
+
 
 /**
  * \brief applique le sprite sur le renderer en l'adaptant à la taille de l'image

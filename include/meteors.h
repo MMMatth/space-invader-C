@@ -1,6 +1,6 @@
 /**
  * \file wall.h
- * \brief fichier d'entete du module wall
+ * \brief module qui permet de gerer les météorites
  * 
  */
 #ifndef WALLS_H
@@ -42,23 +42,23 @@ void init_meteor(world_t * world, int indice, int x, int y, int w, int h);
 int calc_meteor(char * mapfile);
 
 /**
- * \brief procedure qui permet mettre a jour les meteorites
+ * \brief procedure qui permet mettre a jour les meteorites pour prendre en compte la vitesse du jeu
  * 
- * \param world : le monde
+ * \param world : les données du monde
  */
 void update_meteors(world_t *world);
 
 /**
  * \brief procedure qui permet de nettoyer en memoire les meteorites
  * 
- * \param world 
+ * \param world : les données du monde
  */
 void clean_meteors(world_t *world);
 
 /**
- * \brief procedure qui permet de gerer le defaite 
+ * \brief procedure qui permet de voir si le joueur a perdu
  * 
- * \param world 
+ * \param world : les données du monde
  */
 void est_perdu(world_t *world);
 
@@ -70,7 +70,6 @@ void est_perdu(world_t *world);
  * \param texture 
  */
 void apply_meteors(SDL_Renderer *renderer, world_t * world, SDL_Texture *texture);
-
 
 
 #endif /* WALLS_H */

@@ -1,15 +1,18 @@
 #include "../include/over.h"
-#include "../include/display.h"
-#include "../include/world.h"
-#include "../include/const.h"
+
 
 void over_refresh_graphics(SDL_Renderer *renderer, world_t *world, resources_t *resources){
-    apply_texture(resources->over, renderer, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    if (world->joueur->y <= world->ligne_arrivee->y){
+    // on affiche le fond
+    if (resources->over != NULL){
+        apply_texture(resources->over, renderer, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT); // on applique la texture de fond
+    }
+    // on affiche si il a gagné ou perdu
+    if (world->joueur->y <= world->ligne_arrivee->y){ // si le joueur a gagné
         apply_text_adapted(renderer, 200, 120 , "YOU WIN" , resources->font , 2);
     }else{
         apply_text_adapted(renderer, 200, 120, "GAME OVER" , resources->font , 2);
     }
+    // on affiche les trois meilleurs scores enregistrés
     int * best_score = get_sort_score(world);
     char * score = malloc(sizeof(char) * 10);
     apply_text_adapted(renderer, 750, SCREEN_HEIGHT / 2 - 50, "BEST SCORES" , resources->font , 1);
@@ -24,12 +27,12 @@ void over_refresh_graphics(SDL_Renderer *renderer, world_t *world, resources_t *
             i++;
         }
     }
-
+    // on actualise l'écran
     update_screen(renderer);
 }
 
 
-void over_handle_events(SDL_Event *event,world_t *world, sounds_t * sounds, const Uint8 *keys){
+void over_handle_events(SDL_Event *event,world_t *world, sounds_t * sounds){
     Uint8 *keystates;
     while(SDL_PollEvent(event)) {
         switch (event->type)

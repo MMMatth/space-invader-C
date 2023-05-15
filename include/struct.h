@@ -1,3 +1,8 @@
+/**
+ * \file struct.h
+ * \brief fichier qui contient toute les structures du jeu
+ */
+
 #ifndef STRUCT_H
 #define STRUCT_H
 
