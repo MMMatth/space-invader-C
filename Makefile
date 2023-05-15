@@ -21,8 +21,10 @@ lib/%.o: src/%.c $(INC)
 doc : 
 	cd doc && doxygen Doxyfile
 
-test:
-	gcc -IC:\dev\SDL2\x86_64-w64-mingw32\include src/tests.c lib/world.o lib/sprite.o lib/wall.o  -o bin/tests.exe -lSDL2
+test: $(OBJ) $(INC)
+	gcc $(CFLAGS) $(filter-out lib/main.o, $(OBJ)) src/tests.c -o bin/tests.exe -L$(SDL2_LIBRARIES_DIR) $(LDFLAGS) -I$(SDL2_INCLUDE_DIR)
+	./bin/tests.exe
+
 
 map:
 	gcc src/map_generator.c -o bin/map_generator.exe

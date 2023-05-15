@@ -46,7 +46,7 @@ void init_animate(char * folder_path, int nb_frame, Uint32 frame_duration, anima
 void apply_animate(SDL_Renderer * renderer ,animate_t * animate, SDL_Texture ** tab_texture, int x, int y, int w, int h);
 
 /**
- * \brief procedure qui permet de demarrer plusieurs animations
+ * \brief procedure qui permet de demarrer une animation dans un tableau d'animation
  * 
  * \param animate : le tableau d'animation
  * \param x : la position x
