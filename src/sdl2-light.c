@@ -95,3 +95,10 @@ void clean_sdl(SDL_Renderer *renderer,SDL_Window *window){
     SDL_Quit();    
 }
 
+void def_header(SDL_Window *window, char *title, char* icon_path){
+    SDL_SetWindowTitle(window, title);
+    SDL_Surface *icon = SDL_LoadBMP(icon_path);
+    SDL_SetWindowIcon(window, icon);
+    SDL_FreeSurface(icon);
+}
+

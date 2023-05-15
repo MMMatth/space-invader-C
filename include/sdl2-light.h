@@ -96,4 +96,13 @@ void update_screen(SDL_Renderer *renderer);
 */
 void pause(int time);
 
+/**
+ * \brief fonction qui permet de mettre un icon et un titre à la fenêtre
+ * 
+ * \param window : la fenêtre
+ * \param title : le titre
+ * \param icon_path : le chemin de l'icone
+ */
+void def_header(SDL_Window *window, char *title, char* icon_path);
+
 #endif

@@ -35,6 +35,7 @@ void init(SDL_Window **window, SDL_Renderer ** renderer, resources_t *textures, 
     init_resources(*renderer,textures);
     init_sounds_systeme();
     init_sounds(sounds);
+    def_header(*window, "space invaders", "assets/img/spaceship.bmp");
 }
 /**
 * \brief fonction qui nettoie le jeu: nettoyage de la partie graphique (SDL), nettoyage des textures, nettoyage des données
@@ -67,6 +68,7 @@ int main( int argc, char* argv[] )
     //initialisation du jeu
     init(&window,&renderer,&textures,&world, &sounds);
     
+
     play_music(sounds.music, -1);
 
     while(!is_game_over(&world)){ //tant que le jeu n'est pas fini
