@@ -52,7 +52,7 @@
 /**
  * \brief nombre de meteorite maximum en hauteur
  */
-#define MAP_HEIGHT 50
+#define MAP_HEIGHT 250
 
 /**
  * \brief nombre d'animation que l'on peut avoir
@@ -67,7 +67,7 @@
 /**
  * \brief volumes de la musique
  */
-#define MUSIC_VOLUME 16
+#define MUSIC_VOLUME 24
 
 
 /**

@@ -1,3 +1,8 @@
+/**
+ * \file tests.c
+ * \brief fichier comportant les testes de chaque module
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "../include/animate.h"
@@ -116,7 +121,7 @@ void test_chrono(){
 /*                    METEORS                     */
 /**************************************************/
 
-// Compliqué à tester car la map est généré aléatoirement
+// Compliqué à tester car la map est généré aléatoirement et c'est essentillement de la lecture de fichier
 
 /**************************************************/
 /*                  PROJECTILE                    */
@@ -165,24 +170,28 @@ void test_est_dehors(){
     clean_data(world);
 }
 
-// void test_update_projectile(){
-//     world_t * world = malloc(sizeof(struct world_s));
-//     init_data(world);
-//     tirer(world);
-//     for (int i = 0; i < MAX_PROJECTILE; i++){
-//         if (world->projectiles[i]->active == 1){
-//             update_projectile(world);
-//             if (world->projectiles[i]->y != world->projectiles[i]->y + world->projectiles[i]->variation) error("update_projectile : y");
-//         }
-//     }
-// }
+void test_update_projectile(){
+    world_t * world = malloc(sizeof(struct world_s));
+    init_data(world);
+    tirer(world);
+    float y = world->projectiles[0]->y;
+    update_projectile(world);
+    if (world->projectiles[0]->y == y) error("update_projectile : y");
+    clean_data(world);
+}
 
 void test_projectile(){
     test_init_projectiles();
     test_tirer();
     test_est_dehors();
-    // test_update_projectile();
+    test_update_projectile();
 }
+
+/**************************************************/
+/*                    SOUND                       */
+/**************************************************/
+
+// compliqué à tester car c'est du son
 
 /**************************************************/
 /*                    SPRITE                      */
@@ -229,14 +238,55 @@ void test_sprite(){
 /*                    WORLD                       */
 /**************************************************/
 
-// A faire
+void test_init_data(){
+    world_t * world = malloc(sizeof(struct world_s));
+    init_data(world);
+    if (world->vitesse != INITIAL_SPEED) error("init_data : vitesse");
+    if (world->gameover != 0) error("init_data : score");
+    if (world->chrono != 0) error("init_data : chrono");
+    if (world->phase != 0) error("init_data : score");
+    clean_data(world);
+}
 
+void test_check_pos(){
+    world_t * world = malloc(sizeof(struct world_s));
+    init_data(world);
+    world->joueur->x = -1;
+    check_pos(world); // on reposionne le joueur si il est en dehors de l'écran
+    if (world->joueur->x != 0) error("check_pos : x");
+    clean_data(world);
+}
+
+void test_handle_sprites_collision(){
+    world_t * world = malloc(sizeof(struct world_s));
+    init_data(world);
+    sprite_t * sprite1 = malloc(sizeof(struct sprite_s));
+    sprite_t * sprite2 = malloc(sizeof(struct sprite_s));
+    init_sprite(sprite1, 10, 10, 10, 10);
+    init_sprite(sprite2, 10, 10, 10, 10);
+    handle_sprites_collision(world, sprite1, sprite2);
+    if (world->phase != 2) error("handle_sprites_collision : gameover");
+    free(sprite1);
+    free(sprite2);
+    clean_data(world);
+}
+
+void test_world(){
+    test_init_data();
+    test_check_pos();
+    test_handle_sprites_collision();
+}
+
+/**************************************************/
+/*                    LE MAIN                     */
+/**************************************************/
 
 int main(int argc, char *argv[]){
     test_animate();
     test_chrono();
     test_projectile();
     test_sprite();
+    test_world();
     printf("Il y'a %d erreur \n", nb_error);
     return 0;
 }
