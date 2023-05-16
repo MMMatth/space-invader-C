@@ -121,7 +121,7 @@ void test_chrono(){
 /*                    METEORS                     */
 /**************************************************/
 
-// Compliqué à tester car la map est généré aléatoirement et c'est essentillement de la lecture de fichier
+// Compliqué à tester car la map est générée aléatoirement et c'est essentillement de la lecture de fichier
 
 /**************************************************/
 /*                  PROJECTILE                    */

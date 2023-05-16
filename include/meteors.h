@@ -1,5 +1,5 @@
 /**
- * \file wall.h
+ * \file meteors.h
  * \brief module qui permet de gerer les météorites
  * 
  */

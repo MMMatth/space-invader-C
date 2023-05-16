@@ -62,8 +62,10 @@ int main( int argc, char* argv[] )
     resources_t textures;
     SDL_Renderer *renderer;
     SDL_Window *window;
+    
     const Uint8 *keys = SDL_GetKeyboardState(NULL);
 
+    int time_passed_menu = 0;
 
     //initialisation du jeu
     init(&window,&renderer,&textures,&world, &sounds);
@@ -81,6 +83,8 @@ int main( int argc, char* argv[] )
 
                 pause(10);
 
+                int time_passed_menu = SDL_GetTicks();
+
                 break;
             
             case 1: // jeu
@@ -91,7 +95,8 @@ int main( int argc, char* argv[] )
                 //mise à jour des données liée à la physique du monde
                 update_data(&world);
                 
-                update_chrono(&world, SDL_GetTicks());
+
+                update_chrono(&world, SDL_GetTicks() - time_passed_menu);
 
                 //rafraichissement de l'écran
                 refresh_graphics(renderer, &world, &textures);

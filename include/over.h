@@ -1,5 +1,5 @@
 /**
- * \file menu.h
+ * \file over.h
  * \brief module qui gere l'écran de fin du jeu
  */
 #ifndef OVER_H
