@@ -2,9 +2,9 @@
 #include "../include/chrono.h"
 
 void save_chrono(world_t *world){
-    if (world->gameover = 1 && world->joueur->y <= world->ligne_arrivee->y){ // si la partie est fini et que le joueur a depassé la ligne d'arrivée
+    if (world->joueur->y <= world->ligne_arrivee->y){ // si la partie est fini et que le joueur a depassé la ligne d'arrivée
         FILE *fichier = NULL; // on initialise le fichier
-        fichier = fopen("score.txt", "a"); // on ouvre le fichier en mode ajout
+        fichier = fopen("assets/score.txt", "a"); // on ouvre le fichier en mode ajout
         if(fichier != NULL){ // on verifie que le fichier soit bien ouvert
             fprintf(fichier, "%d\n", world->chrono); // on ecrit le score dans le fichier
             fclose(fichier); // on ferme le fichier
@@ -17,7 +17,7 @@ void save_chrono(world_t *world){
 
 int * get_sort_score(world_t * world){
     FILE *fichier = NULL;
-    fichier = fopen("score.txt", "r");
+    fichier = fopen("assets/score.txt", "r");
     int len = 0; // on initialise la longueur du tableau
     int * score = malloc(sizeof(int) * 1000); // on initialise le tableau
     if (fichier != NULL){

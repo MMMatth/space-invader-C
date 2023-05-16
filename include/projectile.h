@@ -48,7 +48,7 @@ void colide_btw_projectile_and_meteor(world_t *world, int index_projectile, int 
 void est_dehors(projectile_t *projectile);
 
 /**
- * \brief procedure qui gere les projectiles
+ * \brief procedure qui gere la collision entre les projectiles et les meteors
  * 
  * \param world 
  */

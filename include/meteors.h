@@ -60,7 +60,7 @@ void clean_meteors(world_t *world);
  * 
  * \param world : les données du monde
  */
-void est_perdu(world_t *world);
+void est_fini(world_t *world);
 
 /**
  * \brief permet d'afficher les meteores sur l'écran de jeu

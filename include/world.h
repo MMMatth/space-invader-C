@@ -30,7 +30,7 @@ void init_data(world_t* world);
 void check_pos(world_t *world);
 
 /**
- * \brief fonction qui permet de modifier le world en fonction de la collision entre deux sprites
+ * \brief fonction pour verifier si la collision entre deux sprites, change de phase si c'est le cas
  * 
  * \param world : les données du monde ou se trouve les sprites
  * \param sp1 : le premier sprite
@@ -62,6 +62,6 @@ int is_game_over(world_t* world);
  * 
  * \param world : les données du monde
  */
-void activate_speed_animate(world_t *world);
+void speed_animate(world_t *world);
 
 #endif

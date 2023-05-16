@@ -39,7 +39,7 @@ float * cree_bruit_perlin(float frequency, float gain ){
 }
 
 void ecrire_carte(float * noiseData){
-    FILE *f = fopen("map.txt", "w"); // on ouvre le fichier
+    FILE *f = fopen("assets/map.txt", "w"); // on ouvre le fichier
     if (f == NULL)
     {
         printf("Error opening file!\n");
@@ -55,8 +55,12 @@ void ecrire_carte(float * noiseData){
     fclose(f); // on ferme le fichier
 }
 
-int main(int argc, char *argv[]){
+void new_carte(){
     float * noiseData = cree_bruit_perlin(0.075, 0.3); // on récupère le tableau de bruit de perlin
     ecrire_carte(noiseData); // on écrit le tableau dans un fichier
+}
+
+int main(int argc, char *argv[]){
+    new_carte();
     return EXIT_SUCCESS;
 }

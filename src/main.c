@@ -94,13 +94,14 @@ int main( int argc, char* argv[] )
 
                 //mise à jour des données liée à la physique du monde
                 update_data(&world);
-                
 
-                update_chrono(&world, SDL_GetTicks() - time_passed_menu);
+                update_chrono(&world, SDL_GetTicks() - time_passed_menu); // on met à jour le chrono du jeu en enlevant le temps passé dans le menu
 
                 //rafraichissement de l'écran
                 refresh_graphics(renderer, &world, &textures);
                 
+                
+
                 // pause de 10 ms pour controler la vitesse de rafraichissement
                 pause(10);
 
@@ -133,7 +134,6 @@ int main( int argc, char* argv[] )
                 break;  
         }
     }
-    save_chrono(&world);
 
     refresh_graphics(renderer, &world, &textures); // on rafrachit une dernière fois l'écran pour afficher le message de fin de jeu et faire disparaitre le vaisseau
     

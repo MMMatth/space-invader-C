@@ -7,7 +7,7 @@ void init_data(world_t * world){
     world->ligne_arrivee = malloc(sizeof(sprite_t));
     init_sprite(world->ligne_arrivee, 0, FINISH_LINE_HEIGHT, SCREEN_WIDTH, 1);
     world->meteors = malloc(sizeof(meteors_t));
-    init_meteors(world, "map.txt");
+    init_meteors(world, "assets/map.txt");
     world->projectiles = malloc(sizeof(projectile_t*) * (MAX_PROJECTILE+1) );
     init_projectiles(world);
     world->vitesse = INITIAL_SPEED;
@@ -57,30 +57,30 @@ void clean_data(world_t *world){
 
 void update_data(world_t *world){
     world->ligne_arrivee->y += world->vitesse;
-    update_meteors(world);
-    update_projectile(world);
-    check_pos(world);
-    handle_sprites_collision(world, world->joueur, world->ligne_arrivee);
-    est_perdu(world);
-    handle_projectile(world);
-    update_animates(world, world->explode_animate);
-    activate_speed_animate(world);
+    update_meteors(world); // met à jour les météores
+    update_projectile(world); // met à jour les projectiles
+    check_pos(world); // vérifie que le joueur ne sort pas de l'écran
+    est_fini(world); // vérifie si le joueur a fini
+    handle_projectile(world); // gère les collisions entre les projectiles et les météores
+    update_animates(world, world->explode_animate); // met à jour les animations
+    speed_animate(world); // on regarde si on active l'animation de vitesse
+    save_chrono(world); // on regarde si on sauvegarde le chrono
 }   
 
 int is_game_over(world_t *world){
     return world->gameover;
 }
 
-int speed_animate = 0;
+int speed_anim = 0;
 
-void activate_speed_animate(world_t *world){
+void speed_animate(world_t *world){
     if (world->vitesse > 3){
-        if (speed_animate == 0){
+        if (speed_anim == 0){
             start_animate(world->speed_animate, 0, 0);
-            speed_animate = 1;
+            speed_anim = 1;
         }
     }else{
         pause_animate(world->speed_animate);
-        speed_animate = 0;
+        speed_anim = 0;
     }
 }

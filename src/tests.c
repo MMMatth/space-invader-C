@@ -264,8 +264,8 @@ void test_handle_sprites_collision(){
     sprite_t * sprite2 = malloc(sizeof(struct sprite_s));
     init_sprite(sprite1, 10, 10, 10, 10);
     init_sprite(sprite2, 10, 10, 10, 10);
-    handle_sprites_collision(world, sprite1, sprite2);
-    if (world->phase != 2) error("handle_sprites_collision : gameover");
+    est_fini(world, sprite1, sprite2);
+    if (world->phase != 2) error("est_fini : gameover");
     free(sprite1);
     free(sprite2);
     clean_data(world);
