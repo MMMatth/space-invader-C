@@ -41,6 +41,7 @@ void menu_handle_events(SDL_Event *event,world_t *world, sounds_t * sounds){
                 }if (hitbox(*event, 0, 185, 360, 390 )){
                     printf("quit\n");
                     play_sound(sounds->clic, -1, 0);
+                    fade_out_music(500);
                     world->gameover = 1;
                     pause(500); // On attend 500ms pour que le son puisse se jouer
                     SDL_Quit();
