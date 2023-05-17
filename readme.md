@@ -2,8 +2,9 @@
 Jeu réalisé dans le cadre du cours de méthodologie de la programmation niveau 2 à l'Université de Lorraine. 
 
 ## Gamelay
-<!-- Image  -->
-<img style="display: block; margin-left: auto; margin-right: auto" width ="400px" src="assets/gif/gameplay.gif">
+<p align="center">
+    <img style="display: block; margin-left: auto; margin-right: auto" width ="400px" src="assets/gif/gameplay.gif">
+</p>
 
 ## But du jeu
 Le but du jeu est de finir le niveau le plus rapidement possible, vous pouvez vous déplacer (Z, Q, ,S, D), tirer sur les météorite avec espace.
@@ -20,7 +21,9 @@ On utilise une librairie qui s'appelle [FastNoiseLite](include/FastNoiseLite.h) 
 On peut modifier la taille de la map dans le fichier [const.c](include/const.h) (ligne 55). Attention de bien make map et make avant de relancer le jeu.
 
 ### Exemple de carte :
-<img style="display: block; margin-left: auto; margin-right: auto" width = "100px" src = "assets/img/exemple_de_carte.png">
+<p align="center">
+    <img style="display: block; margin-left: auto; margin-right: auto" width = "100px" src = "assets/img/exemple_de_carte.png">
+</p>
 
 
 
@@ -30,19 +33,22 @@ On peut modifier la taille de la map dans le fichier [const.c](include/const.h) 
 Le vaisseau se déplace de gauche à droite. Il peut se déplacer en restant appuyé D (droite) ou Q (gauche). On peut aussi accélérer le vaisseau en appuyant sur Z et ralentir en appuyant sur S. 
 
 ### Exemple de déplacement :
-
-<img style="display: block; margin-left: auto; margin-right: auto" width="300px" src="assets/gif/deplacement.gif">
+<p align="center">
+    <img style="display: block; margin-left: auto; margin-right: auto" width="300px" src="assets/gif/deplacement.gif">
+</p>
 
 ## Animations
 Nous avons crée un sytème n'animation [animate](include/animate.h)   qui permet de crée des animations grace à plusieur image qui s'affiche les unes après les autres. 
 
 ### Exemple de l'animation d'explotion:
-
-<img style="display: block; margin-left: auto; margin-right: auto" width = "200px" src="assets/gif/explode.gif">
+<p align="center">
+    <img style="display: block; margin-left: auto; margin-right: auto" width = "200px" src="assets/gif/explode.gif">
+</p>
 
 ### Exemple de l'animation de vitesse :
-
-<img style="display: block; margin-left: auto; margin-right: auto" width = "300px" src="assets/gif/vitesse.gif">
+<p align="center">
+    <img style="display: block; margin-left: auto; margin-right: auto" width = "300px" src="assets/gif/vitesse.gif">
+</p>
 
 
 
@@ -55,7 +61,9 @@ Pour le menu et l'écran de fin nous avons fait deux modules qui fonctionne comm
 Nous pouvons tirer plusieur projectiles d'un coup mais il y a un cooldown qui permet de ne pas tirer trop de projectiles en même temps. Les projectiles sont détruit quand ils touchent un ennemi ou quand ils sortent de la map. Il y'a aussi une legere variation de droite à gauche pour donner un effet de distortion.
 
 ### Exemple de tir:
-<img style="display: block; margin-left: auto; margin-right: auto" width="100px" src="assets/gif/projectile.gif">
+<p align="center">
+    <img style="display: block; margin-left: auto; margin-right: auto" width="100px" src="assets/gif/projectile.gif">
+</p>
 
 ## Les sons
 Nous avons ajouté des sons pour les tirs et les clics. Nous avons aussi ajouté de la musique de fond.
@@ -64,4 +72,4 @@ Pour régler le volume de la musique de fond, il faut modifier la variable ```MU
 ## Tests
 Une très grande partie du code a été testé pour lancer les tests, il faut lancer ```make test``` dans le terminal.
 ## Crédits
-Ce projet a été réalisé par [Matthieu Gaudel]("https://github.com/MMMatth") et [Gabin Colin]("https://github.com/Gabinxc"), étudiants en L1 Informatique à l'Université de Lorraine.
+Ce projet a été réalisé par Matthieu Gaudel et Gabin Colin, étudiants en L1 Informatique à l'Université de Lorraine.
