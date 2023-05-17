@@ -20,10 +20,10 @@ void tirer(world_t *world){
     // on cherche une place vide dans le tableau après tout les tir deja actif
     while(i < MAX_PROJECTILE && world->projectiles[i]->active){i++;}
     world->projectiles[i]->active = 1; // on passe le projectile en actif
-    world->projectiles[i]->x = world->joueur->x + SHIP_SIZE / 2 - PROJECTILE_SIZE / 4;
-    world->projectiles[i]->y = world->joueur->y ;
-    world->projectiles[i]->vitesse_y = 10;
-    world->projectiles[i]->vitesse_x = 0.5;
+    world->projectiles[i]->x = world->joueur->x + SHIP_SIZE / 2 - PROJECTILE_SIZE / 4; // on le place au centre du vaisseau
+    world->projectiles[i]->y = world->joueur->y ; // on le place au dessus du vaisseau
+    world->projectiles[i]->vitesse_y = 10; // on lui donne une vitesse
+    world->projectiles[i]->vitesse_x = 0.5; 
 }
 
 void colide_btw_projectile_and_meteor(world_t *world, int index_projectile, int index_meteor){
@@ -39,8 +39,8 @@ void colide_btw_projectile_and_meteor(world_t *world, int index_projectile, int 
 }
 
 void est_dehors(projectile_t *projectile){
-    if (projectile->y < 0){
-        projectile->active = 0;
+    if (projectile->y < 0){ // si le projectile sort de l'ecran
+        projectile->active = 0; // on le desactive
     }
 }
 
@@ -71,8 +71,8 @@ void update_projectile(world_t *world){
 }
 
 void apply_projectile(SDL_Renderer *renderer, world_t *world, resources_t *resources){
-    for (int i = 0; i < MAX_PROJECTILE; i++){
-        if (world->projectiles[i]->active){
+    for (int i = 0; i < MAX_PROJECTILE; i++){ // on parcours les projectiles
+        if (world->projectiles[i]->active){ // on applique le sprite si le projectile est actif
             apply_sprite(renderer, resources->laser, world->projectiles[i]->sprite);
         }
     }
@@ -81,8 +81,8 @@ void apply_projectile(SDL_Renderer *renderer, world_t *world, resources_t *resou
 
 void clean_projectile(world_t * world){
     for (int i = 0; i < MAX_PROJECTILE; i++){
-        free(world->projectiles[i]->sprite);
-        free(world->projectiles[i]);
+        free(world->projectiles[i]->sprite); // on libere la memoire pour chaque sprite
+        free(world->projectiles[i]); // on libere la memoire pour chaque projectile
     }
-    free(world->projectiles);
+    free(world->projectiles); // on libere la memoire pour le tableau de projectile
 }

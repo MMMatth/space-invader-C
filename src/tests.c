@@ -12,6 +12,11 @@
 
 int nb_error = 0;
 
+/**
+ * \brief fonction qui sert pour les erreurs
+ * 
+ * \param message 
+ */
 void error(char * message){
     printf("Erreur : %s\n", message);
     nb_error++;
@@ -121,7 +126,30 @@ void test_chrono(){
 /*                    METEORS                     */
 /**************************************************/
 
-// Compliqué à tester car la map est générée aléatoirement et c'est essentillement de la lecture de fichier
+void test_init_meteors(){
+    world_t * world = malloc(sizeof(struct world_s));
+    init_data(world);
+    for (int i = 0; i < world->meteors->nb_meteor; i++){
+        if (world->meteors->tab_meteor[i] == NULL) error("init_meteors : active");
+    }
+    clean_data(world);
+    free(world);
+}
+
+void test_update_meteors(){
+    world_t * world = malloc(sizeof(struct world_s));
+    init_data(world); // on initialise les données
+    world->meteors->tab_meteor[0]->y = 0; // on le place en haut de l'écran
+    update_meteors(world); // on met à jour les météores
+    if (world->meteors->tab_meteor[0]->y != INITIAL_SPEED) error("update_meteors : update");
+    clean_data(world);
+    free(world);
+}
+
+void test_meteors(){
+    test_update_meteors();
+    test_init_meteors();
+}
 
 /**************************************************/
 /*                  PROJECTILE                    */
@@ -260,14 +288,17 @@ void test_check_pos(){
 void test_handle_sprites_collision(){
     world_t * world = malloc(sizeof(struct world_s));
     init_data(world);
-    sprite_t * sprite1 = malloc(sizeof(struct sprite_s));
-    sprite_t * sprite2 = malloc(sizeof(struct sprite_s));
-    init_sprite(sprite1, 10, 10, 10, 10);
-    init_sprite(sprite2, 10, 10, 10, 10);
-    est_fini(world, sprite1, sprite2);
+    world->joueur->x = 0;
+    world->joueur->y = 0;
+    world->ligne_arrivee->x = 0;
+    world->ligne_arrivee->y = 0;
+    est_fini(world);
     if (world->phase != 2) error("est_fini : gameover");
-    free(sprite1);
-    free(sprite2);
+    world->phase = 0;
+    world->ligne_arrivee->x = 20000;
+    world->ligne_arrivee->y = 20000;
+    est_fini(world); // on reverifie si le joueur est arrivé
+    if (world->phase != 0) error("est_fini : pas fini");
     clean_data(world);
 }
 
@@ -287,6 +318,7 @@ int main(int argc, char *argv[]){
     test_projectile();
     test_sprite();
     test_world();
+    test_meteors();
     printf("Il y'a %d erreur \n", nb_error);
     return 0;
 }

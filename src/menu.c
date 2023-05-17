@@ -33,15 +33,12 @@ void menu_handle_events(SDL_Event *event,world_t *world, sounds_t * sounds){
             break; 
         case SDL_MOUSEBUTTONDOWN:
             if (event->button.button == SDL_BUTTON_LEFT){
-                printf("x = %d, y = %d\n", event->button.x, event->button.y);
                 if (hitbox(*event, 0, 185, 305, 330 )){
-                    printf("play\n");
                     play_sound(sounds->clic, -1, 0);
                     world->phase = 1;
                 }if (hitbox(*event, 0, 185, 360, 390 )){
-                    printf("quit\n");
                     play_sound(sounds->clic, -1, 0);
-                    fade_out_music(500);
+                    fade_out_music(500); // On fait un fondu de 500ms
                     world->gameover = 1;
                     pause(500); // On attend 500ms pour que le son puisse se jouer
                     SDL_Quit();

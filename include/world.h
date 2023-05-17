@@ -64,4 +64,11 @@ int is_game_over(world_t* world);
  */
 void speed_animate(world_t *world);
 
+/**
+ * \brief procedure qui permet de voir si le joueur a perdu
+ * 
+ * \param world : les données du monde
+ */
+void est_fini(world_t *world);
+
 #endif

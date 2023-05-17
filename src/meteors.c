@@ -63,16 +63,6 @@ void clean_meteors(world_t *world){
     free(world->meteors->tab_meteor); // on libere l'adresse du tableau
 }
 
-void est_fini(world_t *world){
-    handle_sprites_collision(world, world->joueur, world->ligne_arrivee); // on verifie si il a gagné
-    // on verifie si il a perdu
-    for (int i = 0; i < world->meteors->nb_meteor; i++) {
-        if (world->meteors->tab_meteor[i] != NULL) {
-            handle_sprites_collision(world, world->meteors->tab_meteor[i], world->joueur); // on verifie si on a perdu ou non
-        }
-    }
-}
-
 void apply_meteors(SDL_Renderer *renderer, world_t * world, SDL_Texture *texture){
     for (int k = 0; k < world->meteors->nb_meteor ; k++){ // on parcourt le tableau de mur
         if (world->meteors->tab_meteor[k] != NULL)

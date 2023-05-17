@@ -62,8 +62,8 @@ int * tri_tableau(int * tab, int len){
     int tmp;
     for (int j = 0; j < len; j++){
         for (int k = j + 1; k < len; k++){
-            if (tab[j] > tab[k]){
-                tmp = tab[j];
+            if (tab[j] > tab[k]){ 
+                tmp = tab[j]; // on echange les valeurs
                 tab[j] = tab[k];
                 tab[k] = tmp;
             }
@@ -73,9 +73,9 @@ int * tri_tableau(int * tab, int len){
 }
 
 void update_chrono(world_t *world, int time){
-    world->chrono = time / 1000;
+    world->chrono = time / 1000; // on recupere le temps en seconde
 }
 
 void apply_chrono(SDL_Renderer *renderer, world_t *world, resources_t *resources){
-    apply_text_adapted(renderer, SCREEN_WIDTH/2, 15, get_chrono_str(world) , resources->font, 1 );
+    apply_text_adapted(renderer, SCREEN_WIDTH/2, 15, get_chrono_str(world) , resources->font, 1 ); // on affiche le chrono
 }

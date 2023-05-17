@@ -84,3 +84,13 @@ void speed_animate(world_t *world){
         speed_anim = 0;
     }
 }
+
+void est_fini(world_t *world){
+    handle_sprites_collision(world, world->joueur, world->ligne_arrivee); // on verifie si il a gagné
+    // on verifie si il a perdu
+    for (int i = 0; i < world->meteors->nb_meteor; i++) {
+        if (world->meteors->tab_meteor[i] != NULL) {
+            handle_sprites_collision(world, world->meteors->tab_meteor[i], world->joueur); // on verifie si on a perdu ou non
+        }
+    }
+}

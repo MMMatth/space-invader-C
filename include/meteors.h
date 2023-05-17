@@ -56,13 +56,6 @@ void update_meteors(world_t *world);
 void clean_meteors(world_t *world);
 
 /**
- * \brief procedure qui permet de voir si le joueur a perdu
- * 
- * \param world : les données du monde
- */
-void est_fini(world_t *world);
-
-/**
  * \brief permet d'afficher les meteores sur l'écran de jeu
  * 
  * \param renderer 

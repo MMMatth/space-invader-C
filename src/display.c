@@ -88,8 +88,8 @@ void handle_events(SDL_Event *event,world_t *world, sounds_t * sounds, const Uin
 }
 
 void apply_background(SDL_Renderer *renderer, resources_t *textures){
-    if(textures->background != NULL){
-        apply_texture_adapted(textures->background, renderer, 0, 0);
+    if(textures->background != NULL){ // si la texture existe
+        apply_texture_adapted(textures->background, renderer, 0, 0); // on l'applique
     }
 }
 

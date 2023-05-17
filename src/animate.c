@@ -1,14 +1,14 @@
 #include "../include/animate.h"
 
 void init_animates(char * folder_path, int nb_frame, Uint32 frame_duration, animate_t ** animate, int loop){
-    for (int i = 0; i < MAX_ANIM; i++){
-        animate[i] = malloc(sizeof(struct animate_s));
-        init_animate(folder_path, nb_frame, frame_duration, animate[i], loop);
+    for (int i = 0; i < MAX_ANIM; i++){ // on parcours le tableau d'animation
+        animate[i] = malloc(sizeof(struct animate_s)); // on alloue la memoire pour l'animation
+        init_animate(folder_path, nb_frame, frame_duration, animate[i], loop); // on initialise l'animation
     }
 }
 
 void init_animate(char * folder_path, int nb_frame, Uint32 frame_duration, animate_t * animate, int loop){
-    animate->nb_frames = nb_frame;
+    animate->nb_frames = nb_frame; 
     animate->current_time = 0;
     animate->frame_duration = frame_duration;
     animate->last_frame_time = 0;
@@ -52,24 +52,24 @@ void pause_animate(animate_t * animate){
 }
 
 void update_animates(world_t * world, animate_t ** animate){
-    for (int i = 0; i < MAX_ANIM; i++){
-        if (animate[i]->active){
-            update_animate(world, animate[i]);
+    for (int i = 0; i < MAX_ANIM; i++){ // on parcours le tableau d'animation
+        if (animate[i]->active){ // on verifie que l'animation soit active
+            update_animate(world, animate[i]); // on met a jour l'animation
         }
     }
 }
 
 void update_animate(world_t * world, animate_t * animate){
-    animate->y += world->vitesse;
+    animate->y += world->vitesse; // on met a jour la position
 }
 
 void clean_animates(animate_t ** animate){
-    for (int i = 0; i < MAX_ANIM; i++){
-        clean_animate(animate[i]);
+    for (int i = 0; i < MAX_ANIM; i++){ // on parcours le tableau d'animation
+        clean_animate(animate[i]); // on libere la memoire de l'animation
     }
-    free(animate);
+    free(animate); // on libere la memoire du tableau d'animation
 }
 
 void clean_animate(animate_t * animate){
-    free(animate);
+    free(animate); // on libere la memoire de l'animation
 }

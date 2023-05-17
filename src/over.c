@@ -55,16 +55,14 @@ void over_handle_events(SDL_Event *event,world_t *world, sounds_t * sounds){
         case SDL_MOUSEBUTTONDOWN:
             if (event->button.button == SDL_BUTTON_LEFT){
                 if (hitbox(*event, 30, 290, 300, 330 )){
-                    printf("replay\n");
                     play_sound(sounds->clic, -1, 0);
                     world->phase = 3;
                 }
                 if (hitbox(*event, 0, 185, 360, 390 )){
-                    printf("quit\n");
                     play_sound(sounds->clic, -1, 0);
                     fade_out_music(500);
                     world->gameover = 1;
-                    pause(500);
+                    pause(500); // On attend 500ms pour que le son puisse se jouer
                     SDL_Quit();
                 }
             }
