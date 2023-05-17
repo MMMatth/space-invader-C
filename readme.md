@@ -57,6 +57,18 @@ Les scores sont sauvegarder dans un fichier txt, ils sont écrit à chaque fin d
 ## Menu et ecran de fin
 Pour le menu et l'écran de fin nous avons fait deux modules qui fonctionne comme le main mais qui sont plus simple. Nous avons fait un menu qui permet de choisir entre jouer et quitter. Nous avons aussi fait un écran de fin qui permet de rejouer ou de quitter, on peut aussi voir les meilleurs scores.
 
+### Exemple du menu:
+
+<p align="center">
+    <img style="display: block; margin-left: auto; margin-right: auto" width ="400px" src="assets/gif/menu.png">
+</p>
+
+### Exemple ecran de fin:
+
+<p align="center">
+    <img style="display: block; margin-left: auto; margin-right: auto" width ="400px" src="assets/gif/win.png">
+</p>
+
 ## Projectiles
 Nous pouvons tirer plusieur projectiles d'un coup mais il y a un cooldown qui permet de ne pas tirer trop de projectiles en même temps. Les projectiles sont détruit quand ils touchent un ennemi ou quand ils sortent de la map. Il y'a aussi une legere variation de droite à gauche pour donner un effet de distortion.
 
