@@ -5,3 +5,5 @@ map.txt
 # sauf le fichier .dll de la librairie SDL2 
 !bin/SDL2.dll 
 !bin/SDL2_ttf.dll
+!bin/SDL2_image.dll
+!bin/SDL2_mixer.dll
