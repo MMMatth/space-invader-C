@@ -1,0 +1,120 @@
+\hypertarget{sdl2-ttf-light_8h}{}\doxysection{Référence du fichier C\+:/\+Users/matlo/\+Documents/worflow/space-\/invader-\/tp/include/sdl2-\/ttf-\/light.h}
+\label{sdl2-ttf-light_8h}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/sdl2-\/ttf-\/light.h@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/sdl2-\/ttf-\/light.h}}
+
+
+module qui permet de gérer l\textquotesingle{}affichage de texte plus facilement (SDL\+\_\+\+TTF)  
+
+
+{\ttfamily \#include $<$SDL2/\+SDL.\+h$>$}\newline
+{\ttfamily \#include $<$SDL2/\+SDL\+\_\+ttf.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sdl2-ttf-light_8h_a1eb77346b2c3ea4968cd58197a05fba0}\label{sdl2-ttf-light_8h_a1eb77346b2c3ea4968cd58197a05fba0}} 
+void {\bfseries init\+\_\+ttf} ()
+\begin{DoxyCompactList}\small\item\em La fonction initialise l\textquotesingle{}environnement TTF. \end{DoxyCompactList}\item 
+TTF\+\_\+\+Font $\ast$ \mbox{\hyperlink{sdl2-ttf-light_8h_a683a77399f5796b2a39d9bac6277e453}{load\+\_\+font}} (const char $\ast$path, int font\+\_\+size)
+\begin{DoxyCompactList}\small\item\em La fonction charge une police. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sdl2-ttf-light_8h_a4f4d3a28859bebc295b99cb7fc7ca3f7}{apply\+\_\+text}} (SDL\+\_\+\+Renderer $\ast$renderer, int x, int y, int w, int h, const char $\ast$text, TTF\+\_\+\+Font $\ast$font)
+\begin{DoxyCompactList}\small\item\em La fonction applique un texte dans une certaine police sur le renderer à une certaine position et avec une certaine dimension. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sdl2-ttf-light_8h_a19ea6a6cc0315a9e4fb40262cf4c7197}{apply\+\_\+text\+\_\+adapted}} (SDL\+\_\+\+Renderer $\ast$renderer, int x, int y, const char $\ast$text, TTF\+\_\+\+Font $\ast$font, int size)
+\begin{DoxyCompactList}\small\item\em meme que apply\+\_\+text mais la taille du sprite est adaptée à la taille du texte \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sdl2-ttf-light_8h_af763a1894238fa2a7f3384461f8e8ded}{clean\+\_\+font}} (TTF\+\_\+\+Font $\ast$font)
+\begin{DoxyCompactList}\small\item\em La fonction nettoie une police en mémoire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+module qui permet de gérer l\textquotesingle{}affichage de texte plus facilement (SDL\+\_\+\+TTF) 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{sdl2-ttf-light_8h_a4f4d3a28859bebc295b99cb7fc7ca3f7}\label{sdl2-ttf-light_8h_a4f4d3a28859bebc295b99cb7fc7ca3f7}} 
+\index{sdl2-\/ttf-\/light.h@{sdl2-\/ttf-\/light.h}!apply\_text@{apply\_text}}
+\index{apply\_text@{apply\_text}!sdl2-\/ttf-\/light.h@{sdl2-\/ttf-\/light.h}}
+\doxysubsubsection{\texorpdfstring{apply\_text()}{apply\_text()}}
+{\footnotesize\ttfamily void apply\+\_\+text (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h,  }\item[{const char $\ast$}]{text,  }\item[{TTF\+\_\+\+Font $\ast$}]{font }\end{DoxyParamCaption})}
+
+
+
+La fonction applique un texte dans une certaine police sur le renderer à une certaine position et avec une certaine dimension. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em renderer} & le renderer \\
+\hline
+{\em x} & abscisse du coin en haut à gauche du texte \\
+\hline
+{\em y} & son abscisse \\
+\hline
+{\em w} & la largeur du message \\
+\hline
+{\em h} & sa hauteur \\
+\hline
+{\em text} & le texte à afficher \\
+\hline
+{\em font} & la police \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sdl2-ttf-light_8h_a19ea6a6cc0315a9e4fb40262cf4c7197}\label{sdl2-ttf-light_8h_a19ea6a6cc0315a9e4fb40262cf4c7197}} 
+\index{sdl2-\/ttf-\/light.h@{sdl2-\/ttf-\/light.h}!apply\_text\_adapted@{apply\_text\_adapted}}
+\index{apply\_text\_adapted@{apply\_text\_adapted}!sdl2-\/ttf-\/light.h@{sdl2-\/ttf-\/light.h}}
+\doxysubsubsection{\texorpdfstring{apply\_text\_adapted()}{apply\_text\_adapted()}}
+{\footnotesize\ttfamily void apply\+\_\+text\+\_\+adapted (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{const char $\ast$}]{text,  }\item[{TTF\+\_\+\+Font $\ast$}]{font,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+meme que apply\+\_\+text mais la taille du sprite est adaptée à la taille du texte 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em renderer} & \+: le renderer \\
+\hline
+{\em x} & \+: abscisse du centre du texte \\
+\hline
+{\em y} & \+: \\
+\hline
+{\em text} & \\
+\hline
+{\em font} & \\
+\hline
+{\em size} & \+: taille du texte par exemple 1 pour la taille normale, 2 pour le double de la taille normale \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sdl2-ttf-light_8h_af763a1894238fa2a7f3384461f8e8ded}\label{sdl2-ttf-light_8h_af763a1894238fa2a7f3384461f8e8ded}} 
+\index{sdl2-\/ttf-\/light.h@{sdl2-\/ttf-\/light.h}!clean\_font@{clean\_font}}
+\index{clean\_font@{clean\_font}!sdl2-\/ttf-\/light.h@{sdl2-\/ttf-\/light.h}}
+\doxysubsubsection{\texorpdfstring{clean\_font()}{clean\_font()}}
+{\footnotesize\ttfamily void clean\+\_\+font (\begin{DoxyParamCaption}\item[{TTF\+\_\+\+Font $\ast$}]{font }\end{DoxyParamCaption})}
+
+
+
+La fonction nettoie une police en mémoire. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em font} & la police \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sdl2-ttf-light_8h_a683a77399f5796b2a39d9bac6277e453}\label{sdl2-ttf-light_8h_a683a77399f5796b2a39d9bac6277e453}} 
+\index{sdl2-\/ttf-\/light.h@{sdl2-\/ttf-\/light.h}!load\_font@{load\_font}}
+\index{load\_font@{load\_font}!sdl2-\/ttf-\/light.h@{sdl2-\/ttf-\/light.h}}
+\doxysubsubsection{\texorpdfstring{load\_font()}{load\_font()}}
+{\footnotesize\ttfamily TTF\+\_\+\+Font $\ast$ load\+\_\+font (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path,  }\item[{int}]{font\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+La fonction charge une police. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em path} & le chemin du fichier correpondant à la police \\
+\hline
+{\em font\+\_\+size} & la taille de la police \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la police chargée 
+\end{DoxyReturn}

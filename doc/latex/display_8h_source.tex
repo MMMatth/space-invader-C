@@ -1,0 +1,36 @@
+\hypertarget{display_8h_source}{}\doxysection{display.\+h}
+\label{display_8h_source}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/display.h@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/display.h}}
+\mbox{\hyperlink{display_8h}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ DISPLAY\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ DISPLAY\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{const_8h}{const.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{struct_8h}{struct.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{world_8h}{world.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sound_8h}{sound.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{animate_8h}{animate.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{chrono_8h}{chrono.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{meteors_8h}{meteors.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sdl2-light_8h}{sdl2-\/light.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sdl2-ttf-light_8h}{sdl2-\/ttf-\/light.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{display_8h_ab9f3c43ae20c0e214c1ecd0f2a9c7f88}{init\_resources}}(SDL\_Renderer\ *renderer,\ \mbox{\hyperlink{structresources__s}{resources\_t}}\ *ressources);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{display_8h_a5534cf2d44b1f8beb2dcc0caa2506fec}{handle\_events}}(SDL\_Event*\ event,\mbox{\hyperlink{structworld__s}{world\_t}}\ *\ world,\ \mbox{\hyperlink{structsounds__s}{sounds\_t}}\ *\ sounds,\ \textcolor{keyword}{const}\ Uint8\ *keys);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{display_8h_ab62ad18be0f56a4ab6af55e1c9d181dc}{apply\_background}}(SDL\_Renderer\ *renderer,\ \mbox{\hyperlink{structresources__s}{resources\_t}}\ *textures);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{display_8h_a6dbc7599cf219df862245c92f34cee34}{clean\_ressources}}(\mbox{\hyperlink{structresources__s}{resources\_t}}\ *textures);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{display_8h_a08eeab212b5ccc3bd5a1222503e57bf3}{refresh\_graphics}}(SDL\_Renderer\ *renderer,\ \mbox{\hyperlink{structworld__s}{world\_t}}\ *world,\mbox{\hyperlink{structresources__s}{resources\_t}}\ *resources);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{display_8h_a76a895a757cba20b6fd63912633546b4}{hitbox}}(SDL\_Event\ event,\ \textcolor{keywordtype}{int}\ x\_top\_left,\ \textcolor{keywordtype}{int}\ x\_bottom\_left,\ \textcolor{keywordtype}{int}\ y\_top\_left,\ \textcolor{keywordtype}{int}\ y\_bottom\_left);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

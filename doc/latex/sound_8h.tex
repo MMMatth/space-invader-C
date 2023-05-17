@@ -1,0 +1,194 @@
+\hypertarget{sound_8h}{}\doxysection{Référence du fichier C\+:/\+Users/matlo/\+Documents/worflow/space-\/invader-\/tp/include/sound.h}
+\label{sound_8h}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/sound.h@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/sound.h}}
+
+
+module qui gère les sons  
+
+
+{\ttfamily \#include $<$SDL2/\+SDL.\+h$>$}\newline
+{\ttfamily \#include $<$SDL2/\+SDL\+\_\+mixer.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}const.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sound_8h_a341f9115f1d0dcfcc8b3e82baf85060a}{init\+\_\+sounds\+\_\+systeme}} ()
+\begin{DoxyCompactList}\small\item\em La fonction initialise le système de son. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sound_8h_adfb2be2e1ce7efb7dc97306e7c0d2e44}{init\+\_\+sounds}} (\mbox{\hyperlink{structsounds__s}{sounds\+\_\+t}} $\ast$sounds)
+\begin{DoxyCompactList}\small\item\em La fonction initialise les sons et la musique. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sound_8h_a0c5bba2e9feaaaa18b81c6101c7ce7f1}{clean\+\_\+sound}} ()
+\begin{DoxyCompactList}\small\item\em La fonction nettoie les sons en mémoire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sound_8h_aea3ed978d3c55f808a1842471c48a5d9}{play\+\_\+sound}} (Mix\+\_\+\+Chunk $\ast$sound, int channel, int loop)
+\begin{DoxyCompactList}\small\item\em fonction pour jouer un son \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sound_8h_a8916f073523427ee8d50051c27541409}{play\+\_\+music}} (Mix\+\_\+\+Music $\ast$music, int loop)
+\begin{DoxyCompactList}\small\item\em fonction pour jouer une musique \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sound_8h_a49ffe3e49efa56df4042a4494a0ab5aa}{pause\+\_\+music}} ()
+\begin{DoxyCompactList}\small\item\em fonction pour mettre en pause la musique \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sound_8h_ad425c76c31ed9d8fe851d45021506d0e}{resume\+\_\+music}} ()
+\begin{DoxyCompactList}\small\item\em fonction pour reprendre la musique \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sound_8h_a3ce6129e7ea65b8a896668d110fae950}{stop\+\_\+music}} ()
+\begin{DoxyCompactList}\small\item\em fonction pour arrêter la musique \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sound_8h_a4aebd782df416d5bbe65b71378f3ad50}{stop\+\_\+channel}} (int channel)
+\begin{DoxyCompactList}\small\item\em fonction pour arrêter un son \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sound_8h_aa31611bed7a3f610241015ff1dc5da18}{set\+\_\+volume}} (int channel, int volume)
+\begin{DoxyCompactList}\small\item\em fonction pour régler le volume d\textquotesingle{}un canal \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sound_8h_af30c5381365f5cbdb565e4581ce3db18}{fade\+\_\+out\+\_\+music}} (int ms)
+\begin{DoxyCompactList}\small\item\em fonction pour faire un fondu sur la musique \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+module qui gère les sons 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{sound_8h_a0c5bba2e9feaaaa18b81c6101c7ce7f1}\label{sound_8h_a0c5bba2e9feaaaa18b81c6101c7ce7f1}} 
+\index{sound.h@{sound.h}!clean\_sound@{clean\_sound}}
+\index{clean\_sound@{clean\_sound}!sound.h@{sound.h}}
+\doxysubsubsection{\texorpdfstring{clean\_sound()}{clean\_sound()}}
+{\footnotesize\ttfamily void clean\+\_\+sound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+La fonction nettoie les sons en mémoire. 
+
+\mbox{\Hypertarget{sound_8h_af30c5381365f5cbdb565e4581ce3db18}\label{sound_8h_af30c5381365f5cbdb565e4581ce3db18}} 
+\index{sound.h@{sound.h}!fade\_out\_music@{fade\_out\_music}}
+\index{fade\_out\_music@{fade\_out\_music}!sound.h@{sound.h}}
+\doxysubsubsection{\texorpdfstring{fade\_out\_music()}{fade\_out\_music()}}
+{\footnotesize\ttfamily void fade\+\_\+out\+\_\+music (\begin{DoxyParamCaption}\item[{int}]{ms }\end{DoxyParamCaption})}
+
+
+
+fonction pour faire un fondu sur la musique 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ms} & \+: le temps en millisecondes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sound_8h_adfb2be2e1ce7efb7dc97306e7c0d2e44}\label{sound_8h_adfb2be2e1ce7efb7dc97306e7c0d2e44}} 
+\index{sound.h@{sound.h}!init\_sounds@{init\_sounds}}
+\index{init\_sounds@{init\_sounds}!sound.h@{sound.h}}
+\doxysubsubsection{\texorpdfstring{init\_sounds()}{init\_sounds()}}
+{\footnotesize\ttfamily void init\+\_\+sounds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsounds__s}{sounds\+\_\+t}} $\ast$}]{sounds }\end{DoxyParamCaption})}
+
+
+
+La fonction initialise les sons et la musique. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em sounds} & \+: structure qui contient les sons \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sound_8h_a341f9115f1d0dcfcc8b3e82baf85060a}\label{sound_8h_a341f9115f1d0dcfcc8b3e82baf85060a}} 
+\index{sound.h@{sound.h}!init\_sounds\_systeme@{init\_sounds\_systeme}}
+\index{init\_sounds\_systeme@{init\_sounds\_systeme}!sound.h@{sound.h}}
+\doxysubsubsection{\texorpdfstring{init\_sounds\_systeme()}{init\_sounds\_systeme()}}
+{\footnotesize\ttfamily void init\+\_\+sounds\+\_\+systeme (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+La fonction initialise le système de son. 
+
+\mbox{\Hypertarget{sound_8h_a49ffe3e49efa56df4042a4494a0ab5aa}\label{sound_8h_a49ffe3e49efa56df4042a4494a0ab5aa}} 
+\index{sound.h@{sound.h}!pause\_music@{pause\_music}}
+\index{pause\_music@{pause\_music}!sound.h@{sound.h}}
+\doxysubsubsection{\texorpdfstring{pause\_music()}{pause\_music()}}
+{\footnotesize\ttfamily void pause\+\_\+music (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+fonction pour mettre en pause la musique 
+
+\mbox{\Hypertarget{sound_8h_a8916f073523427ee8d50051c27541409}\label{sound_8h_a8916f073523427ee8d50051c27541409}} 
+\index{sound.h@{sound.h}!play\_music@{play\_music}}
+\index{play\_music@{play\_music}!sound.h@{sound.h}}
+\doxysubsubsection{\texorpdfstring{play\_music()}{play\_music()}}
+{\footnotesize\ttfamily void play\+\_\+music (\begin{DoxyParamCaption}\item[{Mix\+\_\+\+Music $\ast$}]{music,  }\item[{int}]{loop }\end{DoxyParamCaption})}
+
+
+
+fonction pour jouer une musique 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em music} & \+: la musique (Mix\+\_\+\+Music) \\
+\hline
+{\em loop} & \+: le nombre de fois que l\textquotesingle{}on joue la musique (-\/1 pour une boucle infinie) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sound_8h_aea3ed978d3c55f808a1842471c48a5d9}\label{sound_8h_aea3ed978d3c55f808a1842471c48a5d9}} 
+\index{sound.h@{sound.h}!play\_sound@{play\_sound}}
+\index{play\_sound@{play\_sound}!sound.h@{sound.h}}
+\doxysubsubsection{\texorpdfstring{play\_sound()}{play\_sound()}}
+{\footnotesize\ttfamily void play\+\_\+sound (\begin{DoxyParamCaption}\item[{Mix\+\_\+\+Chunk $\ast$}]{sound,  }\item[{int}]{channel,  }\item[{int}]{loop }\end{DoxyParamCaption})}
+
+
+
+fonction pour jouer un son 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em sound} & \+: le son (Mix\+\_\+\+Chunk) \\
+\hline
+{\em channel} & \+: le canal sur lequel on joue le son (-\/1 pour le premier canal disponible) \\
+\hline
+{\em loop} & \+: le nombre de fois que l\textquotesingle{}on joue le son (-\/1 pour une boucle infinie) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sound_8h_ad425c76c31ed9d8fe851d45021506d0e}\label{sound_8h_ad425c76c31ed9d8fe851d45021506d0e}} 
+\index{sound.h@{sound.h}!resume\_music@{resume\_music}}
+\index{resume\_music@{resume\_music}!sound.h@{sound.h}}
+\doxysubsubsection{\texorpdfstring{resume\_music()}{resume\_music()}}
+{\footnotesize\ttfamily void resume\+\_\+music (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+fonction pour reprendre la musique 
+
+\mbox{\Hypertarget{sound_8h_aa31611bed7a3f610241015ff1dc5da18}\label{sound_8h_aa31611bed7a3f610241015ff1dc5da18}} 
+\index{sound.h@{sound.h}!set\_volume@{set\_volume}}
+\index{set\_volume@{set\_volume}!sound.h@{sound.h}}
+\doxysubsubsection{\texorpdfstring{set\_volume()}{set\_volume()}}
+{\footnotesize\ttfamily void set\+\_\+volume (\begin{DoxyParamCaption}\item[{int}]{channel,  }\item[{int}]{volume }\end{DoxyParamCaption})}
+
+
+
+fonction pour régler le volume d\textquotesingle{}un canal 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em channel} & \+: le canal sur lequel on règle le volume (-\/1 pour tous les canaux) \\
+\hline
+{\em volume} & \+: le volume (entre 0 et 128) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sound_8h_a4aebd782df416d5bbe65b71378f3ad50}\label{sound_8h_a4aebd782df416d5bbe65b71378f3ad50}} 
+\index{sound.h@{sound.h}!stop\_channel@{stop\_channel}}
+\index{stop\_channel@{stop\_channel}!sound.h@{sound.h}}
+\doxysubsubsection{\texorpdfstring{stop\_channel()}{stop\_channel()}}
+{\footnotesize\ttfamily void stop\+\_\+channel (\begin{DoxyParamCaption}\item[{int}]{channel }\end{DoxyParamCaption})}
+
+
+
+fonction pour arrêter un son 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em channel} & \+: le canal sur lequel on arrête le son (-\/1 pour tous les canaux) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sound_8h_a3ce6129e7ea65b8a896668d110fae950}\label{sound_8h_a3ce6129e7ea65b8a896668d110fae950}} 
+\index{sound.h@{sound.h}!stop\_music@{stop\_music}}
+\index{stop\_music@{stop\_music}!sound.h@{sound.h}}
+\doxysubsubsection{\texorpdfstring{stop\_music()}{stop\_music()}}
+{\footnotesize\ttfamily void stop\+\_\+music (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+fonction pour arrêter la musique 
+

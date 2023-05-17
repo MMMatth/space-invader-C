@@ -1,0 +1,142 @@
+\hypertarget{chrono_8h}{}\doxysection{Référence du fichier C\+:/\+Users/matlo/\+Documents/worflow/space-\/invader-\/tp/include/chrono.h}
+\label{chrono_8h}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/chrono.h@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/chrono.h}}
+
+
+module qui gere le chrono  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$SDL2/\+SDL.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}world.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{chrono_8h_a295d84d7809a8219b8b0a79e6a45a278}{save\+\_\+chrono}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world)
+\begin{DoxyCompactList}\small\item\em sauvegarder le chrono dans un fichier \end{DoxyCompactList}\item 
+int $\ast$ \mbox{\hyperlink{chrono_8h_a77fba6c9012f96a5a0eab8c1d3d1e786}{get\+\_\+sort\+\_\+score}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world)
+\begin{DoxyCompactList}\small\item\em permet de recuperer les trois meilleurs scores \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{chrono_8h_ad46ead54fd58e30df6eaeb7043bc0cbc}{get\+\_\+chrono\+\_\+str}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world)
+\begin{DoxyCompactList}\small\item\em permet de recuperer le chrono sous la forme 00 \+: 00 \end{DoxyCompactList}\item 
+int $\ast$ \mbox{\hyperlink{chrono_8h_a31b724028cbef7756b92045dedf38370}{tri\+\_\+tableau}} (int $\ast$tab, int len)
+\begin{DoxyCompactList}\small\item\em permet de trier un tableau d\textquotesingle{}entiers dans l\textquotesingle{}ordre croissant \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{chrono_8h_a9958a76649d70b938ef9ee96f3b42739}{update\+\_\+chrono}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, int time)
+\begin{DoxyCompactList}\small\item\em permet de mettre a jour le chrono \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{chrono_8h_a90a7d8cd6c99a8e98f94f173f8621a27}{apply\+\_\+chrono}} (SDL\+\_\+\+Renderer $\ast$renderer, \mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, \mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$resources)
+\begin{DoxyCompactList}\small\item\em permet d\textquotesingle{}afficher le chrono \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+module qui gere le chrono 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{chrono_8h_a90a7d8cd6c99a8e98f94f173f8621a27}\label{chrono_8h_a90a7d8cd6c99a8e98f94f173f8621a27}} 
+\index{chrono.h@{chrono.h}!apply\_chrono@{apply\_chrono}}
+\index{apply\_chrono@{apply\_chrono}!chrono.h@{chrono.h}}
+\doxysubsubsection{\texorpdfstring{apply\_chrono()}{apply\_chrono()}}
+{\footnotesize\ttfamily void apply\+\_\+chrono (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{\mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$}]{resources }\end{DoxyParamCaption})}
+
+
+
+permet d\textquotesingle{}afficher le chrono 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em renderer} & \+: le renderer SDL \\
+\hline
+{\em world} & \+: les données du monde \\
+\hline
+{\em resources} & \+: les ressources \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{chrono_8h_ad46ead54fd58e30df6eaeb7043bc0cbc}\label{chrono_8h_ad46ead54fd58e30df6eaeb7043bc0cbc}} 
+\index{chrono.h@{chrono.h}!get\_chrono\_str@{get\_chrono\_str}}
+\index{get\_chrono\_str@{get\_chrono\_str}!chrono.h@{chrono.h}}
+\doxysubsubsection{\texorpdfstring{get\_chrono\_str()}{get\_chrono\_str()}}
+{\footnotesize\ttfamily char $\ast$ get\+\_\+chrono\+\_\+str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world }\end{DoxyParamCaption})}
+
+
+
+permet de recuperer le chrono sous la forme 00 \+: 00 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+char $\ast$ \+: le chrono sous la forme 00 \+: 00 
+\end{DoxyReturn}
+\mbox{\Hypertarget{chrono_8h_a77fba6c9012f96a5a0eab8c1d3d1e786}\label{chrono_8h_a77fba6c9012f96a5a0eab8c1d3d1e786}} 
+\index{chrono.h@{chrono.h}!get\_sort\_score@{get\_sort\_score}}
+\index{get\_sort\_score@{get\_sort\_score}!chrono.h@{chrono.h}}
+\doxysubsubsection{\texorpdfstring{get\_sort\_score()}{get\_sort\_score()}}
+{\footnotesize\ttfamily int $\ast$ get\+\_\+sort\+\_\+score (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world }\end{DoxyParamCaption})}
+
+
+
+permet de recuperer les trois meilleurs scores 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \+: le monde \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int$\ast$ \+: tableau de 3 entiers 
+\end{DoxyReturn}
+\mbox{\Hypertarget{chrono_8h_a295d84d7809a8219b8b0a79e6a45a278}\label{chrono_8h_a295d84d7809a8219b8b0a79e6a45a278}} 
+\index{chrono.h@{chrono.h}!save\_chrono@{save\_chrono}}
+\index{save\_chrono@{save\_chrono}!chrono.h@{chrono.h}}
+\doxysubsubsection{\texorpdfstring{save\_chrono()}{save\_chrono()}}
+{\footnotesize\ttfamily void save\+\_\+chrono (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world }\end{DoxyParamCaption})}
+
+
+
+sauvegarder le chrono dans un fichier 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \+: le monde \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{chrono_8h_a31b724028cbef7756b92045dedf38370}\label{chrono_8h_a31b724028cbef7756b92045dedf38370}} 
+\index{chrono.h@{chrono.h}!tri\_tableau@{tri\_tableau}}
+\index{tri\_tableau@{tri\_tableau}!chrono.h@{chrono.h}}
+\doxysubsubsection{\texorpdfstring{tri\_tableau()}{tri\_tableau()}}
+{\footnotesize\ttfamily int $\ast$ tri\+\_\+tableau (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+permet de trier un tableau d\textquotesingle{}entiers dans l\textquotesingle{}ordre croissant 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em tab} & \+: le tableau d\textquotesingle{}entiers \\
+\hline
+{\em len} & \+: la taille du tableau \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int$\ast$ \+: le tableau trié 
+\end{DoxyReturn}
+\mbox{\Hypertarget{chrono_8h_a9958a76649d70b938ef9ee96f3b42739}\label{chrono_8h_a9958a76649d70b938ef9ee96f3b42739}} 
+\index{chrono.h@{chrono.h}!update\_chrono@{update\_chrono}}
+\index{update\_chrono@{update\_chrono}!chrono.h@{chrono.h}}
+\doxysubsubsection{\texorpdfstring{update\_chrono()}{update\_chrono()}}
+{\footnotesize\ttfamily void update\+\_\+chrono (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{int}]{time }\end{DoxyParamCaption})}
+
+
+
+permet de mettre a jour le chrono 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \+: le monde \\
+\hline
+{\em time} & \+: le temps \\
+\hline
+\end{DoxyParams}

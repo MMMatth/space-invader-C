@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>space-invader-tp:  Fichier source de C:/Users/matlo/Documents/worflow/space-invader-tp/include/struct.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="spaceship.bmp"/></td>
+  <td id="projectalign">
+   <div id="projectname">space-invader-tp
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">struct.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="struct_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef STRUCT_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define STRUCT_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;SDL2/SDL_ttf.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;SDL2/SDL_mixer.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structsprite__s.html">   19</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structsprite__s.html">sprite_s</a>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structsprite__s.html#a6150e0515f7202e2fb518f7206ed97dc">   20</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structsprite__s.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>; </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structsprite__s.html#a0a2f84ed7838f07779ae24c5a9086d33">   21</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structsprite__s.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a>; </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structsprite__s.html#aac374e320caaadeca4874add33b62af2">   22</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structsprite__s.html#aac374e320caaadeca4874add33b62af2">w</a>; </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structsprite__s.html#a16611451551e3d15916bae723c3f59f7">   23</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structsprite__s.html#a16611451551e3d15916bae723c3f59f7">h</a>; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsprite__s.html">sprite_s</a> <a class="code hl_struct" href="structsprite__s.html">sprite_t</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structprojectile__s.html">   30</a></span><span class="keyword">struct  </span><a class="code hl_struct" href="structprojectile__s.html">projectile_s</a>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structprojectile__s.html#ad0da36b2558901e21e7a30f6c227a45e">   31</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structprojectile__s.html#ad0da36b2558901e21e7a30f6c227a45e">x</a>; </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structprojectile__s.html#aa4f0d3eebc3c443f9be81bf48561a217">   32</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structprojectile__s.html#aa4f0d3eebc3c443f9be81bf48561a217">y</a>; </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structprojectile__s.html#a7cfc98f491b461931c37e1576c2a5c59">   33</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structprojectile__s.html#a7cfc98f491b461931c37e1576c2a5c59">vitesse_x</a>; </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structprojectile__s.html#ad0ae3983d9823219ad79ef6112cea38c">   34</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structprojectile__s.html#ad0ae3983d9823219ad79ef6112cea38c">vitesse_y</a>; </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structprojectile__s.html#a7010cdccfed0200584ad63025d0f1a5d">   35</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structprojectile__s.html#a7010cdccfed0200584ad63025d0f1a5d">variation</a>; </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structprojectile__s.html#a03c996f9fcf0e10baeb3e700be0c409a">   36</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structprojectile__s.html#a03c996f9fcf0e10baeb3e700be0c409a">active</a>; </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structprojectile__s.html#aea0d55ed5eb92b131b710a6bb0585782">   37</a></span>    <a class="code hl_struct" href="structsprite__s.html">sprite_t</a> * <a class="code hl_variable" href="structprojectile__s.html#aea0d55ed5eb92b131b710a6bb0585782">sprite</a>; </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structprojectile__s.html">projectile_s</a> <a class="code hl_struct" href="structprojectile__s.html">projectile_t</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structmeteors__s.html">   44</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structmeteors__s.html">meteors_s</a>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structmeteors__s.html#a7346fbfe221c1ab9cae027bb653e346d">   45</a></span>    <a class="code hl_struct" href="structsprite__s.html">sprite_t</a> ** <a class="code hl_variable" href="structmeteors__s.html#a7346fbfe221c1ab9cae027bb653e346d">tab_meteor</a>; </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structmeteors__s.html#a507c8654564518e7b8c3b0bc8199ad79">   46</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structmeteors__s.html#a507c8654564518e7b8c3b0bc8199ad79">nb_meteor</a>; </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}; </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structmeteors__s.html">meteors_s</a> <a class="code hl_struct" href="structmeteors__s.html">meteors_t</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structanimate__s.html">   53</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structanimate__s.html">animate_s</a>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">int</span> nb_frames; <span class="comment">/*&lt; Nombre de frames de l&#39;animation */</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structanimate__s.html#a8915224642e155ba06d1682e27c56c41">   55</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structanimate__s.html#a8915224642e155ba06d1682e27c56c41">current_time</a>; </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structanimate__s.html#a3e47c7595b08a52a2fb7d808ac558014">   56</a></span>    Uint32 <a class="code hl_variable" href="structanimate__s.html#a3e47c7595b08a52a2fb7d808ac558014">frame_duration</a>; </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structanimate__s.html#abd9495bce819b86b138011c049418d01">   57</a></span>    Uint32 <a class="code hl_variable" href="structanimate__s.html#abd9495bce819b86b138011c049418d01">last_frame_time</a>; </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structanimate__s.html#ad667f040f2932c8097435492fbd10d76">   58</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structanimate__s.html#ad667f040f2932c8097435492fbd10d76">loop</a>; </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structanimate__s.html#aa5805c5e936174e5092bf7a5b78e7e64">   59</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structanimate__s.html#aa5805c5e936174e5092bf7a5b78e7e64">active</a>; </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structanimate__s.html#a6150e0515f7202e2fb518f7206ed97dc">   60</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structanimate__s.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>; </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structanimate__s.html#a0a2f84ed7838f07779ae24c5a9086d33">   61</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structanimate__s.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a>; </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structanimate__s.html">animate_s</a> <a class="code hl_struct" href="structanimate__s.html">animate_t</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structresources__s.html">   69</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structresources__s.html">resources_s</a>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structresources__s.html#aa6506cd10a348128d0d73bb4dfa58dd5">   70</a></span>    SDL_Texture* <a class="code hl_variable" href="structresources__s.html#aa6506cd10a348128d0d73bb4dfa58dd5">background</a>; </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structresources__s.html#ae2355ac3409e92caf0e16794b99c63ea">   71</a></span>    SDL_Texture* <a class="code hl_variable" href="structresources__s.html#ae2355ac3409e92caf0e16794b99c63ea">vaisseau</a>; </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structresources__s.html#ad8d47f52d3567339a2c91c168fc0c55d">   72</a></span>    SDL_Texture* <a class="code hl_variable" href="structresources__s.html#ad8d47f52d3567339a2c91c168fc0c55d">ligne_arrivee</a>; </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="structresources__s.html#a4cae54091136c5401acd136167bf2f36">   73</a></span>    SDL_Texture* <a class="code hl_variable" href="structresources__s.html#a4cae54091136c5401acd136167bf2f36">meteorite</a>; </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structresources__s.html#a4cf28cbf0272336f1478b88b857809ee">   74</a></span>    SDL_Texture* <a class="code hl_variable" href="structresources__s.html#a4cf28cbf0272336f1478b88b857809ee">laser</a>; </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structresources__s.html#a8aa0e4f11fb509f6af5b59e7be1af96b">   75</a></span>    SDL_Texture* <a class="code hl_variable" href="structresources__s.html#a8aa0e4f11fb509f6af5b59e7be1af96b">menu</a>; </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="structresources__s.html#a075e718569dd29d712b98643d45b3260">   76</a></span>    SDL_Texture* <a class="code hl_variable" href="structresources__s.html#a075e718569dd29d712b98643d45b3260">over</a>; </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="structresources__s.html#add4892366cfed030282392f40bb4dfcd">   77</a></span>    SDL_Texture ** <a class="code hl_variable" href="structresources__s.html#add4892366cfed030282392f40bb4dfcd">explode_img</a>; </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="structresources__s.html#ae39dc9159f31364f773758a7e98d7fb7">   78</a></span>    SDL_Texture ** <a class="code hl_variable" href="structresources__s.html#ae39dc9159f31364f773758a7e98d7fb7">speed_img</a>; </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="structresources__s.html#abf5bfa705e66ffc1ddaa6ce46c960873">   79</a></span>    TTF_Font *<a class="code hl_variable" href="structresources__s.html#abf5bfa705e66ffc1ddaa6ce46c960873">font</a>; </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>};</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structresources__s.html">resources_s</a> <a class="code hl_struct" href="structresources__s.html">resources_t</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="structsounds__s.html">   86</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structsounds__s.html">sounds_s</a>{</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="structsounds__s.html#ab203ceba3699c997bf63f13bbc33b33a">   87</a></span>    Mix_Music *<a class="code hl_variable" href="structsounds__s.html#ab203ceba3699c997bf63f13bbc33b33a">music</a>; </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="structsounds__s.html#a209b589de9bb1492477392e2e28f593f">   88</a></span>    Mix_Chunk *<a class="code hl_variable" href="structsounds__s.html#a209b589de9bb1492477392e2e28f593f">laser</a>; </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="structsounds__s.html#a1122d14066a4a94eb08ea4f038d8d3e6">   89</a></span>    Mix_Chunk *<a class="code hl_variable" href="structsounds__s.html#a1122d14066a4a94eb08ea4f038d8d3e6">explosion</a>; </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="structsounds__s.html#a60d2e9c70ec5214f7065f7f7c39de8dc">   90</a></span>    Mix_Chunk *<a class="code hl_variable" href="structsounds__s.html#a60d2e9c70ec5214f7065f7f7c39de8dc">clic</a>; </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsounds__s.html">sounds_s</a> <a class="code hl_struct" href="structsounds__s.html">sounds_t</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="structworld__s.html">   97</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structworld__s.html">world_s</a>{</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="structworld__s.html#addb06a10eaaeae0f7e33c001b8bc49aa">   98</a></span>    <a class="code hl_struct" href="structsprite__s.html">sprite_t</a>* <a class="code hl_variable" href="structworld__s.html#addb06a10eaaeae0f7e33c001b8bc49aa">joueur</a>; </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="structworld__s.html#aca84dbbdb5371bfc8cbad2a4eaffbe19">   99</a></span>    <a class="code hl_struct" href="structsprite__s.html">sprite_t</a>* <a class="code hl_variable" href="structworld__s.html#aca84dbbdb5371bfc8cbad2a4eaffbe19">ligne_arrivee</a>; </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="structworld__s.html#a9c176c2bbcbf6294d82279096953285e">  100</a></span>    <a class="code hl_struct" href="structsprite__s.html">sprite_t</a>* <a class="code hl_variable" href="structworld__s.html#a9c176c2bbcbf6294d82279096953285e">mur_meteorite</a>; </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="structworld__s.html#a25951e00468ae3f3de34a95a676a0d69">  101</a></span>    <a class="code hl_struct" href="structsprite__s.html">sprite_t</a>** <a class="code hl_variable" href="structworld__s.html#a25951e00468ae3f3de34a95a676a0d69">tab_wall_meteor</a>; </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="structworld__s.html#a4c7dd042d7ea934e92dfc46051a1a425">  102</a></span>    <a class="code hl_struct" href="structmeteors__s.html">meteors_t</a> * <a class="code hl_variable" href="structworld__s.html#a4c7dd042d7ea934e92dfc46051a1a425">meteors</a>; </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="structworld__s.html#aabb6eb57e84d6428bd7f6898ca0580ef">  103</a></span>    <a class="code hl_struct" href="structanimate__s.html">animate_t</a> ** <a class="code hl_variable" href="structworld__s.html#aabb6eb57e84d6428bd7f6898ca0580ef">explode_animate</a>; </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="structworld__s.html#ad0560d3b095dd9fd0aedf9da01f111a0">  104</a></span>    <a class="code hl_struct" href="structanimate__s.html">animate_t</a> * <a class="code hl_variable" href="structworld__s.html#ad0560d3b095dd9fd0aedf9da01f111a0">speed_animate</a>; </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="structworld__s.html#a31bf7b38c1df51bad871c23bc51dee29">  105</a></span>    <a class="code hl_struct" href="structprojectile__s.html">projectile_t</a> ** <a class="code hl_variable" href="structworld__s.html#a31bf7b38c1df51bad871c23bc51dee29">projectiles</a>; </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="structworld__s.html#accf3aec63bc20b3c99ab4881cb07c05b">  106</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structworld__s.html#accf3aec63bc20b3c99ab4881cb07c05b">phase</a>; </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="structworld__s.html#aef55e1775d611bfea0196692da1a0bc5">  107</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structworld__s.html#aef55e1775d611bfea0196692da1a0bc5">vitesse</a>; </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="structworld__s.html#a50a80ebd7ceb510cd2c07015d0d36cf2">  108</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structworld__s.html#a50a80ebd7ceb510cd2c07015d0d36cf2">chrono</a>; </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="structworld__s.html#a78254252ef207b26bd5cbc668592fcee">  109</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structworld__s.html#a78254252ef207b26bd5cbc668592fcee">gameover</a>; </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>};</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structworld__s.html">world_s</a> <a class="code hl_struct" href="structworld__s.html">world_t</a>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="astructanimate__s_html"><div class="ttname"><a href="structanimate__s.html">animate_s</a></div><div class="ttdoc">structure qui sert à stocker une animation</div><div class="ttdef"><b>Definition:</b> struct.h:53</div></div>
+<div class="ttc" id="astructanimate__s_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="structanimate__s.html#a0a2f84ed7838f07779ae24c5a9086d33">animate_s::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition:</b> struct.h:61</div></div>
+<div class="ttc" id="astructanimate__s_html_a3e47c7595b08a52a2fb7d808ac558014"><div class="ttname"><a href="structanimate__s.html#a3e47c7595b08a52a2fb7d808ac558014">animate_s::frame_duration</a></div><div class="ttdeci">Uint32 frame_duration</div><div class="ttdef"><b>Definition:</b> struct.h:56</div></div>
+<div class="ttc" id="astructanimate__s_html_a6150e0515f7202e2fb518f7206ed97dc"><div class="ttname"><a href="structanimate__s.html#a6150e0515f7202e2fb518f7206ed97dc">animate_s::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition:</b> struct.h:60</div></div>
+<div class="ttc" id="astructanimate__s_html_a8915224642e155ba06d1682e27c56c41"><div class="ttname"><a href="structanimate__s.html#a8915224642e155ba06d1682e27c56c41">animate_s::current_time</a></div><div class="ttdeci">int current_time</div><div class="ttdef"><b>Definition:</b> struct.h:55</div></div>
+<div class="ttc" id="astructanimate__s_html_aa5805c5e936174e5092bf7a5b78e7e64"><div class="ttname"><a href="structanimate__s.html#aa5805c5e936174e5092bf7a5b78e7e64">animate_s::active</a></div><div class="ttdeci">int active</div><div class="ttdef"><b>Definition:</b> struct.h:59</div></div>
+<div class="ttc" id="astructanimate__s_html_abd9495bce819b86b138011c049418d01"><div class="ttname"><a href="structanimate__s.html#abd9495bce819b86b138011c049418d01">animate_s::last_frame_time</a></div><div class="ttdeci">Uint32 last_frame_time</div><div class="ttdef"><b>Definition:</b> struct.h:57</div></div>
+<div class="ttc" id="astructanimate__s_html_ad667f040f2932c8097435492fbd10d76"><div class="ttname"><a href="structanimate__s.html#ad667f040f2932c8097435492fbd10d76">animate_s::loop</a></div><div class="ttdeci">int loop</div><div class="ttdef"><b>Definition:</b> struct.h:58</div></div>
+<div class="ttc" id="astructmeteors__s_html"><div class="ttname"><a href="structmeteors__s.html">meteors_s</a></div><div class="ttdoc">structure qui stocke les meteors</div><div class="ttdef"><b>Definition:</b> struct.h:44</div></div>
+<div class="ttc" id="astructmeteors__s_html_a507c8654564518e7b8c3b0bc8199ad79"><div class="ttname"><a href="structmeteors__s.html#a507c8654564518e7b8c3b0bc8199ad79">meteors_s::nb_meteor</a></div><div class="ttdeci">int nb_meteor</div><div class="ttdef"><b>Definition:</b> struct.h:46</div></div>
+<div class="ttc" id="astructmeteors__s_html_a7346fbfe221c1ab9cae027bb653e346d"><div class="ttname"><a href="structmeteors__s.html#a7346fbfe221c1ab9cae027bb653e346d">meteors_s::tab_meteor</a></div><div class="ttdeci">sprite_t ** tab_meteor</div><div class="ttdef"><b>Definition:</b> struct.h:45</div></div>
+<div class="ttc" id="astructprojectile__s_html"><div class="ttname"><a href="structprojectile__s.html">projectile_s</a></div><div class="ttdoc">structure qui représente un projectile</div><div class="ttdef"><b>Definition:</b> struct.h:30</div></div>
+<div class="ttc" id="astructprojectile__s_html_a03c996f9fcf0e10baeb3e700be0c409a"><div class="ttname"><a href="structprojectile__s.html#a03c996f9fcf0e10baeb3e700be0c409a">projectile_s::active</a></div><div class="ttdeci">bool active</div><div class="ttdef"><b>Definition:</b> struct.h:36</div></div>
+<div class="ttc" id="astructprojectile__s_html_a7010cdccfed0200584ad63025d0f1a5d"><div class="ttname"><a href="structprojectile__s.html#a7010cdccfed0200584ad63025d0f1a5d">projectile_s::variation</a></div><div class="ttdeci">float variation</div><div class="ttdef"><b>Definition:</b> struct.h:35</div></div>
+<div class="ttc" id="astructprojectile__s_html_a7cfc98f491b461931c37e1576c2a5c59"><div class="ttname"><a href="structprojectile__s.html#a7cfc98f491b461931c37e1576c2a5c59">projectile_s::vitesse_x</a></div><div class="ttdeci">float vitesse_x</div><div class="ttdef"><b>Definition:</b> struct.h:33</div></div>
+<div class="ttc" id="astructprojectile__s_html_aa4f0d3eebc3c443f9be81bf48561a217"><div class="ttname"><a href="structprojectile__s.html#aa4f0d3eebc3c443f9be81bf48561a217">projectile_s::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition:</b> struct.h:32</div></div>
+<div class="ttc" id="astructprojectile__s_html_ad0ae3983d9823219ad79ef6112cea38c"><div class="ttname"><a href="structprojectile__s.html#ad0ae3983d9823219ad79ef6112cea38c">projectile_s::vitesse_y</a></div><div class="ttdeci">float vitesse_y</div><div class="ttdef"><b>Definition:</b> struct.h:34</div></div>
+<div class="ttc" id="astructprojectile__s_html_ad0da36b2558901e21e7a30f6c227a45e"><div class="ttname"><a href="structprojectile__s.html#ad0da36b2558901e21e7a30f6c227a45e">projectile_s::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> struct.h:31</div></div>
+<div class="ttc" id="astructprojectile__s_html_aea0d55ed5eb92b131b710a6bb0585782"><div class="ttname"><a href="structprojectile__s.html#aea0d55ed5eb92b131b710a6bb0585782">projectile_s::sprite</a></div><div class="ttdeci">sprite_t * sprite</div><div class="ttdef"><b>Definition:</b> struct.h:37</div></div>
+<div class="ttc" id="astructresources__s_html"><div class="ttname"><a href="structresources__s.html">resources_s</a></div><div class="ttdoc">Représentation pour stocker les ressources (img, font) nécessaires à l'affichage graphique.</div><div class="ttdef"><b>Definition:</b> struct.h:69</div></div>
+<div class="ttc" id="astructresources__s_html_a075e718569dd29d712b98643d45b3260"><div class="ttname"><a href="structresources__s.html#a075e718569dd29d712b98643d45b3260">resources_s::over</a></div><div class="ttdeci">SDL_Texture * over</div><div class="ttdef"><b>Definition:</b> struct.h:76</div></div>
+<div class="ttc" id="astructresources__s_html_a4cae54091136c5401acd136167bf2f36"><div class="ttname"><a href="structresources__s.html#a4cae54091136c5401acd136167bf2f36">resources_s::meteorite</a></div><div class="ttdeci">SDL_Texture * meteorite</div><div class="ttdef"><b>Definition:</b> struct.h:73</div></div>
+<div class="ttc" id="astructresources__s_html_a4cf28cbf0272336f1478b88b857809ee"><div class="ttname"><a href="structresources__s.html#a4cf28cbf0272336f1478b88b857809ee">resources_s::laser</a></div><div class="ttdeci">SDL_Texture * laser</div><div class="ttdef"><b>Definition:</b> struct.h:74</div></div>
+<div class="ttc" id="astructresources__s_html_a8aa0e4f11fb509f6af5b59e7be1af96b"><div class="ttname"><a href="structresources__s.html#a8aa0e4f11fb509f6af5b59e7be1af96b">resources_s::menu</a></div><div class="ttdeci">SDL_Texture * menu</div><div class="ttdef"><b>Definition:</b> struct.h:75</div></div>
+<div class="ttc" id="astructresources__s_html_aa6506cd10a348128d0d73bb4dfa58dd5"><div class="ttname"><a href="structresources__s.html#aa6506cd10a348128d0d73bb4dfa58dd5">resources_s::background</a></div><div class="ttdeci">SDL_Texture * background</div><div class="ttdef"><b>Definition:</b> struct.h:70</div></div>
+<div class="ttc" id="astructresources__s_html_abf5bfa705e66ffc1ddaa6ce46c960873"><div class="ttname"><a href="structresources__s.html#abf5bfa705e66ffc1ddaa6ce46c960873">resources_s::font</a></div><div class="ttdeci">TTF_Font * font</div><div class="ttdef"><b>Definition:</b> struct.h:79</div></div>
+<div class="ttc" id="astructresources__s_html_ad8d47f52d3567339a2c91c168fc0c55d"><div class="ttname"><a href="structresources__s.html#ad8d47f52d3567339a2c91c168fc0c55d">resources_s::ligne_arrivee</a></div><div class="ttdeci">SDL_Texture * ligne_arrivee</div><div class="ttdef"><b>Definition:</b> struct.h:72</div></div>
+<div class="ttc" id="astructresources__s_html_add4892366cfed030282392f40bb4dfcd"><div class="ttname"><a href="structresources__s.html#add4892366cfed030282392f40bb4dfcd">resources_s::explode_img</a></div><div class="ttdeci">SDL_Texture ** explode_img</div><div class="ttdef"><b>Definition:</b> struct.h:77</div></div>
+<div class="ttc" id="astructresources__s_html_ae2355ac3409e92caf0e16794b99c63ea"><div class="ttname"><a href="structresources__s.html#ae2355ac3409e92caf0e16794b99c63ea">resources_s::vaisseau</a></div><div class="ttdeci">SDL_Texture * vaisseau</div><div class="ttdef"><b>Definition:</b> struct.h:71</div></div>
+<div class="ttc" id="astructresources__s_html_ae39dc9159f31364f773758a7e98d7fb7"><div class="ttname"><a href="structresources__s.html#ae39dc9159f31364f773758a7e98d7fb7">resources_s::speed_img</a></div><div class="ttdeci">SDL_Texture ** speed_img</div><div class="ttdef"><b>Definition:</b> struct.h:78</div></div>
+<div class="ttc" id="astructsounds__s_html"><div class="ttname"><a href="structsounds__s.html">sounds_s</a></div><div class="ttdoc">structure qui permet de stocker les sons du jeu</div><div class="ttdef"><b>Definition:</b> struct.h:86</div></div>
+<div class="ttc" id="astructsounds__s_html_a1122d14066a4a94eb08ea4f038d8d3e6"><div class="ttname"><a href="structsounds__s.html#a1122d14066a4a94eb08ea4f038d8d3e6">sounds_s::explosion</a></div><div class="ttdeci">Mix_Chunk * explosion</div><div class="ttdef"><b>Definition:</b> struct.h:89</div></div>
+<div class="ttc" id="astructsounds__s_html_a209b589de9bb1492477392e2e28f593f"><div class="ttname"><a href="structsounds__s.html#a209b589de9bb1492477392e2e28f593f">sounds_s::laser</a></div><div class="ttdeci">Mix_Chunk * laser</div><div class="ttdef"><b>Definition:</b> struct.h:88</div></div>
+<div class="ttc" id="astructsounds__s_html_a60d2e9c70ec5214f7065f7f7c39de8dc"><div class="ttname"><a href="structsounds__s.html#a60d2e9c70ec5214f7065f7f7c39de8dc">sounds_s::clic</a></div><div class="ttdeci">Mix_Chunk * clic</div><div class="ttdef"><b>Definition:</b> struct.h:90</div></div>
+<div class="ttc" id="astructsounds__s_html_ab203ceba3699c997bf63f13bbc33b33a"><div class="ttname"><a href="structsounds__s.html#ab203ceba3699c997bf63f13bbc33b33a">sounds_s::music</a></div><div class="ttdeci">Mix_Music * music</div><div class="ttdef"><b>Definition:</b> struct.h:87</div></div>
+<div class="ttc" id="astructsprite__s_html"><div class="ttname"><a href="structsprite__s.html">sprite_s</a></div><div class="ttdoc">structure qui représente un sprite</div><div class="ttdef"><b>Definition:</b> struct.h:19</div></div>
+<div class="ttc" id="astructsprite__s_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="structsprite__s.html#a0a2f84ed7838f07779ae24c5a9086d33">sprite_s::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition:</b> struct.h:21</div></div>
+<div class="ttc" id="astructsprite__s_html_a16611451551e3d15916bae723c3f59f7"><div class="ttname"><a href="structsprite__s.html#a16611451551e3d15916bae723c3f59f7">sprite_s::h</a></div><div class="ttdeci">int h</div><div class="ttdef"><b>Definition:</b> struct.h:23</div></div>
+<div class="ttc" id="astructsprite__s_html_a6150e0515f7202e2fb518f7206ed97dc"><div class="ttname"><a href="structsprite__s.html#a6150e0515f7202e2fb518f7206ed97dc">sprite_s::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition:</b> struct.h:20</div></div>
+<div class="ttc" id="astructsprite__s_html_aac374e320caaadeca4874add33b62af2"><div class="ttname"><a href="structsprite__s.html#aac374e320caaadeca4874add33b62af2">sprite_s::w</a></div><div class="ttdeci">int w</div><div class="ttdef"><b>Definition:</b> struct.h:22</div></div>
+<div class="ttc" id="astructworld__s_html"><div class="ttname"><a href="structworld__s.html">world_s</a></div><div class="ttdoc">Représentation du monde du jeu.</div><div class="ttdef"><b>Definition:</b> struct.h:97</div></div>
+<div class="ttc" id="astructworld__s_html_a25951e00468ae3f3de34a95a676a0d69"><div class="ttname"><a href="structworld__s.html#a25951e00468ae3f3de34a95a676a0d69">world_s::tab_wall_meteor</a></div><div class="ttdeci">sprite_t ** tab_wall_meteor</div><div class="ttdef"><b>Definition:</b> struct.h:101</div></div>
+<div class="ttc" id="astructworld__s_html_a31bf7b38c1df51bad871c23bc51dee29"><div class="ttname"><a href="structworld__s.html#a31bf7b38c1df51bad871c23bc51dee29">world_s::projectiles</a></div><div class="ttdeci">projectile_t ** projectiles</div><div class="ttdef"><b>Definition:</b> struct.h:105</div></div>
+<div class="ttc" id="astructworld__s_html_a4c7dd042d7ea934e92dfc46051a1a425"><div class="ttname"><a href="structworld__s.html#a4c7dd042d7ea934e92dfc46051a1a425">world_s::meteors</a></div><div class="ttdeci">meteors_t * meteors</div><div class="ttdef"><b>Definition:</b> struct.h:102</div></div>
+<div class="ttc" id="astructworld__s_html_a50a80ebd7ceb510cd2c07015d0d36cf2"><div class="ttname"><a href="structworld__s.html#a50a80ebd7ceb510cd2c07015d0d36cf2">world_s::chrono</a></div><div class="ttdeci">int chrono</div><div class="ttdef"><b>Definition:</b> struct.h:108</div></div>
+<div class="ttc" id="astructworld__s_html_a78254252ef207b26bd5cbc668592fcee"><div class="ttname"><a href="structworld__s.html#a78254252ef207b26bd5cbc668592fcee">world_s::gameover</a></div><div class="ttdeci">int gameover</div><div class="ttdef"><b>Definition:</b> struct.h:109</div></div>
+<div class="ttc" id="astructworld__s_html_a9c176c2bbcbf6294d82279096953285e"><div class="ttname"><a href="structworld__s.html#a9c176c2bbcbf6294d82279096953285e">world_s::mur_meteorite</a></div><div class="ttdeci">sprite_t * mur_meteorite</div><div class="ttdef"><b>Definition:</b> struct.h:100</div></div>
+<div class="ttc" id="astructworld__s_html_aabb6eb57e84d6428bd7f6898ca0580ef"><div class="ttname"><a href="structworld__s.html#aabb6eb57e84d6428bd7f6898ca0580ef">world_s::explode_animate</a></div><div class="ttdeci">animate_t ** explode_animate</div><div class="ttdef"><b>Definition:</b> struct.h:103</div></div>
+<div class="ttc" id="astructworld__s_html_aca84dbbdb5371bfc8cbad2a4eaffbe19"><div class="ttname"><a href="structworld__s.html#aca84dbbdb5371bfc8cbad2a4eaffbe19">world_s::ligne_arrivee</a></div><div class="ttdeci">sprite_t * ligne_arrivee</div><div class="ttdef"><b>Definition:</b> struct.h:99</div></div>
+<div class="ttc" id="astructworld__s_html_accf3aec63bc20b3c99ab4881cb07c05b"><div class="ttname"><a href="structworld__s.html#accf3aec63bc20b3c99ab4881cb07c05b">world_s::phase</a></div><div class="ttdeci">int phase</div><div class="ttdef"><b>Definition:</b> struct.h:106</div></div>
+<div class="ttc" id="astructworld__s_html_ad0560d3b095dd9fd0aedf9da01f111a0"><div class="ttname"><a href="structworld__s.html#ad0560d3b095dd9fd0aedf9da01f111a0">world_s::speed_animate</a></div><div class="ttdeci">animate_t * speed_animate</div><div class="ttdef"><b>Definition:</b> struct.h:104</div></div>
+<div class="ttc" id="astructworld__s_html_addb06a10eaaeae0f7e33c001b8bc49aa"><div class="ttname"><a href="structworld__s.html#addb06a10eaaeae0f7e33c001b8bc49aa">world_s::joueur</a></div><div class="ttdeci">sprite_t * joueur</div><div class="ttdef"><b>Definition:</b> struct.h:98</div></div>
+<div class="ttc" id="astructworld__s_html_aef55e1775d611bfea0196692da1a0bc5"><div class="ttname"><a href="structworld__s.html#aef55e1775d611bfea0196692da1a0bc5">world_s::vitesse</a></div><div class="ttdeci">float vitesse</div><div class="ttdef"><b>Definition:</b> struct.h:107</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

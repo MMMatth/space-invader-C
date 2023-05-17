@@ -1,0 +1,169 @@
+\hypertarget{projectile_8h}{}\doxysection{Référence du fichier C\+:/\+Users/matlo/\+Documents/worflow/space-\/invader-\/tp/include/projectile.h}
+\label{projectile_8h}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/projectile.h@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/projectile.h}}
+
+
+module qui s\textquotesingle{}occupe de la gestion des projectiles  
+
+
+{\ttfamily \#include \char`\"{}const.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sprite.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}animate.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}world.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$SDL2/\+SDL.\+h$>$}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{projectile_8h_a25bbbfca36288e757160bec6589e49c1}{init\+\_\+projectiles}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world)
+\begin{DoxyCompactList}\small\item\em procedure qui permet d\textquotesingle{}initialiser les projectiles du monde \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectile_8h_a41dfdb0d8e8d288e1a98dedce989b40f}{tirer}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world)
+\begin{DoxyCompactList}\small\item\em procedure qui permet de tirer un projectile \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectile_8h_a8c62e3dd0acc1207a56fe465f24f6387}{colide\+\_\+btw\+\_\+projectile\+\_\+and\+\_\+meteor}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, int index\+\_\+projectile, int index\+\_\+meteor)
+\begin{DoxyCompactList}\small\item\em procedure qui gere la collision entre les projectiles et les meteors \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectile_8h_ab2d11a81c4a93199cad96af2a8b7ceec}{est\+\_\+dehors}} (\mbox{\hyperlink{structprojectile__s}{projectile\+\_\+t}} $\ast$projectile)
+\begin{DoxyCompactList}\small\item\em procedure qui permet de désactiver un projectile si il sort de l\textquotesingle{}écran \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectile_8h_a95320d1eeebe7eadb7b5697099e2045e}{handle\+\_\+projectile}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world)
+\begin{DoxyCompactList}\small\item\em procedure qui gere la collision entre les projectiles et les meteors \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectile_8h_af025c350ac763d2f9275cb90cdfdf945}{update\+\_\+projectile}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world)
+\begin{DoxyCompactList}\small\item\em procedure qui met à jour les projectiles \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectile_8h_af1aa893375d8275889f125410abb9a4b}{apply\+\_\+projectile}} (SDL\+\_\+\+Renderer $\ast$renderer, \mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, \mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$resources)
+\begin{DoxyCompactList}\small\item\em procedure qui affiche les projectiles sur l\textquotesingle{}écran \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{projectile_8h_af67355fbcd61292e27ccac6cb7e739bb}{clean\+\_\+projectile}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world)
+\begin{DoxyCompactList}\small\item\em procedure qui permet de nettoyer les projectiles du monde en mémoire \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+module qui s\textquotesingle{}occupe de la gestion des projectiles 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{projectile_8h_af1aa893375d8275889f125410abb9a4b}\label{projectile_8h_af1aa893375d8275889f125410abb9a4b}} 
+\index{projectile.h@{projectile.h}!apply\_projectile@{apply\_projectile}}
+\index{apply\_projectile@{apply\_projectile}!projectile.h@{projectile.h}}
+\doxysubsubsection{\texorpdfstring{apply\_projectile()}{apply\_projectile()}}
+{\footnotesize\ttfamily void apply\+\_\+projectile (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{\mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$}]{resources }\end{DoxyParamCaption})}
+
+
+
+procedure qui affiche les projectiles sur l\textquotesingle{}écran 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em renderer} & \\
+\hline
+{\em world} & \\
+\hline
+{\em resources} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectile_8h_af67355fbcd61292e27ccac6cb7e739bb}\label{projectile_8h_af67355fbcd61292e27ccac6cb7e739bb}} 
+\index{projectile.h@{projectile.h}!clean\_projectile@{clean\_projectile}}
+\index{clean\_projectile@{clean\_projectile}!projectile.h@{projectile.h}}
+\doxysubsubsection{\texorpdfstring{clean\_projectile()}{clean\_projectile()}}
+{\footnotesize\ttfamily void clean\+\_\+projectile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet de nettoyer les projectiles du monde en mémoire 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectile_8h_a8c62e3dd0acc1207a56fe465f24f6387}\label{projectile_8h_a8c62e3dd0acc1207a56fe465f24f6387}} 
+\index{projectile.h@{projectile.h}!colide\_btw\_projectile\_and\_meteor@{colide\_btw\_projectile\_and\_meteor}}
+\index{colide\_btw\_projectile\_and\_meteor@{colide\_btw\_projectile\_and\_meteor}!projectile.h@{projectile.h}}
+\doxysubsubsection{\texorpdfstring{colide\_btw\_projectile\_and\_meteor()}{colide\_btw\_projectile\_and\_meteor()}}
+{\footnotesize\ttfamily void colide\+\_\+btw\+\_\+projectile\+\_\+and\+\_\+meteor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{int}]{index\+\_\+projectile,  }\item[{int}]{index\+\_\+meteor }\end{DoxyParamCaption})}
+
+
+
+procedure qui gere la collision entre les projectiles et les meteors 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \+: le monde \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectile_8h_ab2d11a81c4a93199cad96af2a8b7ceec}\label{projectile_8h_ab2d11a81c4a93199cad96af2a8b7ceec}} 
+\index{projectile.h@{projectile.h}!est\_dehors@{est\_dehors}}
+\index{est\_dehors@{est\_dehors}!projectile.h@{projectile.h}}
+\doxysubsubsection{\texorpdfstring{est\_dehors()}{est\_dehors()}}
+{\footnotesize\ttfamily void est\+\_\+dehors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structprojectile__s}{projectile\+\_\+t}} $\ast$}]{projectile }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet de désactiver un projectile si il sort de l\textquotesingle{}écran 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em projectile} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectile_8h_a95320d1eeebe7eadb7b5697099e2045e}\label{projectile_8h_a95320d1eeebe7eadb7b5697099e2045e}} 
+\index{projectile.h@{projectile.h}!handle\_projectile@{handle\_projectile}}
+\index{handle\_projectile@{handle\_projectile}!projectile.h@{projectile.h}}
+\doxysubsubsection{\texorpdfstring{handle\_projectile()}{handle\_projectile()}}
+{\footnotesize\ttfamily void handle\+\_\+projectile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world }\end{DoxyParamCaption})}
+
+
+
+procedure qui gere la collision entre les projectiles et les meteors 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectile_8h_a25bbbfca36288e757160bec6589e49c1}\label{projectile_8h_a25bbbfca36288e757160bec6589e49c1}} 
+\index{projectile.h@{projectile.h}!init\_projectiles@{init\_projectiles}}
+\index{init\_projectiles@{init\_projectiles}!projectile.h@{projectile.h}}
+\doxysubsubsection{\texorpdfstring{init\_projectiles()}{init\_projectiles()}}
+{\footnotesize\ttfamily void init\+\_\+projectiles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet d\textquotesingle{}initialiser les projectiles du monde 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectile_8h_a41dfdb0d8e8d288e1a98dedce989b40f}\label{projectile_8h_a41dfdb0d8e8d288e1a98dedce989b40f}} 
+\index{projectile.h@{projectile.h}!tirer@{tirer}}
+\index{tirer@{tirer}!projectile.h@{projectile.h}}
+\doxysubsubsection{\texorpdfstring{tirer()}{tirer()}}
+{\footnotesize\ttfamily void tirer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet de tirer un projectile 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \+: le monde \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{projectile_8h_af025c350ac763d2f9275cb90cdfdf945}\label{projectile_8h_af025c350ac763d2f9275cb90cdfdf945}} 
+\index{projectile.h@{projectile.h}!update\_projectile@{update\_projectile}}
+\index{update\_projectile@{update\_projectile}!projectile.h@{projectile.h}}
+\doxysubsubsection{\texorpdfstring{update\_projectile()}{update\_projectile()}}
+{\footnotesize\ttfamily void update\+\_\+projectile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world }\end{DoxyParamCaption})}
+
+
+
+procedure qui met à jour les projectiles 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \\
+\hline
+\end{DoxyParams}

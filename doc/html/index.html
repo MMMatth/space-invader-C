@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>space-invader-tp: Jeu Space Invaders</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="spaceship.bmp"/></td>
+  <td id="projectalign">
+   <div id="projectname">space-invader-tp
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Jeu Space Invaders </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_C__Users_matlo_Documents_worflow_space_invader_tp_readme"></a>Jeu réalisé dans le cadre du cours de méthodologie de la programmation niveau 2 à l'Université de Lorraine.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Gamelay</h1>
+<p><img src="assets/gif/gameplay.gif" alt="" style="display: block; margin-left: auto; margin-right: auto" width="400px" class="inline"/> </p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+But du jeu</h1>
+<p>Le but du jeu est de finir le niveau le plus rapidement possible, vous pouvez vous déplacer (Z, Q, ,S, D), tirer sur les météorite avec espace. </p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Installation</h1>
+<p>Pour installer le jeu, il suffit de cloner le dépôt git et d'ecrire make dans le terminal puis lancer ./space_invaders.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Doc</h1>
+<p>Pour générer la documentation, il suffit d'écrire <code>make doc</code> dans le terminal. Si ca marque 'doc' is up to date, il faut lancer <code>make -B doc</code></p>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Génération de la map</h1>
+<p>La map est générée aléatoirement grace à un bruit de perlin qui nous permet de faire une carte qui se ressemble mais qui est toujours differente. Pour générer une map, il faut lancer <code>make map</code> dans le terminal. En ce qui concerne les paramètres du bruit de perlin, on les a choisi en faisant des tests sur le logiciel de FastNoiseLite. On utilise une librairie qui s'appelle <a href="include/FastNoiseLite.h">FastNoiseLite</a> pour générer la map. On peut modifier la taille de la map dans le fichier <a href="include/const.h">const.c</a> (ligne 55). Attention de bien make map et make avant de relancer le jeu.</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Exemple de carte :</h2>
+<p><img src="assets/img/exemple_de_carte.png" alt="" style="display: block; margin-left: auto; margin-right: auto" width="100px" class="inline"/> </p>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Les deplacements</h1>
+<p>Le vaisseau se déplace de gauche à droite. Il peut se déplacer en restant appuyé D (droite) ou Q (gauche). On peut aussi accélérer le vaisseau en appuyant sur Z et ralentir en appuyant sur S.</p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Exemple de déplacement :</h2>
+<p><img src="assets/gif/deplacement.gif" alt="" style="display: block; margin-left: auto; margin-right: auto" width="300px" class="inline"/> </p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Animations</h1>
+<p>Nous avons crée un sytème n'animation <a href="include/animate.h">animate</a> qui permet de crée des animations grace à plusieur image qui s'affiche les unes après les autres.</p>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Exemple de l'animation d'explosion:</h2>
+<p><img src="assets/gif/explode.gif" alt="" style="display: block; margin-left: auto; margin-right: auto" width="200px" class="inline"/> </p>
+<h2><a class="anchor" id="autotoc_md11"></a>
+Exemple de l'animation de vitesse :</h2>
+<p><img src="assets/gif/vitesse.gif" alt="" style="display: block; margin-left: auto; margin-right: auto" width="300px" class="inline"/> </p>
+<h1><a class="anchor" id="autotoc_md12"></a>
+Les scores</h1>
+<p>Les scores sont sauvegarder dans un fichier txt, ils sont écrit à chaque fin de jeu et on peut voir les meilleurs à la fin du jeu. </p>
+<h1><a class="anchor" id="autotoc_md13"></a>
+Menu et ecran de fin</h1>
+<p>Pour le menu et l'écran de fin nous avons fait deux modules qui fonctionne comme le main mais qui sont plus simple. Nous avons fait un menu qui permet de choisir entre jouer et quitter. Nous avons aussi fait un écran de fin qui permet de rejouer ou de quitter, on peut aussi voir les meilleurs scores.</p>
+<h2><a class="anchor" id="autotoc_md14"></a>
+Exemple du menu:</h2>
+<p><img src="assets/gif/menu.png" alt="" style="display: block; margin-left: auto; margin-right: auto" width="400px" class="inline"/> </p>
+<h2><a class="anchor" id="autotoc_md15"></a>
+Exemple ecran de fin:</h2>
+<p><img src="assets/gif/win.png" alt="" style="display: block; margin-left: auto; margin-right: auto" width="400px" class="inline"/> </p>
+<h1><a class="anchor" id="autotoc_md16"></a>
+Projectiles</h1>
+<p>Nous pouvons tirer plusieur projectiles d'un coup mais il y a un cooldown qui permet de ne pas tirer trop de projectiles en même temps. Les projectiles sont détruit quand ils touchent un ennemi ou quand ils sortent de la map. Il y'a aussi une legere variation de droite à gauche pour donner un effet de distortion.</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Exemple de tir:</h2>
+<p><img src="assets/gif/projectile.gif" alt="" style="display: block; margin-left: auto; margin-right: auto" width="100px" class="inline"/> </p>
+<h1><a class="anchor" id="autotoc_md18"></a>
+Les sons</h1>
+<p>Nous avons ajouté des sons pour les tirs et les clics. Nous avons aussi ajouté de la musique de fond. Pour régler le volume de la musique de fond, il faut modifier la variable <code>MUSIC_VOLUME</code> pour la musique ou <code>SOUND_VOLUME</code> pour les sons dans le fichier <a href="include/const.h">const.c</a> (ligne 65 et 70).</p>
+<h1><a class="anchor" id="autotoc_md19"></a>
+Tests</h1>
+<p>Une très grande partie du code a été testé pour lancer les tests, il faut lancer <code>make test</code> dans le terminal. </p>
+<h1><a class="anchor" id="autotoc_md20"></a>
+Crédits</h1>
+<p>Ce projet a été réalisé par Matthieu Gaudel et Gabin Colin, étudiants en L1 Informatique à l'Université de Lorraine. </p>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

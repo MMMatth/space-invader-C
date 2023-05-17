@@ -1,0 +1,94 @@
+\hypertarget{struct_8h_source}{}\doxysection{struct.\+h}
+\label{struct_8h_source}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/struct.h@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/struct.h}}
+\mbox{\hyperlink{struct_8h}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ STRUCT\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ STRUCT\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_ttf.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_mixer.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsprite__s}{sprite\_s}}\{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structsprite__s_a6150e0515f7202e2fb518f7206ed97dc}{x}};\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structsprite__s_a0a2f84ed7838f07779ae24c5a9086d33}{y}};\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structsprite__s_aac374e320caaadeca4874add33b62af2}{w}};\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structsprite__s_a16611451551e3d15916bae723c3f59f7}{h}};\ }
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsprite__s}{sprite\_s}}\ \mbox{\hyperlink{structsprite__s}{sprite\_t}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{struct\ \ }\mbox{\hyperlink{structprojectile__s}{projectile\_s}}\{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structprojectile__s_ad0da36b2558901e21e7a30f6c227a45e}{x}};\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structprojectile__s_aa4f0d3eebc3c443f9be81bf48561a217}{y}};\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structprojectile__s_a7cfc98f491b461931c37e1576c2a5c59}{vitesse\_x}};\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structprojectile__s_ad0ae3983d9823219ad79ef6112cea38c}{vitesse\_y}};\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structprojectile__s_a7010cdccfed0200584ad63025d0f1a5d}{variation}};\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structprojectile__s_a03c996f9fcf0e10baeb3e700be0c409a}{active}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{structsprite__s}{sprite\_t}}\ *\ \mbox{\hyperlink{structprojectile__s_aea0d55ed5eb92b131b710a6bb0585782}{sprite}};\ }
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structprojectile__s}{projectile\_s}}\ \mbox{\hyperlink{structprojectile__s}{projectile\_t}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmeteors__s}{meteors\_s}}\{}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{structsprite__s}{sprite\_t}}\ **\ \mbox{\hyperlink{structmeteors__s_a7346fbfe221c1ab9cae027bb653e346d}{tab\_meteor}};\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structmeteors__s_a507c8654564518e7b8c3b0bc8199ad79}{nb\_meteor}};\ }
+\DoxyCodeLine{00047\ \};\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmeteors__s}{meteors\_s}}\ \mbox{\hyperlink{structmeteors__s}{meteors\_t}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structanimate__s}{animate\_s}}\{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ nb\_frames;\ \textcolor{comment}{/*<\ Nombre\ de\ frames\ de\ l'animation\ */}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structanimate__s_a8915224642e155ba06d1682e27c56c41}{current\_time}};\ }
+\DoxyCodeLine{00056\ \ \ \ \ Uint32\ \mbox{\hyperlink{structanimate__s_a3e47c7595b08a52a2fb7d808ac558014}{frame\_duration}};\ }
+\DoxyCodeLine{00057\ \ \ \ \ Uint32\ \mbox{\hyperlink{structanimate__s_abd9495bce819b86b138011c049418d01}{last\_frame\_time}};\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structanimate__s_ad667f040f2932c8097435492fbd10d76}{loop}};\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structanimate__s_aa5805c5e936174e5092bf7a5b78e7e64}{active}};\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structanimate__s_a6150e0515f7202e2fb518f7206ed97dc}{x}};\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structanimate__s_a0a2f84ed7838f07779ae24c5a9086d33}{y}};\ }
+\DoxyCodeLine{00062\ \};\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structanimate__s}{animate\_s}}\ \mbox{\hyperlink{structanimate__s}{animate\_t}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structresources__s}{resources\_s}}\{}
+\DoxyCodeLine{00070\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{structresources__s_aa6506cd10a348128d0d73bb4dfa58dd5}{background}};\ }
+\DoxyCodeLine{00071\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{structresources__s_ae2355ac3409e92caf0e16794b99c63ea}{vaisseau}};\ }
+\DoxyCodeLine{00072\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{structresources__s_ad8d47f52d3567339a2c91c168fc0c55d}{ligne\_arrivee}};\ }
+\DoxyCodeLine{00073\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{structresources__s_a4cae54091136c5401acd136167bf2f36}{meteorite}};\ }
+\DoxyCodeLine{00074\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{structresources__s_a4cf28cbf0272336f1478b88b857809ee}{laser}};\ }
+\DoxyCodeLine{00075\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{structresources__s_a8aa0e4f11fb509f6af5b59e7be1af96b}{menu}};\ }
+\DoxyCodeLine{00076\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{structresources__s_a075e718569dd29d712b98643d45b3260}{over}};\ }
+\DoxyCodeLine{00077\ \ \ \ \ SDL\_Texture\ **\ \mbox{\hyperlink{structresources__s_add4892366cfed030282392f40bb4dfcd}{explode\_img}};\ }
+\DoxyCodeLine{00078\ \ \ \ \ SDL\_Texture\ **\ \mbox{\hyperlink{structresources__s_ae39dc9159f31364f773758a7e98d7fb7}{speed\_img}};\ }
+\DoxyCodeLine{00079\ \ \ \ \ TTF\_Font\ *\mbox{\hyperlink{structresources__s_abf5bfa705e66ffc1ddaa6ce46c960873}{font}};\ }
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structresources__s}{resources\_s}}\ \mbox{\hyperlink{structresources__s}{resources\_t}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsounds__s}{sounds\_s}}\{}
+\DoxyCodeLine{00087\ \ \ \ \ Mix\_Music\ *\mbox{\hyperlink{structsounds__s_ab203ceba3699c997bf63f13bbc33b33a}{music}};\ }
+\DoxyCodeLine{00088\ \ \ \ \ Mix\_Chunk\ *\mbox{\hyperlink{structsounds__s_a209b589de9bb1492477392e2e28f593f}{laser}};\ }
+\DoxyCodeLine{00089\ \ \ \ \ Mix\_Chunk\ *\mbox{\hyperlink{structsounds__s_a1122d14066a4a94eb08ea4f038d8d3e6}{explosion}};\ }
+\DoxyCodeLine{00090\ \ \ \ \ Mix\_Chunk\ *\mbox{\hyperlink{structsounds__s_a60d2e9c70ec5214f7065f7f7c39de8dc}{clic}};\ }
+\DoxyCodeLine{00091\ \};\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsounds__s}{sounds\_s}}\ \mbox{\hyperlink{structsounds__s}{sounds\_t}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structworld__s}{world\_s}}\{}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{structsprite__s}{sprite\_t}}*\ \mbox{\hyperlink{structworld__s_addb06a10eaaeae0f7e33c001b8bc49aa}{joueur}};\ }
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{structsprite__s}{sprite\_t}}*\ \mbox{\hyperlink{structworld__s_aca84dbbdb5371bfc8cbad2a4eaffbe19}{ligne\_arrivee}};\ }
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{structsprite__s}{sprite\_t}}*\ \mbox{\hyperlink{structworld__s_a9c176c2bbcbf6294d82279096953285e}{mur\_meteorite}};\ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{structsprite__s}{sprite\_t}}**\ \mbox{\hyperlink{structworld__s_a25951e00468ae3f3de34a95a676a0d69}{tab\_wall\_meteor}};\ }
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{structmeteors__s}{meteors\_t}}\ *\ \mbox{\hyperlink{structworld__s_a4c7dd042d7ea934e92dfc46051a1a425}{meteors}};\ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{structanimate__s}{animate\_t}}\ **\ \mbox{\hyperlink{structworld__s_aabb6eb57e84d6428bd7f6898ca0580ef}{explode\_animate}};\ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{structanimate__s}{animate\_t}}\ *\ \mbox{\hyperlink{structworld__s_ad0560d3b095dd9fd0aedf9da01f111a0}{speed\_animate}};\ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{structprojectile__s}{projectile\_t}}\ **\ \mbox{\hyperlink{structworld__s_a31bf7b38c1df51bad871c23bc51dee29}{projectiles}};\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structworld__s_accf3aec63bc20b3c99ab4881cb07c05b}{phase}};\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structworld__s_aef55e1775d611bfea0196692da1a0bc5}{vitesse}};\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structworld__s_a50a80ebd7ceb510cd2c07015d0d36cf2}{chrono}};\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structworld__s_a78254252ef207b26bd5cbc668592fcee}{gameover}};\ }
+\DoxyCodeLine{00110\ \};}
+\DoxyCodeLine{00111\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structworld__s}{world\_s}}\ \mbox{\hyperlink{structworld__s}{world\_t}};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

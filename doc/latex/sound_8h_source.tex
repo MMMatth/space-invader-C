@@ -1,0 +1,40 @@
+\hypertarget{sound_8h_source}{}\doxysection{sound.\+h}
+\label{sound_8h_source}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/sound.h@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/sound.h}}
+\mbox{\hyperlink{sound_8h}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ SOUND\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ SOUND\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_mixer.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{const_8h}{const.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{struct_8h}{struct.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sound_8h_a341f9115f1d0dcfcc8b3e82baf85060a}{init\_sounds\_systeme}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sound_8h_adfb2be2e1ce7efb7dc97306e7c0d2e44}{init\_sounds}}(\mbox{\hyperlink{structsounds__s}{sounds\_t}}\ *\ sounds);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sound_8h_a0c5bba2e9feaaaa18b81c6101c7ce7f1}{clean\_sound}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sound_8h_aea3ed978d3c55f808a1842471c48a5d9}{play\_sound}}(Mix\_Chunk\ *sound,\ \textcolor{keywordtype}{int}\ channel,\ \textcolor{keywordtype}{int}\ loop);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sound_8h_a8916f073523427ee8d50051c27541409}{play\_music}}(Mix\_Music\ *music,\ \textcolor{keywordtype}{int}\ loop);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sound_8h_a49ffe3e49efa56df4042a4494a0ab5aa}{pause\_music}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sound_8h_ad425c76c31ed9d8fe851d45021506d0e}{resume\_music}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sound_8h_a3ce6129e7ea65b8a896668d110fae950}{stop\_music}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sound_8h_a4aebd782df416d5bbe65b71378f3ad50}{stop\_channel}}(\textcolor{keywordtype}{int}\ channel);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sound_8h_aa31611bed7a3f610241015ff1dc5da18}{set\_volume}}(\textcolor{keywordtype}{int}\ channel,\ \textcolor{keywordtype}{int}\ volume);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sound_8h_af30c5381365f5cbdb565e4581ce3db18}{fade\_out\_music}}(\textcolor{keywordtype}{int}\ ms);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

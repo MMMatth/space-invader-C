@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>space-invader-tp:  Fichier source de C:/Users/matlo/Documents/worflow/space-invader-tp/include/sound.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="spaceship.bmp"/></td>
+  <td id="projectalign">
+   <div id="projectname">space-invader-tp
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">sound.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="sound_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef SOUND_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define SOUND_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;SDL2/SDL_mixer.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="const_8h.html">const.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="struct_8h.html">struct.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> <a class="code hl_function" href="sound_8h.html#a341f9115f1d0dcfcc8b3e82baf85060a">init_sounds_systeme</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">void</span> <a class="code hl_function" href="sound_8h.html#adfb2be2e1ce7efb7dc97306e7c0d2e44">init_sounds</a>(<a class="code hl_struct" href="structsounds__s.html">sounds_t</a> * sounds);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keywordtype">void</span> <a class="code hl_function" href="sound_8h.html#a0c5bba2e9feaaaa18b81c6101c7ce7f1">clean_sound</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keywordtype">void</span> <a class="code hl_function" href="sound_8h.html#aea3ed978d3c55f808a1842471c48a5d9">play_sound</a>(Mix_Chunk *sound, <span class="keywordtype">int</span> channel, <span class="keywordtype">int</span> loop);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">void</span> <a class="code hl_function" href="sound_8h.html#a8916f073523427ee8d50051c27541409">play_music</a>(Mix_Music *music, <span class="keywordtype">int</span> loop);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keywordtype">void</span> <a class="code hl_function" href="sound_8h.html#a49ffe3e49efa56df4042a4494a0ab5aa">pause_music</a>();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keywordtype">void</span> <a class="code hl_function" href="sound_8h.html#ad425c76c31ed9d8fe851d45021506d0e">resume_music</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keywordtype">void</span> <a class="code hl_function" href="sound_8h.html#a3ce6129e7ea65b8a896668d110fae950">stop_music</a>();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordtype">void</span> <a class="code hl_function" href="sound_8h.html#a4aebd782df416d5bbe65b71378f3ad50">stop_channel</a>(<span class="keywordtype">int</span> channel);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keywordtype">void</span> <a class="code hl_function" href="sound_8h.html#aa31611bed7a3f610241015ff1dc5da18">set_volume</a>(<span class="keywordtype">int</span> channel, <span class="keywordtype">int</span> volume);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keywordtype">void</span> <a class="code hl_function" href="sound_8h.html#af30c5381365f5cbdb565e4581ce3db18">fade_out_music</a>(<span class="keywordtype">int</span> ms);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aconst_8h_html"><div class="ttname"><a href="const_8h.html">const.h</a></div><div class="ttdoc">fichier avec les constantes du jeu</div></div>
+<div class="ttc" id="asound_8h_html_a0c5bba2e9feaaaa18b81c6101c7ce7f1"><div class="ttname"><a href="sound_8h.html#a0c5bba2e9feaaaa18b81c6101c7ce7f1">clean_sound</a></div><div class="ttdeci">void clean_sound()</div><div class="ttdoc">La fonction nettoie les sons en mémoire.</div><div class="ttdef"><b>Definition:</b> sound.c:17</div></div>
+<div class="ttc" id="asound_8h_html_a341f9115f1d0dcfcc8b3e82baf85060a"><div class="ttname"><a href="sound_8h.html#a341f9115f1d0dcfcc8b3e82baf85060a">init_sounds_systeme</a></div><div class="ttdeci">void init_sounds_systeme()</div><div class="ttdoc">La fonction initialise le système de son.</div><div class="ttdef"><b>Definition:</b> sound.c:3</div></div>
+<div class="ttc" id="asound_8h_html_a3ce6129e7ea65b8a896668d110fae950"><div class="ttname"><a href="sound_8h.html#a3ce6129e7ea65b8a896668d110fae950">stop_music</a></div><div class="ttdeci">void stop_music()</div><div class="ttdoc">fonction pour arrêter la musique</div><div class="ttdef"><b>Definition:</b> sound.c:37</div></div>
+<div class="ttc" id="asound_8h_html_a49ffe3e49efa56df4042a4494a0ab5aa"><div class="ttname"><a href="sound_8h.html#a49ffe3e49efa56df4042a4494a0ab5aa">pause_music</a></div><div class="ttdeci">void pause_music()</div><div class="ttdoc">fonction pour mettre en pause la musique</div><div class="ttdef"><b>Definition:</b> sound.c:29</div></div>
+<div class="ttc" id="asound_8h_html_a4aebd782df416d5bbe65b71378f3ad50"><div class="ttname"><a href="sound_8h.html#a4aebd782df416d5bbe65b71378f3ad50">stop_channel</a></div><div class="ttdeci">void stop_channel(int channel)</div><div class="ttdoc">fonction pour arrêter un son</div><div class="ttdef"><b>Definition:</b> sound.c:41</div></div>
+<div class="ttc" id="asound_8h_html_a8916f073523427ee8d50051c27541409"><div class="ttname"><a href="sound_8h.html#a8916f073523427ee8d50051c27541409">play_music</a></div><div class="ttdeci">void play_music(Mix_Music *music, int loop)</div><div class="ttdoc">fonction pour jouer une musique</div><div class="ttdef"><b>Definition:</b> sound.c:25</div></div>
+<div class="ttc" id="asound_8h_html_aa31611bed7a3f610241015ff1dc5da18"><div class="ttname"><a href="sound_8h.html#aa31611bed7a3f610241015ff1dc5da18">set_volume</a></div><div class="ttdeci">void set_volume(int channel, int volume)</div><div class="ttdoc">fonction pour régler le volume d'un canal</div><div class="ttdef"><b>Definition:</b> sound.c:45</div></div>
+<div class="ttc" id="asound_8h_html_ad425c76c31ed9d8fe851d45021506d0e"><div class="ttname"><a href="sound_8h.html#ad425c76c31ed9d8fe851d45021506d0e">resume_music</a></div><div class="ttdeci">void resume_music()</div><div class="ttdoc">fonction pour reprendre la musique</div><div class="ttdef"><b>Definition:</b> sound.c:33</div></div>
+<div class="ttc" id="asound_8h_html_adfb2be2e1ce7efb7dc97306e7c0d2e44"><div class="ttname"><a href="sound_8h.html#adfb2be2e1ce7efb7dc97306e7c0d2e44">init_sounds</a></div><div class="ttdeci">void init_sounds(sounds_t *sounds)</div><div class="ttdoc">La fonction initialise les sons et la musique.</div><div class="ttdef"><b>Definition:</b> sound.c:10</div></div>
+<div class="ttc" id="asound_8h_html_aea3ed978d3c55f808a1842471c48a5d9"><div class="ttname"><a href="sound_8h.html#aea3ed978d3c55f808a1842471c48a5d9">play_sound</a></div><div class="ttdeci">void play_sound(Mix_Chunk *sound, int channel, int loop)</div><div class="ttdoc">fonction pour jouer un son</div><div class="ttdef"><b>Definition:</b> sound.c:21</div></div>
+<div class="ttc" id="asound_8h_html_af30c5381365f5cbdb565e4581ce3db18"><div class="ttname"><a href="sound_8h.html#af30c5381365f5cbdb565e4581ce3db18">fade_out_music</a></div><div class="ttdeci">void fade_out_music(int ms)</div><div class="ttdoc">fonction pour faire un fondu sur la musique</div><div class="ttdef"><b>Definition:</b> sound.c:49</div></div>
+<div class="ttc" id="astruct_8h_html"><div class="ttname"><a href="struct_8h.html">struct.h</a></div><div class="ttdoc">fichier qui contient toute les structures du jeu</div></div>
+<div class="ttc" id="astructsounds__s_html"><div class="ttname"><a href="structsounds__s.html">sounds_s</a></div><div class="ttdoc">structure qui permet de stocker les sons du jeu</div><div class="ttdef"><b>Definition:</b> struct.h:86</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

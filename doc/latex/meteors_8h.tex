@@ -1,0 +1,161 @@
+\hypertarget{meteors_8h}{}\doxysection{Référence du fichier C\+:/\+Users/matlo/\+Documents/worflow/space-\/invader-\/tp/include/meteors.h}
+\label{meteors_8h}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/meteors.h@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/meteors.h}}
+
+
+module qui permet de gerer les météorites  
+
+
+{\ttfamily \#include \char`\"{}world.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sprite.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}const.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sdl2-\/light.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{meteors_8h_a86130104e8be4b70a661eea8f2b402bd}{init\+\_\+meteors}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, char $\ast$map\+\_\+file)
+\begin{DoxyCompactList}\small\item\em procedure permettant d\textquotesingle{}initialliser les meteors \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{meteors_8h_aaef0329ca18e5f1381708b407e03f83a}{init\+\_\+meteor}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, int indice, int x, int y, int w, int h)
+\begin{DoxyCompactList}\small\item\em procedure qui pertmet d\textquotesingle{}initialliser un meteor \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{meteors_8h_ad395a252ae8c4d2e7dc67702d60fa56c}{calc\+\_\+meteor}} (char $\ast$mapfile)
+\begin{DoxyCompactList}\small\item\em fonction qui permet de calculer le nombre de meteorites il conte le nombre de 1 dans le fichier de la map \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{meteors_8h_a9a2416e8f8b811a408de7b3858da8567}{update\+\_\+meteors}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world)
+\begin{DoxyCompactList}\small\item\em procedure qui permet mettre a jour les meteorites pour prendre en compte la vitesse du jeu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{meteors_8h_a1d8468efa6103cd003cc3a2cb83f6802}{clean\+\_\+meteors}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world)
+\begin{DoxyCompactList}\small\item\em procedure qui permet de nettoyer en memoire les meteorites \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{meteors_8h_ae214f2afe96aede1f00dc8d200d9d14a}{est\+\_\+fini}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world)
+\begin{DoxyCompactList}\small\item\em procedure qui permet de voir si le joueur a perdu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{meteors_8h_abbb00286048b158d99628133403e3c58}{apply\+\_\+meteors}} (SDL\+\_\+\+Renderer $\ast$renderer, \mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, SDL\+\_\+\+Texture $\ast$texture)
+\begin{DoxyCompactList}\small\item\em permet d\textquotesingle{}afficher les meteores sur l\textquotesingle{}écran de jeu \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+module qui permet de gerer les météorites 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{meteors_8h_abbb00286048b158d99628133403e3c58}\label{meteors_8h_abbb00286048b158d99628133403e3c58}} 
+\index{meteors.h@{meteors.h}!apply\_meteors@{apply\_meteors}}
+\index{apply\_meteors@{apply\_meteors}!meteors.h@{meteors.h}}
+\doxysubsubsection{\texorpdfstring{apply\_meteors()}{apply\_meteors()}}
+{\footnotesize\ttfamily void apply\+\_\+meteors (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{SDL\+\_\+\+Texture $\ast$}]{texture }\end{DoxyParamCaption})}
+
+
+
+permet d\textquotesingle{}afficher les meteores sur l\textquotesingle{}écran de jeu 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em renderer} & \\
+\hline
+{\em world} & \\
+\hline
+{\em texture} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{meteors_8h_ad395a252ae8c4d2e7dc67702d60fa56c}\label{meteors_8h_ad395a252ae8c4d2e7dc67702d60fa56c}} 
+\index{meteors.h@{meteors.h}!calc\_meteor@{calc\_meteor}}
+\index{calc\_meteor@{calc\_meteor}!meteors.h@{meteors.h}}
+\doxysubsubsection{\texorpdfstring{calc\_meteor()}{calc\_meteor()}}
+{\footnotesize\ttfamily int calc\+\_\+meteor (\begin{DoxyParamCaption}\item[{char $\ast$}]{mapfile }\end{DoxyParamCaption})}
+
+
+
+fonction qui permet de calculer le nombre de meteorites il conte le nombre de 1 dans le fichier de la map 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mapfile} & \+: le fichier de la map \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int le nombre de meteorites 
+\end{DoxyReturn}
+\mbox{\Hypertarget{meteors_8h_a1d8468efa6103cd003cc3a2cb83f6802}\label{meteors_8h_a1d8468efa6103cd003cc3a2cb83f6802}} 
+\index{meteors.h@{meteors.h}!clean\_meteors@{clean\_meteors}}
+\index{clean\_meteors@{clean\_meteors}!meteors.h@{meteors.h}}
+\doxysubsubsection{\texorpdfstring{clean\_meteors()}{clean\_meteors()}}
+{\footnotesize\ttfamily void clean\+\_\+meteors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet de nettoyer en memoire les meteorites 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \+: les données du monde \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{meteors_8h_ae214f2afe96aede1f00dc8d200d9d14a}\label{meteors_8h_ae214f2afe96aede1f00dc8d200d9d14a}} 
+\index{meteors.h@{meteors.h}!est\_fini@{est\_fini}}
+\index{est\_fini@{est\_fini}!meteors.h@{meteors.h}}
+\doxysubsubsection{\texorpdfstring{est\_fini()}{est\_fini()}}
+{\footnotesize\ttfamily void est\+\_\+fini (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet de voir si le joueur a perdu 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \+: les données du monde \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{meteors_8h_aaef0329ca18e5f1381708b407e03f83a}\label{meteors_8h_aaef0329ca18e5f1381708b407e03f83a}} 
+\index{meteors.h@{meteors.h}!init\_meteor@{init\_meteor}}
+\index{init\_meteor@{init\_meteor}!meteors.h@{meteors.h}}
+\doxysubsubsection{\texorpdfstring{init\_meteor()}{init\_meteor()}}
+{\footnotesize\ttfamily void init\+\_\+meteor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{int}]{indice,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+
+
+procedure qui pertmet d\textquotesingle{}initialliser un meteor 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \+: le monde \\
+\hline
+{\em indice} & \+: l\textquotesingle{}indice du meteor \\
+\hline
+{\em x} & \+: position x du meteor \\
+\hline
+{\em y} & \+: position y du meteor \\
+\hline
+{\em w} & \+: largeur du meteor \\
+\hline
+{\em h} & \+: hauteur du meteor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{meteors_8h_a86130104e8be4b70a661eea8f2b402bd}\label{meteors_8h_a86130104e8be4b70a661eea8f2b402bd}} 
+\index{meteors.h@{meteors.h}!init\_meteors@{init\_meteors}}
+\index{init\_meteors@{init\_meteors}!meteors.h@{meteors.h}}
+\doxysubsubsection{\texorpdfstring{init\_meteors()}{init\_meteors()}}
+{\footnotesize\ttfamily void init\+\_\+meteors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{char $\ast$}]{map\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+procedure permettant d\textquotesingle{}initialliser les meteors 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \+: le monde \\
+\hline
+{\em map\+\_\+file} & \+: lien de la carte \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{meteors_8h_a9a2416e8f8b811a408de7b3858da8567}\label{meteors_8h_a9a2416e8f8b811a408de7b3858da8567}} 
+\index{meteors.h@{meteors.h}!update\_meteors@{update\_meteors}}
+\index{update\_meteors@{update\_meteors}!meteors.h@{meteors.h}}
+\doxysubsubsection{\texorpdfstring{update\_meteors()}{update\_meteors()}}
+{\footnotesize\ttfamily void update\+\_\+meteors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet mettre a jour les meteorites pour prendre en compte la vitesse du jeu 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \+: les données du monde \\
+\hline
+\end{DoxyParams}

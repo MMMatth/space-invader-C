@@ -1,0 +1,231 @@
+\hypertarget{animate_8h}{}\doxysection{Référence du fichier C\+:/\+Users/matlo/\+Documents/worflow/space-\/invader-\/tp/include/animate.h}
+\label{animate_8h}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/animate.h@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/animate.h}}
+
+
+module qui permet de gérer les animations  
+
+
+{\ttfamily \#include \char`\"{}const.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sdl2-\/light.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{animate_8h_aa6df12aaeb92907ba8f3c77167e861c1}{init\+\_\+animates}} (char $\ast$folder\+\_\+path, int nb\+\_\+frame, Uint32 frame\+\_\+duration, \mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$$\ast$tab\+\_\+animate, int loop)
+\begin{DoxyCompactList}\small\item\em procedure qui permet d\textquotesingle{}initialiser plusieurs animations \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{animate_8h_a41458fe70e023422d08e23e3ba53839d}{init\+\_\+animate}} (char $\ast$folder\+\_\+path, int nb\+\_\+frame, Uint32 frame\+\_\+duration, \mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$animate, int loop)
+\begin{DoxyCompactList}\small\item\em procedure qui permet d\textquotesingle{}initialiser une animation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{animate_8h_a01369e406624d60908e7eb5a9fc87655}{apply\+\_\+animate}} (SDL\+\_\+\+Renderer $\ast$renderer, \mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$animate, SDL\+\_\+\+Texture $\ast$$\ast$tab\+\_\+texture, int x, int y, int w, int h)
+\begin{DoxyCompactList}\small\item\em procedure qui permet d\textquotesingle{}afficher une animation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{animate_8h_a8603a87e220ff3fd2f1fc6fe650aa6f7}{start\+\_\+animates}} (\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$$\ast$animate, int x, int y)
+\begin{DoxyCompactList}\small\item\em procedure qui permet de demarrer une animation dans un tableau d\textquotesingle{}animation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{animate_8h_ab14f8e15ace8224fde03ba7a3bc31ee7}{start\+\_\+animate}} (\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$animate, int x, int y)
+\begin{DoxyCompactList}\small\item\em procedure qui permet de demarrer une animation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{animate_8h_a71f2981d0c1d6645703b63bf6fba4ac4}{pause\+\_\+animate}} (\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$animate)
+\begin{DoxyCompactList}\small\item\em procedure qui permet de mettre en pause une animation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{animate_8h_a9e1918a822013e3e306304b22eab3589}{update\+\_\+animates}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, \mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$$\ast$animate)
+\begin{DoxyCompactList}\small\item\em procedure qui permet de mettre a jour plusieurs animations ( appliquer la vitesse) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{animate_8h_a6f4c243e755c2ee939a4a0cfb041e287}{update\+\_\+animate}} (\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, \mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$animate)
+\begin{DoxyCompactList}\small\item\em procedure qui permet de mettre a jour une animation ( appliquer la vitesse par exemple pour les explotions des meteorites) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{animate_8h_a464584414990d7648f1c0da938ccc516}{clean\+\_\+animates}} (\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$$\ast$animate)
+\begin{DoxyCompactList}\small\item\em procedure qui permet de liberer la memoire de plusieurs animations \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{animate_8h_a86f88fa8bc4decc2151a491494cfdad7}{clean\+\_\+animate}} (\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$animate)
+\begin{DoxyCompactList}\small\item\em procedure qui permet de liberer la memoire d\textquotesingle{}une animation \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+module qui permet de gérer les animations 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{animate_8h_a01369e406624d60908e7eb5a9fc87655}\label{animate_8h_a01369e406624d60908e7eb5a9fc87655}} 
+\index{animate.h@{animate.h}!apply\_animate@{apply\_animate}}
+\index{apply\_animate@{apply\_animate}!animate.h@{animate.h}}
+\doxysubsubsection{\texorpdfstring{apply\_animate()}{apply\_animate()}}
+{\footnotesize\ttfamily void apply\+\_\+animate (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$}]{animate,  }\item[{SDL\+\_\+\+Texture $\ast$$\ast$}]{tab\+\_\+texture,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet d\textquotesingle{}afficher une animation 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em renderer} & \+: le renderer \\
+\hline
+{\em animate} & \+: l\textquotesingle{}animation \\
+\hline
+{\em tab\+\_\+texture} & \+: le tableau de texture \\
+\hline
+{\em x} & \+: la position x \\
+\hline
+{\em y} & \+: la position y \\
+\hline
+{\em w} & \+: la largeur \\
+\hline
+{\em h} & \+: la hauteur \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{animate_8h_a86f88fa8bc4decc2151a491494cfdad7}\label{animate_8h_a86f88fa8bc4decc2151a491494cfdad7}} 
+\index{animate.h@{animate.h}!clean\_animate@{clean\_animate}}
+\index{clean\_animate@{clean\_animate}!animate.h@{animate.h}}
+\doxysubsubsection{\texorpdfstring{clean\_animate()}{clean\_animate()}}
+{\footnotesize\ttfamily void clean\+\_\+animate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$}]{animate }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet de liberer la memoire d\textquotesingle{}une animation 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em animate} & \+: l\textquotesingle{}animation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{animate_8h_a464584414990d7648f1c0da938ccc516}\label{animate_8h_a464584414990d7648f1c0da938ccc516}} 
+\index{animate.h@{animate.h}!clean\_animates@{clean\_animates}}
+\index{clean\_animates@{clean\_animates}!animate.h@{animate.h}}
+\doxysubsubsection{\texorpdfstring{clean\_animates()}{clean\_animates()}}
+{\footnotesize\ttfamily void clean\+\_\+animates (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$$\ast$}]{animate }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet de liberer la memoire de plusieurs animations 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em animate} & \+: le tableau d\textquotesingle{}animation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{animate_8h_a41458fe70e023422d08e23e3ba53839d}\label{animate_8h_a41458fe70e023422d08e23e3ba53839d}} 
+\index{animate.h@{animate.h}!init\_animate@{init\_animate}}
+\index{init\_animate@{init\_animate}!animate.h@{animate.h}}
+\doxysubsubsection{\texorpdfstring{init\_animate()}{init\_animate()}}
+{\footnotesize\ttfamily void init\+\_\+animate (\begin{DoxyParamCaption}\item[{char $\ast$}]{folder\+\_\+path,  }\item[{int}]{nb\+\_\+frame,  }\item[{Uint32}]{frame\+\_\+duration,  }\item[{\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$}]{animate,  }\item[{int}]{loop }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet d\textquotesingle{}initialiser une animation 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em folder\+\_\+path} & ! le dossier ou se trouve les images (1.\+bmp, 2.\+bmp, ...) \\
+\hline
+{\em nb\+\_\+frame} & \+: le nombre d\textquotesingle{}image dans le dossier \\
+\hline
+{\em frame\+\_\+duration} & \+: la durée d\textquotesingle{}une frame en ms \\
+\hline
+{\em animate} & \+: l\textquotesingle{}animation \\
+\hline
+{\em loop} & \+: si l\textquotesingle{}animation doit boucler -\/1 sinon 0 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{animate_8h_aa6df12aaeb92907ba8f3c77167e861c1}\label{animate_8h_aa6df12aaeb92907ba8f3c77167e861c1}} 
+\index{animate.h@{animate.h}!init\_animates@{init\_animates}}
+\index{init\_animates@{init\_animates}!animate.h@{animate.h}}
+\doxysubsubsection{\texorpdfstring{init\_animates()}{init\_animates()}}
+{\footnotesize\ttfamily void init\+\_\+animates (\begin{DoxyParamCaption}\item[{char $\ast$}]{folder\+\_\+path,  }\item[{int}]{nb\+\_\+frame,  }\item[{Uint32}]{frame\+\_\+duration,  }\item[{\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$$\ast$}]{tab\+\_\+animate,  }\item[{int}]{loop }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet d\textquotesingle{}initialiser plusieurs animations 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em folder\+\_\+path} & \+: le dossier ou se trouve les images (1.\+bmp, 2.\+bmp, ...) \\
+\hline
+{\em nb\+\_\+frame} & \+: le nombre d\textquotesingle{}image dans le dossier \\
+\hline
+{\em frame\+\_\+duration} & \+: la durée d\textquotesingle{}une frame en ms \\
+\hline
+{\em tab\+\_\+animate} & \+: le tableau d\textquotesingle{}animation \\
+\hline
+{\em loop} & \+: si l\textquotesingle{}animation doit boucler -\/1 sinon 0 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{animate_8h_a71f2981d0c1d6645703b63bf6fba4ac4}\label{animate_8h_a71f2981d0c1d6645703b63bf6fba4ac4}} 
+\index{animate.h@{animate.h}!pause\_animate@{pause\_animate}}
+\index{pause\_animate@{pause\_animate}!animate.h@{animate.h}}
+\doxysubsubsection{\texorpdfstring{pause\_animate()}{pause\_animate()}}
+{\footnotesize\ttfamily void pause\+\_\+animate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$}]{animate }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet de mettre en pause une animation 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em animate} & \+: l\textquotesingle{}animation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{animate_8h_ab14f8e15ace8224fde03ba7a3bc31ee7}\label{animate_8h_ab14f8e15ace8224fde03ba7a3bc31ee7}} 
+\index{animate.h@{animate.h}!start\_animate@{start\_animate}}
+\index{start\_animate@{start\_animate}!animate.h@{animate.h}}
+\doxysubsubsection{\texorpdfstring{start\_animate()}{start\_animate()}}
+{\footnotesize\ttfamily void start\+\_\+animate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$}]{animate,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet de demarrer une animation 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em animate} & \+: l\textquotesingle{}animation \\
+\hline
+{\em x} & \+: la position x \\
+\hline
+{\em y} & \+: la position y \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{animate_8h_a8603a87e220ff3fd2f1fc6fe650aa6f7}\label{animate_8h_a8603a87e220ff3fd2f1fc6fe650aa6f7}} 
+\index{animate.h@{animate.h}!start\_animates@{start\_animates}}
+\index{start\_animates@{start\_animates}!animate.h@{animate.h}}
+\doxysubsubsection{\texorpdfstring{start\_animates()}{start\_animates()}}
+{\footnotesize\ttfamily void start\+\_\+animates (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$$\ast$}]{animate,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet de demarrer une animation dans un tableau d\textquotesingle{}animation 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em animate} & \+: le tableau d\textquotesingle{}animation \\
+\hline
+{\em x} & \+: la position x \\
+\hline
+{\em y} & \+: la position y \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{animate_8h_a6f4c243e755c2ee939a4a0cfb041e287}\label{animate_8h_a6f4c243e755c2ee939a4a0cfb041e287}} 
+\index{animate.h@{animate.h}!update\_animate@{update\_animate}}
+\index{update\_animate@{update\_animate}!animate.h@{animate.h}}
+\doxysubsubsection{\texorpdfstring{update\_animate()}{update\_animate()}}
+{\footnotesize\ttfamily void update\+\_\+animate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$}]{animate }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet de mettre a jour une animation ( appliquer la vitesse par exemple pour les explotions des meteorites) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \+: le monde \\
+\hline
+{\em animate} & \+: l\textquotesingle{}animation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{animate_8h_a9e1918a822013e3e306304b22eab3589}\label{animate_8h_a9e1918a822013e3e306304b22eab3589}} 
+\index{animate.h@{animate.h}!update\_animates@{update\_animates}}
+\index{update\_animates@{update\_animates}!animate.h@{animate.h}}
+\doxysubsubsection{\texorpdfstring{update\_animates()}{update\_animates()}}
+{\footnotesize\ttfamily void update\+\_\+animates (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$$\ast$}]{animate }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet de mettre a jour plusieurs animations ( appliquer la vitesse) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em world} & \+: le monde \\
+\hline
+{\em animate} & \+: le tableau d\textquotesingle{}animation \\
+\hline
+\end{DoxyParams}

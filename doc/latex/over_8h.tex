@@ -1,0 +1,70 @@
+\hypertarget{over_8h}{}\doxysection{Référence du fichier C\+:/\+Users/matlo/\+Documents/worflow/space-\/invader-\/tp/include/over.h}
+\label{over_8h}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/over.h@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/over.h}}
+
+
+module qui gere l\textquotesingle{}écran de fin du jeu  
+
+
+{\ttfamily \#include \char`\"{}sdl2-\/light.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sdl2-\/ttf-\/light.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}const.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}world.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{over_8h_aaa6d88ed7e5af7fca71b464dbbbf835e}{over\+\_\+refresh\+\_\+graphics}} (SDL\+\_\+\+Renderer $\ast$renderer, \mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, \mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$resources)
+\begin{DoxyCompactList}\small\item\em permet de rafraichir les graphiques de l\textquotesingle{}écran de fin du jeu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{over_8h_a24edf9887172175569bdf4ee7ab7f676}{over\+\_\+handle\+\_\+events}} (SDL\+\_\+\+Event $\ast$event, \mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, \mbox{\hyperlink{structsounds__s}{sounds\+\_\+t}} $\ast$sounds)
+\begin{DoxyCompactList}\small\item\em permet de gerer les evenements de l\textquotesingle{}écran de fin du jeu \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+module qui gere l\textquotesingle{}écran de fin du jeu 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{over_8h_a24edf9887172175569bdf4ee7ab7f676}\label{over_8h_a24edf9887172175569bdf4ee7ab7f676}} 
+\index{over.h@{over.h}!over\_handle\_events@{over\_handle\_events}}
+\index{over\_handle\_events@{over\_handle\_events}!over.h@{over.h}}
+\doxysubsubsection{\texorpdfstring{over\_handle\_events()}{over\_handle\_events()}}
+{\footnotesize\ttfamily void over\+\_\+handle\+\_\+events (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event $\ast$}]{event,  }\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{\mbox{\hyperlink{structsounds__s}{sounds\+\_\+t}} $\ast$}]{sounds }\end{DoxyParamCaption})}
+
+
+
+permet de gerer les evenements de l\textquotesingle{}écran de fin du jeu 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em event} & \+: l\textquotesingle{}evenement SDL \\
+\hline
+{\em world} & \+: le monde \\
+\hline
+{\em sounds} & \+: les sons \\
+\hline
+{\em keys} & \+: les touches du clavier \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{over_8h_aaa6d88ed7e5af7fca71b464dbbbf835e}\label{over_8h_aaa6d88ed7e5af7fca71b464dbbbf835e}} 
+\index{over.h@{over.h}!over\_refresh\_graphics@{over\_refresh\_graphics}}
+\index{over\_refresh\_graphics@{over\_refresh\_graphics}!over.h@{over.h}}
+\doxysubsubsection{\texorpdfstring{over\_refresh\_graphics()}{over\_refresh\_graphics()}}
+{\footnotesize\ttfamily void over\+\_\+refresh\+\_\+graphics (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{\mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$}]{resources }\end{DoxyParamCaption})}
+
+
+
+permet de rafraichir les graphiques de l\textquotesingle{}écran de fin du jeu 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em renderer} & \+: le rendu SDL \\
+\hline
+{\em world} & \+: le monde \\
+\hline
+{\em resources} & \+: les ressources \\
+\hline
+\end{DoxyParams}

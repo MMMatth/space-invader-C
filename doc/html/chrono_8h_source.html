@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>space-invader-tp:  Fichier source de C:/Users/matlo/Documents/worflow/space-invader-tp/include/chrono.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="spaceship.bmp"/></td>
+  <td id="projectalign">
+   <div id="projectname">space-invader-tp
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">chrono.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="chrono_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef CHRNO_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define CHRNO_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="world_8h.html">world.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> <a class="code hl_function" href="chrono_8h.html#a295d84d7809a8219b8b0a79e6a45a278">save_chrono</a>(<a class="code hl_struct" href="structworld__s.html">world_t</a> *world);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">int</span> * <a class="code hl_function" href="chrono_8h.html#a77fba6c9012f96a5a0eab8c1d3d1e786">get_sort_score</a>(<a class="code hl_struct" href="structworld__s.html">world_t</a> * world);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">char</span> * <a class="code hl_function" href="chrono_8h.html#ad46ead54fd58e30df6eaeb7043bc0cbc">get_chrono_str</a>(<a class="code hl_struct" href="structworld__s.html">world_t</a> *world);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keywordtype">int</span> * <a class="code hl_function" href="chrono_8h.html#a31b724028cbef7756b92045dedf38370">tri_tableau</a>(<span class="keywordtype">int</span> * tab, <span class="keywordtype">int</span> len);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keywordtype">void</span> <a class="code hl_function" href="chrono_8h.html#a9958a76649d70b938ef9ee96f3b42739">update_chrono</a>(<a class="code hl_struct" href="structworld__s.html">world_t</a> *world, <span class="keywordtype">int</span> time);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">void</span> <a class="code hl_function" href="chrono_8h.html#a90a7d8cd6c99a8e98f94f173f8621a27">apply_chrono</a>(SDL_Renderer *renderer, <a class="code hl_struct" href="structworld__s.html">world_t</a> *world, <a class="code hl_struct" href="structresources__s.html">resources_t</a> *resources);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="achrono_8h_html_a295d84d7809a8219b8b0a79e6a45a278"><div class="ttname"><a href="chrono_8h.html#a295d84d7809a8219b8b0a79e6a45a278">save_chrono</a></div><div class="ttdeci">void save_chrono(world_t *world)</div><div class="ttdoc">sauvegarder le chrono dans un fichier</div><div class="ttdef"><b>Definition:</b> chrono.c:4</div></div>
+<div class="ttc" id="achrono_8h_html_a31b724028cbef7756b92045dedf38370"><div class="ttname"><a href="chrono_8h.html#a31b724028cbef7756b92045dedf38370">tri_tableau</a></div><div class="ttdeci">int * tri_tableau(int *tab, int len)</div><div class="ttdoc">permet de trier un tableau d'entiers dans l'ordre croissant</div><div class="ttdef"><b>Definition:</b> chrono.c:61</div></div>
+<div class="ttc" id="achrono_8h_html_a77fba6c9012f96a5a0eab8c1d3d1e786"><div class="ttname"><a href="chrono_8h.html#a77fba6c9012f96a5a0eab8c1d3d1e786">get_sort_score</a></div><div class="ttdeci">int * get_sort_score(world_t *world)</div><div class="ttdoc">permet de recuperer les trois meilleurs scores</div><div class="ttdef"><b>Definition:</b> chrono.c:18</div></div>
+<div class="ttc" id="achrono_8h_html_a90a7d8cd6c99a8e98f94f173f8621a27"><div class="ttname"><a href="chrono_8h.html#a90a7d8cd6c99a8e98f94f173f8621a27">apply_chrono</a></div><div class="ttdeci">void apply_chrono(SDL_Renderer *renderer, world_t *world, resources_t *resources)</div><div class="ttdoc">permet d'afficher le chrono</div><div class="ttdef"><b>Definition:</b> chrono.c:79</div></div>
+<div class="ttc" id="achrono_8h_html_a9958a76649d70b938ef9ee96f3b42739"><div class="ttname"><a href="chrono_8h.html#a9958a76649d70b938ef9ee96f3b42739">update_chrono</a></div><div class="ttdeci">void update_chrono(world_t *world, int time)</div><div class="ttdoc">permet de mettre a jour le chrono</div><div class="ttdef"><b>Definition:</b> chrono.c:75</div></div>
+<div class="ttc" id="achrono_8h_html_ad46ead54fd58e30df6eaeb7043bc0cbc"><div class="ttname"><a href="chrono_8h.html#ad46ead54fd58e30df6eaeb7043bc0cbc">get_chrono_str</a></div><div class="ttdeci">char * get_chrono_str(world_t *world)</div><div class="ttdoc">permet de recuperer le chrono sous la forme 00 : 00</div><div class="ttdef"><b>Definition:</b> chrono.c:46</div></div>
+<div class="ttc" id="astructresources__s_html"><div class="ttname"><a href="structresources__s.html">resources_s</a></div><div class="ttdoc">Représentation pour stocker les ressources (img, font) nécessaires à l'affichage graphique.</div><div class="ttdef"><b>Definition:</b> struct.h:69</div></div>
+<div class="ttc" id="astructworld__s_html"><div class="ttname"><a href="structworld__s.html">world_s</a></div><div class="ttdoc">Représentation du monde du jeu.</div><div class="ttdef"><b>Definition:</b> struct.h:97</div></div>
+<div class="ttc" id="aworld_8h_html"><div class="ttname"><a href="world_8h.html">world.h</a></div><div class="ttdoc">module qui s'occupe de la gestion du monde</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

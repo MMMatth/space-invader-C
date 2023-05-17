@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>space-invader-tp:  Fichier source de C:/Users/matlo/Documents/worflow/space-invader-tp/include/meteors.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="spaceship.bmp"/></td>
+  <td id="projectalign">
+   <div id="projectname">space-invader-tp
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">meteors.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="meteors_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef WALLS_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define WALLS_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="world_8h.html">world.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="sprite_8h.html">sprite.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="const_8h.html">const.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="struct_8h.html">struct.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="sdl2-light_8h.html">sdl2-light.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> <a class="code hl_function" href="meteors_8h.html#a86130104e8be4b70a661eea8f2b402bd">init_meteors</a>(<a class="code hl_struct" href="structworld__s.html">world_t</a> *world, <span class="keywordtype">char</span> * map_file);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keywordtype">void</span> <a class="code hl_function" href="meteors_8h.html#aaef0329ca18e5f1381708b407e03f83a">init_meteor</a>(<a class="code hl_struct" href="structworld__s.html">world_t</a> * world, <span class="keywordtype">int</span> indice, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keywordtype">int</span> <a class="code hl_function" href="meteors_8h.html#ad395a252ae8c4d2e7dc67702d60fa56c">calc_meteor</a>(<span class="keywordtype">char</span> * mapfile);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keywordtype">void</span> <a class="code hl_function" href="meteors_8h.html#a9a2416e8f8b811a408de7b3858da8567">update_meteors</a>(<a class="code hl_struct" href="structworld__s.html">world_t</a> *world);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keywordtype">void</span> <a class="code hl_function" href="meteors_8h.html#a1d8468efa6103cd003cc3a2cb83f6802">clean_meteors</a>(<a class="code hl_struct" href="structworld__s.html">world_t</a> *world);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keywordtype">void</span> <a class="code hl_function" href="meteors_8h.html#ae214f2afe96aede1f00dc8d200d9d14a">est_fini</a>(<a class="code hl_struct" href="structworld__s.html">world_t</a> *world);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> <a class="code hl_function" href="meteors_8h.html#abbb00286048b158d99628133403e3c58">apply_meteors</a>(SDL_Renderer *renderer, <a class="code hl_struct" href="structworld__s.html">world_t</a> * world, SDL_Texture *texture);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif </span><span class="comment">/* WALLS_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aconst_8h_html"><div class="ttname"><a href="const_8h.html">const.h</a></div><div class="ttdoc">fichier avec les constantes du jeu</div></div>
+<div class="ttc" id="ameteors_8h_html_a1d8468efa6103cd003cc3a2cb83f6802"><div class="ttname"><a href="meteors_8h.html#a1d8468efa6103cd003cc3a2cb83f6802">clean_meteors</a></div><div class="ttdeci">void clean_meteors(world_t *world)</div><div class="ttdoc">procedure qui permet de nettoyer en memoire les meteorites</div><div class="ttdef"><b>Definition:</b> meteors.c:57</div></div>
+<div class="ttc" id="ameteors_8h_html_a86130104e8be4b70a661eea8f2b402bd"><div class="ttname"><a href="meteors_8h.html#a86130104e8be4b70a661eea8f2b402bd">init_meteors</a></div><div class="ttdeci">void init_meteors(world_t *world, char *map_file)</div><div class="ttdoc">procedure permettant d'initialliser les meteors</div><div class="ttdef"><b>Definition:</b> meteors.c:3</div></div>
+<div class="ttc" id="ameteors_8h_html_a9a2416e8f8b811a408de7b3858da8567"><div class="ttname"><a href="meteors_8h.html#a9a2416e8f8b811a408de7b3858da8567">update_meteors</a></div><div class="ttdeci">void update_meteors(world_t *world)</div><div class="ttdoc">procedure qui permet mettre a jour les meteorites pour prendre en compte la vitesse du jeu</div><div class="ttdef"><b>Definition:</b> meteors.c:49</div></div>
+<div class="ttc" id="ameteors_8h_html_aaef0329ca18e5f1381708b407e03f83a"><div class="ttname"><a href="meteors_8h.html#aaef0329ca18e5f1381708b407e03f83a">init_meteor</a></div><div class="ttdeci">void init_meteor(world_t *world, int indice, int x, int y, int w, int h)</div><div class="ttdoc">procedure qui pertmet d'initialliser un meteor</div><div class="ttdef"><b>Definition:</b> meteors.c:28</div></div>
+<div class="ttc" id="ameteors_8h_html_abbb00286048b158d99628133403e3c58"><div class="ttname"><a href="meteors_8h.html#abbb00286048b158d99628133403e3c58">apply_meteors</a></div><div class="ttdeci">void apply_meteors(SDL_Renderer *renderer, world_t *world, SDL_Texture *texture)</div><div class="ttdoc">permet d'afficher les meteores sur l'écran de jeu</div><div class="ttdef"><b>Definition:</b> meteors.c:76</div></div>
+<div class="ttc" id="ameteors_8h_html_ad395a252ae8c4d2e7dc67702d60fa56c"><div class="ttname"><a href="meteors_8h.html#ad395a252ae8c4d2e7dc67702d60fa56c">calc_meteor</a></div><div class="ttdeci">int calc_meteor(char *mapfile)</div><div class="ttdoc">fonction qui permet de calculer le nombre de meteorites il conte le nombre de 1 dans le fichier de la...</div><div class="ttdef"><b>Definition:</b> meteors.c:33</div></div>
+<div class="ttc" id="ameteors_8h_html_ae214f2afe96aede1f00dc8d200d9d14a"><div class="ttname"><a href="meteors_8h.html#ae214f2afe96aede1f00dc8d200d9d14a">est_fini</a></div><div class="ttdeci">void est_fini(world_t *world)</div><div class="ttdoc">procedure qui permet de voir si le joueur a perdu</div><div class="ttdef"><b>Definition:</b> meteors.c:66</div></div>
+<div class="ttc" id="asdl2-light_8h_html"><div class="ttname"><a href="sdl2-light_8h.html">sdl2-light.h</a></div><div class="ttdoc">en-tête du module correspondant à une sur-couche de SDL2 pour simplifier son utilisation pour le proj...</div></div>
+<div class="ttc" id="asprite_8h_html"><div class="ttname"><a href="sprite_8h.html">sprite.h</a></div><div class="ttdoc">module qui s'occupe des sprites</div></div>
+<div class="ttc" id="astruct_8h_html"><div class="ttname"><a href="struct_8h.html">struct.h</a></div><div class="ttdoc">fichier qui contient toute les structures du jeu</div></div>
+<div class="ttc" id="astructworld__s_html"><div class="ttname"><a href="structworld__s.html">world_s</a></div><div class="ttdoc">Représentation du monde du jeu.</div><div class="ttdef"><b>Definition:</b> struct.h:97</div></div>
+<div class="ttc" id="aworld_8h_html"><div class="ttname"><a href="world_8h.html">world.h</a></div><div class="ttdoc">module qui s'occupe de la gestion du monde</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

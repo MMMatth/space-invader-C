@@ -1,0 +1,89 @@
+\hypertarget{main_8c}{}\doxysection{Référence du fichier C\+:/\+Users/matlo/\+Documents/worflow/space-\/invader-\/tp/src/main.c}
+\label{main_8c}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/src/main.c@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/src/main.c}}
+
+
+Programme principal initial du niveau 0.  
+
+
+{\ttfamily \#include \char`\"{}../include/sdl2-\/light.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/sdl2-\/ttf-\/light.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/const.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/struct.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/world.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/display.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/sprite.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/meteors.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/menu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/sound.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/over.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_af139fdfdfe1fa4f861d4427b16aa2c2b}{init}} (SDL\+\_\+\+Window $\ast$$\ast$window, SDL\+\_\+\+Renderer $\ast$$\ast$renderer, \mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$textures, \mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, \mbox{\hyperlink{structsounds__s}{sounds\+\_\+t}} $\ast$sounds)
+\begin{DoxyCompactList}\small\item\em fonction qui initialise le jeu\+: initialisation de la partie graphique (SDL), chargement des textures, initialisation des données \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a95bd4a8c043d70f47cd9e35d824f79db}{clean}} (SDL\+\_\+\+Window $\ast$window, SDL\+\_\+\+Renderer $\ast$renderer, \mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$textures, \mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world)
+\begin{DoxyCompactList}\small\item\em fonction qui nettoie le jeu\+: nettoyage de la partie graphique (SDL), nettoyage des textures, nettoyage des données \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em programme principal qui implémente la boucle du jeu \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Programme principal initial du niveau 0. 
+
+\begin{DoxyAuthor}{Auteur}
+Mathieu Constant 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18 mars 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{main_8c_a95bd4a8c043d70f47cd9e35d824f79db}\label{main_8c_a95bd4a8c043d70f47cd9e35d824f79db}} 
+\index{main.c@{main.c}!clean@{clean}}
+\index{clean@{clean}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily void clean (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Window $\ast$}]{window,  }\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{\mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$}]{textures,  }\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world }\end{DoxyParamCaption})}
+
+
+
+fonction qui nettoie le jeu\+: nettoyage de la partie graphique (SDL), nettoyage des textures, nettoyage des données 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em window} & la fenêtre du jeu \\
+\hline
+{\em renderer} & le renderer \\
+\hline
+{\em textures} & les textures \\
+\hline
+{\em world} & le monde \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_af139fdfdfe1fa4f861d4427b16aa2c2b}\label{main_8c_af139fdfdfe1fa4f861d4427b16aa2c2b}} 
+\index{main.c@{main.c}!init@{init}}
+\index{init@{init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void init (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Window $\ast$$\ast$}]{window,  }\item[{SDL\+\_\+\+Renderer $\ast$$\ast$}]{renderer,  }\item[{\mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$}]{textures,  }\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{\mbox{\hyperlink{structsounds__s}{sounds\+\_\+t}} $\ast$}]{sounds }\end{DoxyParamCaption})}
+
+
+
+fonction qui initialise le jeu\+: initialisation de la partie graphique (SDL), chargement des textures, initialisation des données 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em window} & la fenêtre du jeu \\
+\hline
+{\em renderer} & le renderer \\
+\hline
+{\em textures} & les textures \\
+\hline
+{\em wordl} & le monde \\
+\hline
+\end{DoxyParams}

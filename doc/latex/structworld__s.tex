@@ -1,0 +1,122 @@
+\hypertarget{structworld__s}{}\doxysection{Référence de la structure world\+\_\+s}
+\label{structworld__s}\index{world\_s@{world\_s}}
+
+
+Représentation du monde du jeu.  
+
+
+
+
+{\ttfamily \#include $<$struct.\+h$>$}
+
+\doxysubsection*{Champs de données}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$ \mbox{\hyperlink{structworld__s_addb06a10eaaeae0f7e33c001b8bc49aa}{joueur}}
+\item 
+\mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$ \mbox{\hyperlink{structworld__s_aca84dbbdb5371bfc8cbad2a4eaffbe19}{ligne\+\_\+arrivee}}
+\item 
+\mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$ \mbox{\hyperlink{structworld__s_a9c176c2bbcbf6294d82279096953285e}{mur\+\_\+meteorite}}
+\item 
+\mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$$\ast$ \mbox{\hyperlink{structworld__s_a25951e00468ae3f3de34a95a676a0d69}{tab\+\_\+wall\+\_\+meteor}}
+\item 
+\mbox{\hyperlink{structmeteors__s}{meteors\+\_\+t}} $\ast$ \mbox{\hyperlink{structworld__s_a4c7dd042d7ea934e92dfc46051a1a425}{meteors}}
+\item 
+\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$$\ast$ \mbox{\hyperlink{structworld__s_aabb6eb57e84d6428bd7f6898ca0580ef}{explode\+\_\+animate}}
+\item 
+\mbox{\hyperlink{structanimate__s}{animate\+\_\+t}} $\ast$ \mbox{\hyperlink{structworld__s_ad0560d3b095dd9fd0aedf9da01f111a0}{speed\+\_\+animate}}
+\item 
+\mbox{\hyperlink{structprojectile__s}{projectile\+\_\+t}} $\ast$$\ast$ \mbox{\hyperlink{structworld__s_a31bf7b38c1df51bad871c23bc51dee29}{projectiles}}
+\item 
+int \mbox{\hyperlink{structworld__s_accf3aec63bc20b3c99ab4881cb07c05b}{phase}}
+\item 
+float \mbox{\hyperlink{structworld__s_aef55e1775d611bfea0196692da1a0bc5}{vitesse}}
+\item 
+int \mbox{\hyperlink{structworld__s_a50a80ebd7ceb510cd2c07015d0d36cf2}{chrono}}
+\item 
+int \mbox{\hyperlink{structworld__s_a78254252ef207b26bd5cbc668592fcee}{gameover}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Représentation du monde du jeu. 
+
+\doxysubsection{Documentation des champs}
+\mbox{\Hypertarget{structworld__s_a50a80ebd7ceb510cd2c07015d0d36cf2}\label{structworld__s_a50a80ebd7ceb510cd2c07015d0d36cf2}} 
+\index{world\_s@{world\_s}!chrono@{chrono}}
+\index{chrono@{chrono}!world\_s@{world\_s}}
+\doxysubsubsection{\texorpdfstring{chrono}{chrono}}
+{\footnotesize\ttfamily int chrono}
+
+Chronomètre du jeu \mbox{\Hypertarget{structworld__s_aabb6eb57e84d6428bd7f6898ca0580ef}\label{structworld__s_aabb6eb57e84d6428bd7f6898ca0580ef}} 
+\index{world\_s@{world\_s}!explode\_animate@{explode\_animate}}
+\index{explode\_animate@{explode\_animate}!world\_s@{world\_s}}
+\doxysubsubsection{\texorpdfstring{explode\_animate}{explode\_animate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structanimate__s}{animate\+\_\+t}}$\ast$$\ast$ explode\+\_\+animate}
+
+Animation d\textquotesingle{}explotion ~\newline
+ \mbox{\Hypertarget{structworld__s_a78254252ef207b26bd5cbc668592fcee}\label{structworld__s_a78254252ef207b26bd5cbc668592fcee}} 
+\index{world\_s@{world\_s}!gameover@{gameover}}
+\index{gameover@{gameover}!world\_s@{world\_s}}
+\doxysubsubsection{\texorpdfstring{gameover}{gameover}}
+{\footnotesize\ttfamily int gameover}
+
+Champ indiquant si l\textquotesingle{}on est à la fin du jeu \mbox{\Hypertarget{structworld__s_addb06a10eaaeae0f7e33c001b8bc49aa}\label{structworld__s_addb06a10eaaeae0f7e33c001b8bc49aa}} 
+\index{world\_s@{world\_s}!joueur@{joueur}}
+\index{joueur@{joueur}!world\_s@{world\_s}}
+\doxysubsubsection{\texorpdfstring{joueur}{joueur}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}}$\ast$ joueur}
+
+Sprite représentant le joueur \mbox{\Hypertarget{structworld__s_aca84dbbdb5371bfc8cbad2a4eaffbe19}\label{structworld__s_aca84dbbdb5371bfc8cbad2a4eaffbe19}} 
+\index{world\_s@{world\_s}!ligne\_arrivee@{ligne\_arrivee}}
+\index{ligne\_arrivee@{ligne\_arrivee}!world\_s@{world\_s}}
+\doxysubsubsection{\texorpdfstring{ligne\_arrivee}{ligne\_arrivee}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}}$\ast$ ligne\+\_\+arrivee}
+
+Sprite représentant la ligne d\textquotesingle{}arrivée \mbox{\Hypertarget{structworld__s_a4c7dd042d7ea934e92dfc46051a1a425}\label{structworld__s_a4c7dd042d7ea934e92dfc46051a1a425}} 
+\index{world\_s@{world\_s}!meteors@{meteors}}
+\index{meteors@{meteors}!world\_s@{world\_s}}
+\doxysubsubsection{\texorpdfstring{meteors}{meteors}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmeteors__s}{meteors\+\_\+t}}$\ast$ meteors}
+
+Structure contenant les météorites \mbox{\Hypertarget{structworld__s_a9c176c2bbcbf6294d82279096953285e}\label{structworld__s_a9c176c2bbcbf6294d82279096953285e}} 
+\index{world\_s@{world\_s}!mur\_meteorite@{mur\_meteorite}}
+\index{mur\_meteorite@{mur\_meteorite}!world\_s@{world\_s}}
+\doxysubsubsection{\texorpdfstring{mur\_meteorite}{mur\_meteorite}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}}$\ast$ mur\+\_\+meteorite}
+
+Sprite représentant le mur de météorites \mbox{\Hypertarget{structworld__s_accf3aec63bc20b3c99ab4881cb07c05b}\label{structworld__s_accf3aec63bc20b3c99ab4881cb07c05b}} 
+\index{world\_s@{world\_s}!phase@{phase}}
+\index{phase@{phase}!world\_s@{world\_s}}
+\doxysubsubsection{\texorpdfstring{phase}{phase}}
+{\footnotesize\ttfamily int phase}
+
+Champ indiquant la phase du jeu (0 \+: menu, 1 \+: le jeu, 2 \+: l\textquotesingle{}écran de fin, 3 \+: recommence une partie) \mbox{\Hypertarget{structworld__s_a31bf7b38c1df51bad871c23bc51dee29}\label{structworld__s_a31bf7b38c1df51bad871c23bc51dee29}} 
+\index{world\_s@{world\_s}!projectiles@{projectiles}}
+\index{projectiles@{projectiles}!world\_s@{world\_s}}
+\doxysubsubsection{\texorpdfstring{projectiles}{projectiles}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structprojectile__s}{projectile\+\_\+t}}$\ast$$\ast$ projectiles}
+
+Tableau de projectiles \mbox{\Hypertarget{structworld__s_ad0560d3b095dd9fd0aedf9da01f111a0}\label{structworld__s_ad0560d3b095dd9fd0aedf9da01f111a0}} 
+\index{world\_s@{world\_s}!speed\_animate@{speed\_animate}}
+\index{speed\_animate@{speed\_animate}!world\_s@{world\_s}}
+\doxysubsubsection{\texorpdfstring{speed\_animate}{speed\_animate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structanimate__s}{animate\+\_\+t}}$\ast$ speed\+\_\+animate}
+
+Animation de vitesse \mbox{\Hypertarget{structworld__s_a25951e00468ae3f3de34a95a676a0d69}\label{structworld__s_a25951e00468ae3f3de34a95a676a0d69}} 
+\index{world\_s@{world\_s}!tab\_wall\_meteor@{tab\_wall\_meteor}}
+\index{tab\_wall\_meteor@{tab\_wall\_meteor}!world\_s@{world\_s}}
+\doxysubsubsection{\texorpdfstring{tab\_wall\_meteor}{tab\_wall\_meteor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}}$\ast$$\ast$ tab\+\_\+wall\+\_\+meteor}
+
+Tableau de sprite représentant les murs de météorites \mbox{\Hypertarget{structworld__s_aef55e1775d611bfea0196692da1a0bc5}\label{structworld__s_aef55e1775d611bfea0196692da1a0bc5}} 
+\index{world\_s@{world\_s}!vitesse@{vitesse}}
+\index{vitesse@{vitesse}!world\_s@{world\_s}}
+\doxysubsubsection{\texorpdfstring{vitesse}{vitesse}}
+{\footnotesize\ttfamily float vitesse}
+
+Vitesse de déplacement du fond 
+
+La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/matlo/\+Documents/worflow/space-\/invader-\/tp/include/\mbox{\hyperlink{struct_8h}{struct.\+h}}\end{DoxyCompactItemize}

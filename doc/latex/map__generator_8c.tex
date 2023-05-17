@@ -1,0 +1,38 @@
+\hypertarget{map__generator_8c}{}\doxysection{Référence du fichier C\+:/\+Users/matlo/\+Documents/worflow/space-\/invader-\/tp/src/map\+\_\+generator.c}
+\label{map__generator_8c}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/src/map\_generator.c@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/src/map\_generator.c}}
+
+
+fichier qui permet de générer la map grace au bruit de perlin  
+
+
+{\ttfamily \#include \char`\"{}../include/\+Fast\+Noise\+Lite.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/const.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{map__generator_8c_ac2c1cea422d5f345710af5f2739716e9}\label{map__generator_8c_ac2c1cea422d5f345710af5f2739716e9}} 
+\#define {\bfseries FNL\+\_\+\+IMPL}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{map__generator_8c_a33d60c5e6d055e314d9f7932a17765c8}\label{map__generator_8c_a33d60c5e6d055e314d9f7932a17765c8}} 
+float $\ast$ {\bfseries cree\+\_\+bruit\+\_\+perlin} (float frequency, float gain)
+\item 
+\mbox{\Hypertarget{map__generator_8c_a9541e557b1f120e8b638943b0ee7f43d}\label{map__generator_8c_a9541e557b1f120e8b638943b0ee7f43d}} 
+void {\bfseries ecrire\+\_\+carte} (float $\ast$noise\+Data)
+\item 
+\mbox{\Hypertarget{map__generator_8c_a48c156a958684f9c689cf46288c43e7c}\label{map__generator_8c_a48c156a958684f9c689cf46288c43e7c}} 
+void {\bfseries new\+\_\+carte} ()
+\item 
+\mbox{\Hypertarget{map__generator_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{map__generator_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+fichier qui permet de générer la map grace au bruit de perlin 
+

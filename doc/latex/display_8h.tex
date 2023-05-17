@@ -1,0 +1,152 @@
+\hypertarget{display_8h}{}\doxysection{Référence du fichier C\+:/\+Users/matlo/\+Documents/worflow/space-\/invader-\/tp/include/display.h}
+\label{display_8h}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/display.h@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/display.h}}
+
+
+module qui permet de gérer l\textquotesingle{}affichage (SDL)  
+
+
+{\ttfamily \#include \char`\"{}const.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}world.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sound.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}animate.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}chrono.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}meteors.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sdl2-\/light.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sdl2-\/ttf-\/light.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{display_8h_ab9f3c43ae20c0e214c1ecd0f2a9c7f88}{init\+\_\+resources}} (SDL\+\_\+\+Renderer $\ast$renderer, \mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$ressources)
+\begin{DoxyCompactList}\small\item\em procedure qui permet d\textquotesingle{}initialiser les ressources du jeu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{display_8h_a5534cf2d44b1f8beb2dcc0caa2506fec}{handle\+\_\+events}} (SDL\+\_\+\+Event $\ast$event, \mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, \mbox{\hyperlink{structsounds__s}{sounds\+\_\+t}} $\ast$sounds, const Uint8 $\ast$keys)
+\begin{DoxyCompactList}\small\item\em procedure qui permet gerer tout les evenements du jeu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{display_8h_ab62ad18be0f56a4ab6af55e1c9d181dc}{apply\+\_\+background}} (SDL\+\_\+\+Renderer $\ast$renderer, \mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$textures)
+\begin{DoxyCompactList}\small\item\em La fonction applique la texture du fond sur le renderer lié à l\textquotesingle{}écran de jeu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{display_8h_a6dbc7599cf219df862245c92f34cee34}{clean\+\_\+ressources}} (\mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$textures)
+\begin{DoxyCompactList}\small\item\em La fonction nettoie les textures. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{display_8h_a08eeab212b5ccc3bd5a1222503e57bf3}{refresh\+\_\+graphics}} (SDL\+\_\+\+Renderer $\ast$renderer, \mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, \mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$resources)
+\begin{DoxyCompactList}\small\item\em La fonction rafraichit l\textquotesingle{}écran en fonction de l\textquotesingle{}état des données du monde. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{display_8h_a76a895a757cba20b6fd63912633546b4}{hitbox}} (SDL\+\_\+\+Event event, int x\+\_\+top\+\_\+left, int x\+\_\+bottom\+\_\+left, int y\+\_\+top\+\_\+left, int y\+\_\+bottom\+\_\+left)
+\begin{DoxyCompactList}\small\item\em la fonction permet de savoir si on clique dans une zone \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+module qui permet de gérer l\textquotesingle{}affichage (SDL) 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{display_8h_ab62ad18be0f56a4ab6af55e1c9d181dc}\label{display_8h_ab62ad18be0f56a4ab6af55e1c9d181dc}} 
+\index{display.h@{display.h}!apply\_background@{apply\_background}}
+\index{apply\_background@{apply\_background}!display.h@{display.h}}
+\doxysubsubsection{\texorpdfstring{apply\_background()}{apply\_background()}}
+{\footnotesize\ttfamily void apply\+\_\+background (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{\mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$}]{textures }\end{DoxyParamCaption})}
+
+
+
+La fonction applique la texture du fond sur le renderer lié à l\textquotesingle{}écran de jeu. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em renderer} & le renderer \\
+\hline
+{\em textures} & les textures du jeu \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{display_8h_a6dbc7599cf219df862245c92f34cee34}\label{display_8h_a6dbc7599cf219df862245c92f34cee34}} 
+\index{display.h@{display.h}!clean\_ressources@{clean\_ressources}}
+\index{clean\_ressources@{clean\_ressources}!display.h@{display.h}}
+\doxysubsubsection{\texorpdfstring{clean\_ressources()}{clean\_ressources()}}
+{\footnotesize\ttfamily void clean\+\_\+ressources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$}]{textures }\end{DoxyParamCaption})}
+
+
+
+La fonction nettoie les textures. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em textures} & les textures \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{display_8h_a5534cf2d44b1f8beb2dcc0caa2506fec}\label{display_8h_a5534cf2d44b1f8beb2dcc0caa2506fec}} 
+\index{display.h@{display.h}!handle\_events@{handle\_events}}
+\index{handle\_events@{handle\_events}!display.h@{display.h}}
+\doxysubsubsection{\texorpdfstring{handle\_events()}{handle\_events()}}
+{\footnotesize\ttfamily void handle\+\_\+events (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event $\ast$}]{event,  }\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{\mbox{\hyperlink{structsounds__s}{sounds\+\_\+t}} $\ast$}]{sounds,  }\item[{const Uint8 $\ast$}]{keys }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet gerer tout les evenements du jeu 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em event} & paramètre qui contient les événements \\
+\hline
+{\em world} & les données du monde \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{display_8h_a76a895a757cba20b6fd63912633546b4}\label{display_8h_a76a895a757cba20b6fd63912633546b4}} 
+\index{display.h@{display.h}!hitbox@{hitbox}}
+\index{hitbox@{hitbox}!display.h@{display.h}}
+\doxysubsubsection{\texorpdfstring{hitbox()}{hitbox()}}
+{\footnotesize\ttfamily bool hitbox (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event}]{event,  }\item[{int}]{x\+\_\+top\+\_\+left,  }\item[{int}]{x\+\_\+bottom\+\_\+left,  }\item[{int}]{y\+\_\+top\+\_\+left,  }\item[{int}]{y\+\_\+bottom\+\_\+left }\end{DoxyParamCaption})}
+
+
+
+la fonction permet de savoir si on clique dans une zone 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em event} & \+: l\textquotesingle{}evenement SDL \\
+\hline
+{\em x\+\_\+top\+\_\+left} & \+: la position en x du coin haut gauche de la zone \\
+\hline
+{\em x\+\_\+bottom\+\_\+left} & \+: la position en x du coin bas gauche de la zone \\
+\hline
+{\em y\+\_\+top\+\_\+left} & \+: la position en y du coin haut gauche de la zone \\
+\hline
+{\em y\+\_\+bottom\+\_\+left} & \+: la position en y du coin bas gauche de la zone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true \+: si on clique dans la zone 
+
+false \+: si on clique en dehors de la zone 
+\end{DoxyReturn}
+\mbox{\Hypertarget{display_8h_ab9f3c43ae20c0e214c1ecd0f2a9c7f88}\label{display_8h_ab9f3c43ae20c0e214c1ecd0f2a9c7f88}} 
+\index{display.h@{display.h}!init\_resources@{init\_resources}}
+\index{init\_resources@{init\_resources}!display.h@{display.h}}
+\doxysubsubsection{\texorpdfstring{init\_resources()}{init\_resources()}}
+{\footnotesize\ttfamily void init\+\_\+resources (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{\mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$}]{ressources }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet d\textquotesingle{}initialiser les ressources du jeu 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em screen} & la surface correspondant à l\textquotesingle{}écran de jeu \\
+\hline
+{\em ressources} & les ressources du jeu \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{display_8h_a08eeab212b5ccc3bd5a1222503e57bf3}\label{display_8h_a08eeab212b5ccc3bd5a1222503e57bf3}} 
+\index{display.h@{display.h}!refresh\_graphics@{refresh\_graphics}}
+\index{refresh\_graphics@{refresh\_graphics}!display.h@{display.h}}
+\doxysubsubsection{\texorpdfstring{refresh\_graphics()}{refresh\_graphics()}}
+{\footnotesize\ttfamily void refresh\+\_\+graphics (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{\mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$}]{resources }\end{DoxyParamCaption})}
+
+
+
+La fonction rafraichit l\textquotesingle{}écran en fonction de l\textquotesingle{}état des données du monde. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em renderer} & le renderer \\
+\hline
+{\em world} & les données du monde \\
+\hline
+{\em resources} & les ressources du jeu \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,72 @@
+\hypertarget{menu_8h}{}\doxysection{Référence du fichier C\+:/\+Users/matlo/\+Documents/worflow/space-\/invader-\/tp/include/menu.h}
+\label{menu_8h}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/menu.h@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/menu.h}}
+
+
+module qui permet de gerer le menu  
+
+
+{\ttfamily \#include \char`\"{}sdl2-\/light.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sdl2-\/ttf-\/light.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}const.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}world.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sprite.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}meteors.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8h_a30dd2ada0dc90e21d6c0eb180b6d574e}{menu\+\_\+refresh\+\_\+graphics}} (SDL\+\_\+\+Renderer $\ast$renderer, \mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, \mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$resources)
+\begin{DoxyCompactList}\small\item\em procedure qui permet de rafraichir les ressources du menu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a9659b6e9b38985da8dee6d8295e45c8f}{menu\+\_\+handle\+\_\+events}} (SDL\+\_\+\+Event $\ast$event, \mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$world, \mbox{\hyperlink{structsounds__s}{sounds\+\_\+t}} $\ast$sounds)
+\begin{DoxyCompactList}\small\item\em procedure qui permet de gerer les evenements du menu \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+module qui permet de gerer le menu 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{menu_8h_a9659b6e9b38985da8dee6d8295e45c8f}\label{menu_8h_a9659b6e9b38985da8dee6d8295e45c8f}} 
+\index{menu.h@{menu.h}!menu\_handle\_events@{menu\_handle\_events}}
+\index{menu\_handle\_events@{menu\_handle\_events}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menu\_handle\_events()}{menu\_handle\_events()}}
+{\footnotesize\ttfamily void menu\+\_\+handle\+\_\+events (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event $\ast$}]{event,  }\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{\mbox{\hyperlink{structsounds__s}{sounds\+\_\+t}} $\ast$}]{sounds }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet de gerer les evenements du menu 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em event} & \+: l\textquotesingle{}evenement SDL \\
+\hline
+{\em world} & \+: les données du monde \\
+\hline
+{\em sounds} & \+: les sons du jeu \\
+\hline
+{\em keys} & \+: les touches du clavier \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{menu_8h_a30dd2ada0dc90e21d6c0eb180b6d574e}\label{menu_8h_a30dd2ada0dc90e21d6c0eb180b6d574e}} 
+\index{menu.h@{menu.h}!menu\_refresh\_graphics@{menu\_refresh\_graphics}}
+\index{menu\_refresh\_graphics@{menu\_refresh\_graphics}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menu\_refresh\_graphics()}{menu\_refresh\_graphics()}}
+{\footnotesize\ttfamily void menu\+\_\+refresh\+\_\+graphics (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{\mbox{\hyperlink{structworld__s}{world\+\_\+t}} $\ast$}]{world,  }\item[{\mbox{\hyperlink{structresources__s}{resources\+\_\+t}} $\ast$}]{resources }\end{DoxyParamCaption})}
+
+
+
+procedure qui permet de rafraichir les ressources du menu 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em renderer} & \+: le renderer SDL \\
+\hline
+{\em world} & \+: les données du monde \\
+\hline
+{\em resources} & \+: les ressources du jeu \\
+\hline
+\end{DoxyParams}

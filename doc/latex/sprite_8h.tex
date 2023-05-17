@@ -1,0 +1,146 @@
+\hypertarget{sprite_8h}{}\doxysection{Référence du fichier C\+:/\+Users/matlo/\+Documents/worflow/space-\/invader-\/tp/include/sprite.h}
+\label{sprite_8h}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/sprite.h@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/sprite.h}}
+
+
+module qui s\textquotesingle{}occupe des sprites  
+
+
+{\ttfamily \#include \char`\"{}const.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}sdl2-\/light.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sprite_8h_a7edf5248c9929108f571836fb92f204a}{init\+\_\+sprite}} (\mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$sprite, int x, int y, int w, int h)
+\begin{DoxyCompactList}\small\item\em initialise un sprite \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sprite_8h_ac4af2d8ff425c5d826b687a47f79c36c}{hide\+\_\+sprite}} (\mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$sprite)
+\begin{DoxyCompactList}\small\item\em procedure qui cache un sprite \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sprite_8h_aa35f099a7e2fcb62d60f44d7a061f151}{sprites\+\_\+collide}} (\mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$sp1, \mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$sp2)
+\begin{DoxyCompactList}\small\item\em fonction qui verifie si deux sprites se chevauchent \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sprite_8h_a8fd24d21785e3c0e3b324936f69ca927}{apply\+\_\+sprite\+\_\+adapted}} (SDL\+\_\+\+Renderer $\ast$renderer, SDL\+\_\+\+Texture $\ast$texture, \mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$sprite)
+\begin{DoxyCompactList}\small\item\em applique le sprite sur le renderer en l\textquotesingle{}adaptant à la taille de l\textquotesingle{}image \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sprite_8h_a1d3be1f25017a0acd88a72bafbb70730}{apply\+\_\+sprite}} (SDL\+\_\+\+Renderer $\ast$renderer, SDL\+\_\+\+Texture $\ast$texture, \mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$sprite)
+\begin{DoxyCompactList}\small\item\em applique le sprite sur le renderer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sprite_8h_a242b29f702d42f06f3cdf3843ee7f930}{print\+\_\+sprite}} (\mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$sprite)
+\begin{DoxyCompactList}\small\item\em affiche les informations du sprite \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+module qui s\textquotesingle{}occupe des sprites 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{sprite_8h_a1d3be1f25017a0acd88a72bafbb70730}\label{sprite_8h_a1d3be1f25017a0acd88a72bafbb70730}} 
+\index{sprite.h@{sprite.h}!apply\_sprite@{apply\_sprite}}
+\index{apply\_sprite@{apply\_sprite}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{apply\_sprite()}{apply\_sprite()}}
+{\footnotesize\ttfamily void apply\+\_\+sprite (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{SDL\+\_\+\+Texture $\ast$}]{texture,  }\item[{\mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+
+
+applique le sprite sur le renderer 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em renderer} & \+: le renderer \\
+\hline
+{\em texture} & \+: la texture \\
+\hline
+{\em sprite} & \+: le sprite \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sprite_8h_a8fd24d21785e3c0e3b324936f69ca927}\label{sprite_8h_a8fd24d21785e3c0e3b324936f69ca927}} 
+\index{sprite.h@{sprite.h}!apply\_sprite\_adapted@{apply\_sprite\_adapted}}
+\index{apply\_sprite\_adapted@{apply\_sprite\_adapted}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{apply\_sprite\_adapted()}{apply\_sprite\_adapted()}}
+{\footnotesize\ttfamily void apply\+\_\+sprite\+\_\+adapted (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{SDL\+\_\+\+Texture $\ast$}]{texture,  }\item[{\mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+
+
+applique le sprite sur le renderer en l\textquotesingle{}adaptant à la taille de l\textquotesingle{}image 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em renderer} & \+: le renderer \\
+\hline
+{\em texture} & \+: la texture \\
+\hline
+{\em sprite} & \+: le sprite \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sprite_8h_ac4af2d8ff425c5d826b687a47f79c36c}\label{sprite_8h_ac4af2d8ff425c5d826b687a47f79c36c}} 
+\index{sprite.h@{sprite.h}!hide\_sprite@{hide\_sprite}}
+\index{hide\_sprite@{hide\_sprite}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{hide\_sprite()}{hide\_sprite()}}
+{\footnotesize\ttfamily void hide\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+
+
+procedure qui cache un sprite 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em sprite} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sprite_8h_a7edf5248c9929108f571836fb92f204a}\label{sprite_8h_a7edf5248c9929108f571836fb92f204a}} 
+\index{sprite.h@{sprite.h}!init\_sprite@{init\_sprite}}
+\index{init\_sprite@{init\_sprite}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{init\_sprite()}{init\_sprite()}}
+{\footnotesize\ttfamily void init\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$}]{sprite,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+
+
+initialise un sprite 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em sprite} & \+: le sprite à initialiser \\
+\hline
+{\em x} & \+: la position en x du sprite \\
+\hline
+{\em y} & \+: la position en y du sprite \\
+\hline
+{\em w} & \+: la largeur du sprite \\
+\hline
+{\em h} & \+: la hauteur du sprite \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sprite_8h_a242b29f702d42f06f3cdf3843ee7f930}\label{sprite_8h_a242b29f702d42f06f3cdf3843ee7f930}} 
+\index{sprite.h@{sprite.h}!print\_sprite@{print\_sprite}}
+\index{print\_sprite@{print\_sprite}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{print\_sprite()}{print\_sprite()}}
+{\footnotesize\ttfamily void print\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+
+
+affiche les informations du sprite 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em sprite} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sprite_8h_aa35f099a7e2fcb62d60f44d7a061f151}\label{sprite_8h_aa35f099a7e2fcb62d60f44d7a061f151}} 
+\index{sprite.h@{sprite.h}!sprites\_collide@{sprites\_collide}}
+\index{sprites\_collide@{sprites\_collide}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{sprites\_collide()}{sprites\_collide()}}
+{\footnotesize\ttfamily int sprites\+\_\+collide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$}]{sp1,  }\item[{\mbox{\hyperlink{structsprite__s}{sprite\+\_\+t}} $\ast$}]{sp2 }\end{DoxyParamCaption})}
+
+
+
+fonction qui verifie si deux sprites se chevauchent 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em sp1} & \+: le premier sprite \\
+\hline
+{\em sp2} & \+: le deuxieme sprite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int \+: 1 si les sprites se chevauchent, 0 sinon 
+\end{DoxyReturn}

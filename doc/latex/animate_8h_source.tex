@@ -1,0 +1,35 @@
+\hypertarget{animate_8h_source}{}\doxysection{animate.\+h}
+\label{animate_8h_source}\index{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/animate.h@{C:/Users/matlo/Documents/worflow/space-\/invader-\/tp/include/animate.h}}
+\mbox{\hyperlink{animate_8h}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ ANIMATE\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ ANIMATE\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{const_8h}{const.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{struct_8h}{struct.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sdl2-light_8h}{sdl2-\/light.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{animate_8h_aa6df12aaeb92907ba8f3c77167e861c1}{init\_animates}}(\textcolor{keywordtype}{char}\ *\ folder\_path,\ \textcolor{keywordtype}{int}\ nb\_frame,\ Uint32\ frame\_duration,\ \mbox{\hyperlink{structanimate__s}{animate\_t}}\ **\ tab\_animate,\ \textcolor{keywordtype}{int}\ loop);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{animate_8h_a41458fe70e023422d08e23e3ba53839d}{init\_animate}}(\textcolor{keywordtype}{char}\ *\ folder\_path,\ \textcolor{keywordtype}{int}\ nb\_frame,\ Uint32\ frame\_duration,\ \mbox{\hyperlink{structanimate__s}{animate\_t}}\ *\ animate,\ \textcolor{keywordtype}{int}\ loop);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{animate_8h_a01369e406624d60908e7eb5a9fc87655}{apply\_animate}}(SDL\_Renderer\ *\ renderer\ ,\mbox{\hyperlink{structanimate__s}{animate\_t}}\ *\ animate,\ SDL\_Texture\ **\ tab\_texture,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{animate_8h_a8603a87e220ff3fd2f1fc6fe650aa6f7}{start\_animates}}(\mbox{\hyperlink{structanimate__s}{animate\_t}}\ **\ animate,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{animate_8h_ab14f8e15ace8224fde03ba7a3bc31ee7}{start\_animate}}(\mbox{\hyperlink{structanimate__s}{animate\_t}}\ *\ animate,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{animate_8h_a71f2981d0c1d6645703b63bf6fba4ac4}{pause\_animate}}(\mbox{\hyperlink{structanimate__s}{animate\_t}}\ *\ animate);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{animate_8h_a9e1918a822013e3e306304b22eab3589}{update\_animates}}(\mbox{\hyperlink{structworld__s}{world\_t}}\ *\ world,\ \mbox{\hyperlink{structanimate__s}{animate\_t}}\ **\ animate);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{animate_8h_a6f4c243e755c2ee939a4a0cfb041e287}{update\_animate}}(\ \mbox{\hyperlink{structworld__s}{world\_t}}\ *\ world,\ \mbox{\hyperlink{structanimate__s}{animate\_t}}\ *\ animate);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{animate_8h_a464584414990d7648f1c0da938ccc516}{clean\_animates}}(\mbox{\hyperlink{structanimate__s}{animate\_t}}\ **\ animate);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{animate_8h_a86f88fa8bc4decc2151a491494cfdad7}{clean\_animate}}(\mbox{\hyperlink{structanimate__s}{animate\_t}}\ *\ animate);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
