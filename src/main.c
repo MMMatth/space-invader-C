@@ -123,6 +123,8 @@ int main( int argc, char* argv[] )
 
                 init(&window,&renderer,&textures,&world, &sounds);
 
+                time_passed_menu = 0;
+
                 world.phase = 1;
                 
                 play_music(sounds.music, -1);
