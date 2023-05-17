@@ -40,7 +40,7 @@ Le vaisseau se déplace de gauche à droite. Il peut se déplacer en restant app
 ## Animations
 Nous avons crée un sytème n'animation [animate](include/animate.h)   qui permet de crée des animations grace à plusieur image qui s'affiche les unes après les autres. 
 
-### Exemple de l'animation d'explotion:
+### Exemple de l'animation d'explosion:
 <p align="center">
     <img style="display: block; margin-left: auto; margin-right: auto" width = "200px" src="assets/gif/explode.gif">
 </p>
